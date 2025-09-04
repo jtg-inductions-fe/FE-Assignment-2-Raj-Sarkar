@@ -8,4 +8,19 @@ export const palette: PaletteOptions = {
     primary: {
         main: COLORS.PRIMARY.MAIN,
     },
+    grey: {
+        50: '#FFFFFF',
+        400: '#9CA3AF',
+        500: '#6B7280',
+        900: '#111827',
+    },
+    success: {
+        main: '#DEF7EC',
+    },
+    error: {
+        main: '#9B1C1C',
+    },
+    info: {
+        main: '#1E429F',
+    },
 };
