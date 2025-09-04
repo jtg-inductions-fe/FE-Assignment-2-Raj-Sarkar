@@ -1,3 +1,1 @@
-const Sidebar: React.FC = () => <h1>Sidebar</h1>;
-
-export default Sidebar;
+export const Sidebar = () => <h1>Sidebar</h1>;

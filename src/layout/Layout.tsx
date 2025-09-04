@@ -1,7 +1,7 @@
 import { Box, Stack } from '@mui/material';
 
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
+import { Header } from '../components';
+import { Sidebar } from '../components';
 import { LayoutProps } from '../types';
 
 const Layout = ({ showSidebar = false, children }: LayoutProps) => (

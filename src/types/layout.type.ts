@@ -1,4 +1,4 @@
 export type LayoutProps = {
-    showSidebar: boolean;
+    showSidebar?: boolean;
     children?: React.ReactNode;
 };

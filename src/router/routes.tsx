@@ -1,9 +1,9 @@
-import Home from 'pages/Home';
-import NotFound from 'pages/NotFound';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { routePaths } from '../constant/index';
+import { routePaths } from '../constant';
 import { Layout } from '../layout';
+import { Home } from '../pages';
+import { NotFound } from '../pages';
 
 export const routes = createBrowserRouter([
     {
