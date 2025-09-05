@@ -1,2 +1,2 @@
-export { Header } from './Header';
+export * from './Sidebar.styles';
 export { Sidebar } from './Sidebar';

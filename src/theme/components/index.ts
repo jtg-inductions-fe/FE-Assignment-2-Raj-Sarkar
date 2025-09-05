@@ -10,7 +10,7 @@ const fontFaceDeclarations = `
         font-display: swap; 
         font-family: 'Inter';
         font-style: normal;
-        font-weight: 400 700;
+        font-weight: 500;
         src: url(${InterRegularWOFF2}) format('woff2'), 
         url(${InterRegularTTF}) format('truetype');
       };

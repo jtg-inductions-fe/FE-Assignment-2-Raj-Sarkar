@@ -1,15 +1,24 @@
+import { Outlet } from 'react-router-dom';
+
 import { Box, Stack } from '@mui/material';
 
-import { Header } from '../components';
-import { Sidebar } from '../components';
-import { LayoutProps } from '../types';
+import { Header } from '@components/header';
+import { Sidebar } from '@components/sidebar';
+import { LayoutProps } from '@types';
 
+/**
+ *
+ * @param showSidebar - boolean value to show/hide sidebar
+ * @returns Layout component for layout reusability
+ */
 const Layout = ({ showSidebar = false, children }: LayoutProps) => (
     <Box>
         <Header />
         <Stack direction="row">
             {showSidebar && <Sidebar />}
-            {children}
+            <Box component={'main'} maxWidth={1600} mx={'auto'}>
+                {children ?? <Outlet />}
+            </Box>
         </Stack>
     </Box>
 );
