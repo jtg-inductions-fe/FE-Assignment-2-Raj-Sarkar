@@ -1,1 +1,1 @@
-export type { LayoutProps } from './layout.types';
+export type { LayoutProps } from './Layout.types';

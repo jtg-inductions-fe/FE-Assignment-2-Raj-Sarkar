@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 
 import { Box, Stack } from '@mui/material';
 
-import { Header } from '@components/header';
-import { Sidebar } from '@components/sidebar';
+import { Header } from '@components/Header';
+import { Sidebar } from '@components/Sidebar';
 import { LayoutProps } from '@types';
 
 /**
