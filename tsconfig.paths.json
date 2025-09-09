@@ -9,7 +9,8 @@
             "@layout": ["layout"],
             "@router": ["router"],
             "@types": ["types"],
-            "@components/*": ["components/*"]
+            "@components/*": ["components/*"],
+            "@helper": ["helper"]
         }
     }
 }
