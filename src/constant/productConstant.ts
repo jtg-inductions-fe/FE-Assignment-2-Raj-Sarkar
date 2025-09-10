@@ -1,9 +1,11 @@
-export const PRODUCT_LIST = [
+import { ProductItem } from '@types';
+
+export const PRODUCT_LIST: ProductItem[] = [
     {
         name: 'Restaurant Booking App',
         technology: 'React & Bootstrap Framework',
         sales: 70,
-        to: '/restuarnt-booking-app',
+        to: '/restaurnt-booking-app',
     },
     {
         name: 'UI Kit',
@@ -25,14 +27,14 @@ export const PRODUCT_LIST = [
     },
     {
         name: 'Glassmorphism UI',
-        technology: 'Vue Js, Tailwind ',
+        technology: 'Vue Js, Tailwind',
         sales: 38,
-        to: 'glassmorphism',
+        to: '/glassmorphism',
     },
     {
         name: 'Multipurpose Template',
         technology: 'React & Bootstrap Framework',
         sales: 22,
-        to: 'multipurpose template',
+        to: '/multipurpose template',
     },
 ];

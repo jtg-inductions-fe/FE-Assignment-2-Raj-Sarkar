@@ -39,8 +39,8 @@ export const IconButton = (props: StyledIconButtonProps) => {
         >
             <Icon
                 component={component}
-                customwidth={customwidth ? customwidth - 4 : 24}
-                customheight={customheight ? customheight - 4 : 24}
+                customwidth={customwidth ? customwidth : 24}
+                customheight={customheight ? customheight : 24}
                 customcolor={customcolor}
                 inheritViewBox
             />

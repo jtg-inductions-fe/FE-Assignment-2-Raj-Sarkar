@@ -7,7 +7,10 @@ export const StyledIconButton = styled(IconButton, {
         prop !== 'customwidth' &&
         prop !== 'customheight' &&
         prop !== 'customcolor' &&
-        prop !== 'component',
+        prop !== 'component' &&
+        prop !== 'hideinmobile' &&
+        prop !== 'hideintablet' &&
+        prop !== 'showshadow',
 })<StyledIconButtonProps>(
     ({
         theme,
@@ -21,14 +24,13 @@ export const StyledIconButton = styled(IconButton, {
         width: customwidth,
         height: customheight,
         color: customcolor ?? theme.palette.grey[900],
-        borderRadius: '50%',
-        padding: 8,
+        padding: theme.spacing(1),
         boxShadow: showshadow
             ? `0 ${theme.typography.pxToRem(4)} ${theme.typography.pxToRem(4)} ${theme.palette.grey[400]}`
             : '',
-        display: hideinmobile ? 'none' : 'flex',
+        display: hideinmobile ? 'none' : 'inline-flex',
         [theme.breakpoints.up('sm')]: {
-            display: hideintablet ? 'none' : 'flex',
+            display: hideintablet ? 'none' : 'inline-flex',
         },
     }),
 );

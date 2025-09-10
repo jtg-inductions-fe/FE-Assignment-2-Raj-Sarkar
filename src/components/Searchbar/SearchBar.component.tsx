@@ -40,14 +40,16 @@ export const SearchBar = (props: SearchBarProps) => {
                     }
                 />
             )}
-            onChange={(e, value) =>
-                handleOptionChange({
-                    e,
-                    value: value as string,
-                    productList,
-                    navigate,
-                })
-            }
+            onChange={(e, value) => {
+                if (typeof value === 'string') {
+                    handleOptionChange({
+                        e,
+                        value,
+                        productList,
+                        navigate,
+                    });
+                }
+            }}
         />
     );
 };

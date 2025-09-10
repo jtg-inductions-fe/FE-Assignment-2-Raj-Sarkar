@@ -10,8 +10,7 @@ import Menu from '@assets/icons/menu.svg?react';
 import ProfileImg from '@assets/imgs/avatar_1.png';
 import { IconButton } from '@components/IconButton';
 import { SearchBar } from '@components/Searchbar';
-import { PRODUCT_LIST } from '@constant';
-import { USERS } from '@constant';
+import { PRODUCT_LIST, USERS } from '@constant';
 import { handleClickByNavigate } from '@helper';
 import { HeaderProps } from '@types';
 
@@ -81,6 +80,7 @@ export const Header = (props: HeaderProps) => {
                         src={ProfileImg}
                         alt=""
                         component={'button'}
+                        type="button"
                         sx={{
                             width: 32,
                             height: 32,
