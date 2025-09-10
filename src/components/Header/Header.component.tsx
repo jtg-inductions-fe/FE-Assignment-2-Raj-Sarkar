@@ -8,6 +8,7 @@ import Bell from '@assets/icons/bell.svg?react';
 import Logo from '@assets/icons/logo.svg?react';
 import Menu from '@assets/icons/menu.svg?react';
 import ProfileImg from '@assets/imgs/avatar_1.png';
+import { StyledHeaderStack } from '@components/Header';
 import { IconButton } from '@components/IconButton';
 import { SearchBar } from '@components/Searchbar';
 import { PRODUCT_LIST, USERS } from '@constant';
@@ -27,21 +28,21 @@ export const Header = (props: HeaderProps) => {
     const id = open ? 'simple-popover' : undefined;
 
     return (
-        <Stack direction={'row'} sx={{ justifyContent: 'space-between', p: 4 }}>
+        <StyledHeaderStack>
             <Stack
                 direction={'row'}
-                spacing={8}
                 sx={{
                     justifyContent: 'start',
                     alignItems: 'center',
+                    gap: 8,
                     flexGrow: 1,
                 }}
             >
                 <IconButton
                     component={Menu}
                     hideintablet={true}
-                    customwidth={32}
-                    customheight={32}
+                    customwidth={28}
+                    customheight={28}
                     onClick={onMenuClick}
                 />
                 <IconButton
@@ -117,6 +118,6 @@ export const Header = (props: HeaderProps) => {
                     </Popover>
                 </Box>
             </Stack>
-        </Stack>
+        </StyledHeaderStack>
     );
 };
