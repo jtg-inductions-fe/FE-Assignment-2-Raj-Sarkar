@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 
 import Search from '@assets/icons/search.svg?react';
 import { Icon } from '@components/Icon';
-import { handleOptionChange } from '@helper';
+import { handleInputChange, handleOptionChange } from '@helper';
 import { SearchBarProps } from '@types';
 
 import { StyledAutocomplete } from './SearchBar.styles';
@@ -49,6 +49,9 @@ export const SearchBar = (props: SearchBarProps) => {
                         navigate,
                     });
                 }
+            }}
+            onInputChange={(e, value) => {
+                handleInputChange({ e, value, navigate });
             }}
         />
     );

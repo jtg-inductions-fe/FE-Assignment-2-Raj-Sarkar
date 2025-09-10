@@ -27,3 +27,12 @@ export type HandleSearchBarProps = {
     productList: ProductItem[];
     navigate: NavigateFunction;
 };
+
+/**
+ * Contains types of props for handling input change
+ */
+export type HandleInputChangeProps = {
+    e: React.SyntheticEvent<Element, Event>;
+    value: string;
+    navigate: NavigateFunction;
+};
