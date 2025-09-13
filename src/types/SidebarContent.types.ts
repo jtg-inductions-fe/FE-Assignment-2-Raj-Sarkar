@@ -17,6 +17,7 @@ export type MenuItem = {
  */
 export type MenuIcon = {
     id: string;
+    label: string;
     icon: React.ElementType;
     to: string;
 };
@@ -38,7 +39,7 @@ export type SidebarContentProps = {
 /**
  * Contains types for menu icons component
  */
-export type SideBarIconsProps = {
+export type SidebarIconsProps = {
     iconItems: MenuIcon[];
 };
 
@@ -47,11 +48,9 @@ export type SideBarIconsProps = {
  */
 export type HandleClickOnListButtonProps = {
     hasChildren: boolean;
-    open: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
     navigate: NavigateFunction;
     item: MenuItem;
-    selected: boolean;
     setSelected: React.Dispatch<React.SetStateAction<boolean>>;
 };
 

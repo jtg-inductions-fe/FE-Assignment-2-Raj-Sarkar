@@ -34,10 +34,12 @@ export const StyledListItemButton = styled(ListItemButton)(
 
 export const StyledTypography = styled(Typography, {
     shouldForwardProp: (prop) => prop !== 'hasicon' && prop !== 'color',
-})<StyledTypographyProps>(({ hasicon = true, color }) => ({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingLeft: hasicon ? 0 : 40,
-    color: color,
-}));
+})<StyledTypographyProps>(
+    ({ theme: { typography }, hasicon = true, color }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: hasicon ? 0 : typography.pxToRem(40),
+        color: color,
+    }),
+);

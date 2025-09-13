@@ -42,7 +42,7 @@ export const menuData1: MenuItem[] = [
         id: '4',
         title: 'Messages',
         icon: InboxIn,
-        count: 1,
+        count: 0,
         to: '/messages',
     },
     {
@@ -61,13 +61,13 @@ export const MenuData2: MenuItem[] = [
         id: '1',
         title: 'Docs',
         icon: ClipboardList,
-        to: 'docs',
+        to: '/docs',
     },
     {
         id: '2',
         title: 'Components',
         icon: Collection,
-        to: 'components',
+        to: '/components',
     },
     {
         id: '1',
@@ -80,17 +80,20 @@ export const MenuData2: MenuItem[] = [
 export const menuIcons: MenuIcon[] = [
     {
         id: '1',
+        label: 'Go to adjustments',
         icon: Adjustment,
         to: '/adjustment',
     },
     {
         id: '2',
+        label: 'Go to global',
         icon: Globe,
-        to: '/adjustment',
+        to: '/global',
     },
     {
         id: '3',
+        label: 'Go to settings',
         icon: Cog,
-        to: '/adjustment',
+        to: '/settings',
     },
 ];

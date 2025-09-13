@@ -25,12 +25,7 @@ const Layout = ({ showSidebar = false, children }: LayoutProps) => {
                 {showSidebar && (
                     <Sidebar open={sidebarOpen} onClose={toggleSidebar} />
                 )}
-                <Box
-                    component={'main'}
-                    maxWidth={1600}
-                    mx={'auto'}
-                    height={5000}
-                >
+                <Box component={'main'} maxWidth={1600} mx={'auto'}>
                     {children ?? <Outlet />}
                 </Box>
             </Stack>

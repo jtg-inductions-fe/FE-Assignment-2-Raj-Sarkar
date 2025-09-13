@@ -2,7 +2,7 @@ import { Autocomplete as MuiAutocomplete, styled } from '@mui/material';
 
 export const StyledAutocomplete = styled(MuiAutocomplete)(
     ({ theme: { palette, breakpoints, typography } }) => ({
-        background: palette.grey[50],
+        backgroundColor: palette.grey[50],
         display: 'none',
         width: '100%',
         maxWidth: typography.pxToRem(402),

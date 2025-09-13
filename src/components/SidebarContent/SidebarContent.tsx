@@ -17,7 +17,7 @@ import { handleClickByNavigate, handleClickOnListButton } from '@helper';
 import { theme } from '@theme';
 import {
     SidebarContentProps,
-    SideBarIconsProps,
+    SidebarIconsProps,
     SidebarItemProps,
 } from '@types';
 
@@ -41,11 +41,9 @@ const SidebarItem = (props: SidebarItemProps) => {
                 onClick={() =>
                     handleClickOnListButton({
                         hasChildren,
-                        open,
                         setOpen,
                         navigate,
                         item,
-                        selected,
                         setSelected,
                     })
                 }
@@ -73,7 +71,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                         {item.title}
                     </StyledTypography>
                 </Stack>
-                {item.count && (
+                {item.count !== undefined && (
                     <StyledBadge variant="body2">{item.count}</StyledBadge>
                 )}
                 {hasChildren && (open ? <ExpandLess /> : <ExpandMore />)}
@@ -97,7 +95,7 @@ const SidebarItem = (props: SidebarItemProps) => {
  * @param menu - Arrays of menu items[]
  * @returns Component to render whole menu items data
  */
-export const SideBarContent = (props: SidebarContentProps) => {
+export const SidebarContent = (props: SidebarContentProps) => {
     const { menu } = props;
     return (
         <StyledList>
@@ -113,7 +111,7 @@ export const SideBarContent = (props: SidebarContentProps) => {
  * @param iconItems - data of icons with re-direct paths
  * @returns Component to render icons with path to re-direct
  */
-export const SideBarIcons = (props: SideBarIconsProps) => {
+export const SidebarIcons = (props: SidebarIconsProps) => {
     const { iconItems } = props;
     const navigate = useNavigate();
 
@@ -122,6 +120,7 @@ export const SideBarIcons = (props: SideBarIconsProps) => {
             {iconItems.map((icon) => (
                 <IconButton
                     key={icon.id}
+                    aria-label={icon.label}
                     component={icon.icon}
                     onClick={() =>
                         handleClickByNavigate({ navigate, path: icon.to })

@@ -48,11 +48,13 @@ export const Header = (props: HeaderProps) => {
             >
                 <IconButton
                     component={Menu}
+                    aria-label="Open Menu"
                     hideintablet={true}
                     buttonsize={'md'}
                     onClick={onMenuClick}
                 />
                 <IconButton
+                    aria-label="Go to home"
                     component={Logo}
                     buttonsize={'lg'}
                     hideinmobile={true}
@@ -72,6 +74,7 @@ export const Header = (props: HeaderProps) => {
             >
                 <IconButton
                     component={Bell}
+                    aria-label="Go to notifications"
                     showshadow={true}
                     onClick={() =>
                         navigateToPage({
@@ -86,6 +89,7 @@ export const Header = (props: HeaderProps) => {
                         alt=""
                         component={'button'}
                         type="button"
+                        aria-label="See user details"
                         sx={{
                             width: 32,
                             height: 32,

@@ -1,7 +1,7 @@
 import { Divider, Stack, useMediaQuery } from '@mui/material';
 
 import { StyledDrawer, StyledMainStack } from '@components/Sidebar';
-import { SideBarContent, SideBarIcons } from '@components/SidebarContent';
+import { SidebarContent, SidebarIcons } from '@components/SidebarContent';
 import { menuData1, MenuData2, menuIcons } from '@constant';
 import { theme } from '@theme';
 import { SidebarProps } from '@types';
@@ -13,11 +13,11 @@ import { SidebarProps } from '@types';
 const SidebarComponent = () => (
     <StyledMainStack>
         <Stack spacing={6}>
-            <SideBarContent menu={menuData1} />
+            <SidebarContent menu={menuData1} />
             <Divider component="hr" />
-            <SideBarContent menu={MenuData2} />
+            <SidebarContent menu={MenuData2} />
         </Stack>
-        <SideBarIcons iconItems={menuIcons} />
+        <SidebarIcons iconItems={menuIcons} />
     </StyledMainStack>
 );
 

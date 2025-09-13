@@ -1,2 +1,2 @@
-export * from './SideBarContent';
-export * from './SideBarContent.styles';
+export * from './SidebarContent';
+export * from './SidebarContent.styles';
