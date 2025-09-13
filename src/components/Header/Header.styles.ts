@@ -7,6 +7,7 @@ export const StyledHeaderStack = styled(MuiStack)(({ theme }) => ({
     maxHeight: theme.typography.pxToRem(70),
     position: 'sticky',
     top: 0,
+    backgroundColor: theme.palette.primary.light,
     [theme.breakpoints.up('sm')]: {
         padding: theme.spacing(3, 5),
     },

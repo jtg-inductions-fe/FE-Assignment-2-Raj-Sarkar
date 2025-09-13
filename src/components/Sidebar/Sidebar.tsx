@@ -1,9 +1,25 @@
-import { Drawer as MuiDrawer, useMediaQuery } from '@mui/material';
+import { Divider, Stack, useMediaQuery } from '@mui/material';
 
-import { SideBarContent } from '@components/Sidebar';
+import { StyledDrawer, StyledMainStack } from '@components/Sidebar';
+import { SideBarContent, SideBarIcons } from '@components/SidebarContent';
+import { menuData1, MenuData2, menuIcons } from '@constant';
 import { theme } from '@theme';
+import { SidebarProps } from '@types';
 
-import { SidebarProps } from './Sidebar.types';
+/**
+ *
+ * @returns Component to render whole sidebar
+ */
+const SidebarComponent = () => (
+    <StyledMainStack>
+        <Stack spacing={6}>
+            <SideBarContent menu={menuData1} />
+            <Divider component="hr" />
+            <SideBarContent menu={MenuData2} />
+        </Stack>
+        <SideBarIcons iconItems={menuIcons} />
+    </StyledMainStack>
+);
 
 /**
  *
@@ -17,10 +33,18 @@ export const Sidebar = (props: SidebarProps) => {
 
     if (!isDesktop) {
         return (
-            <MuiDrawer open={open} onClose={onClose}>
-                <SideBarContent />
-            </MuiDrawer>
+            <StyledDrawer
+                open={open}
+                onClose={onClose}
+                slotProps={{
+                    backdrop: {
+                        invisible: true,
+                    },
+                }}
+            >
+                <SidebarComponent />
+            </StyledDrawer>
         );
     }
-    return <SideBarContent />;
+    return <SidebarComponent />;
 };
