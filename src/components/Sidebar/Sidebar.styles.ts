@@ -17,9 +17,12 @@ export const StyledMainStack = styled(Stack)(
     }),
 );
 
-export const StyledDrawer = styled(Drawer)({
-    '& .MuiDrawer-paper': {
-        top: `64px`,
-        height: `calc(100% - 64px)`,
-    },
-});
+export const StyledDrawer = styled(Drawer)(
+    ({ theme: { typography, palette } }) => ({
+        '& .MuiDrawer-paper': {
+            top: `64px`,
+            height: `calc(100% - 64px)`,
+            borderTop: `${typography.pxToRem(1)} solid ${palette.grey[200]}`,
+        },
+    }),
+);

@@ -42,7 +42,7 @@ export const menuData1: MenuItem[] = [
         id: '4',
         title: 'Messages',
         icon: InboxIn,
-        count: 0,
+        count: 1,
         to: '/messages',
     },
     {
