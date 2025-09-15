@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import { Collapse, Stack } from '@mui/material';
+import { Collapse as MuiCollapse, Stack as MuiStack } from '@mui/material';
 
 import { Icon } from '@components/Icon';
 import { IconButton } from '@components/IconButton';
@@ -13,13 +13,14 @@ import {
     StyledListItemButton,
     StyledTypography,
 } from '@components/SidebarContent';
-import { handleClickByNavigate, handleClickOnListButton } from '@helper';
+import { handleClickOnListButton, navigateToPage } from '@helper';
 import { theme } from '@theme';
+
 import {
     SidebarContentProps,
     SidebarIconsProps,
     SidebarItemProps,
-} from '@types';
+} from './SidebarContent.types';
 
 /**
  *
@@ -48,7 +49,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                     })
                 }
             >
-                <Stack direction={'row'} spacing={4}>
+                <MuiStack direction={'row'} spacing={4}>
                     {item.icon && (
                         <Icon
                             component={item.icon}
@@ -70,7 +71,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                     >
                         {item.title}
                     </StyledTypography>
-                </Stack>
+                </MuiStack>
                 {item.count !== undefined && (
                     <StyledBadge variant="body2">{item.count}</StyledBadge>
                 )}
@@ -78,13 +79,13 @@ const SidebarItem = (props: SidebarItemProps) => {
             </StyledListItemButton>
 
             {hasChildren && (
-                <Collapse in={open} timeout="auto" unmountOnExit>
+                <MuiCollapse in={open} timeout="auto" unmountOnExit>
                     <StyledList>
                         {item.children!.map((child, index) => (
                             <SidebarItem key={index} item={child} />
                         ))}
                     </StyledList>
-                </Collapse>
+                </MuiCollapse>
             )}
         </>
     );
@@ -116,17 +117,15 @@ export const SidebarIcons = (props: SidebarIconsProps) => {
     const navigate = useNavigate();
 
     return (
-        <Stack direction={'row'} spacing={5.5} justifyContent={'center'}>
+        <MuiStack direction={'row'} spacing={5.5} justifyContent={'center'}>
             {iconItems.map((icon) => (
                 <IconButton
                     key={icon.id}
                     aria-label={icon.label}
                     component={icon.icon}
-                    onClick={() =>
-                        handleClickByNavigate({ navigate, path: icon.to })
-                    }
+                    onClick={() => navigateToPage({ navigate, path: icon.to })}
                 />
             ))}
-        </Stack>
+        </MuiStack>
     );
 };

@@ -1,4 +1,4 @@
-import { HandleClickOnListButtonProps } from '@types';
+import { HandleClickOnListButtonProps } from '@components/SidebarContent';
 
 /**
  *

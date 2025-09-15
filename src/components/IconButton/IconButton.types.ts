@@ -1,6 +1,7 @@
 import { IconButtonProps } from '@mui/material';
 
 import { ICON_SIZE } from '@constant';
+
 /**
  * Contains prop types for IconButton component
  * @param buttonsize - size of icon

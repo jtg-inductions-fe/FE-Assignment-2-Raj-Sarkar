@@ -1,6 +1,6 @@
-import { Drawer, Stack, styled } from '@mui/material';
+import { Drawer as MuiDrawer, Stack as MuiStack, styled } from '@mui/material';
 
-export const StyledMainStack = styled(Stack)(
+export const StyledMainStack = styled(MuiStack)(
     ({ theme: { typography, breakpoints } }) => ({
         width: typography.pxToRem(302),
         height: 'calc(100vh - 64px)',
@@ -17,7 +17,7 @@ export const StyledMainStack = styled(Stack)(
     }),
 );
 
-export const StyledDrawer = styled(Drawer)(
+export const StyledDrawer = styled(MuiDrawer)(
     ({ theme: { typography, palette } }) => ({
         '& .MuiDrawer-paper': {
             top: `64px`,

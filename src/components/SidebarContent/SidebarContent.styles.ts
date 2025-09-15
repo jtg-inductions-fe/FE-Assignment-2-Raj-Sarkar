@@ -1,15 +1,22 @@
-import { List, ListItemButton, styled, Typography } from '@mui/material';
+import {
+    List as MuiList,
+    ListItemButton as MuiListItemButton,
+    styled,
+    Typography as MuiTypography,
+} from '@mui/material';
 
-import { StyledTypographyProps } from '@types';
+import { StyledTypographyProps } from './SidebarContent.types';
 
-export const StyledList = styled(List)(({ theme: { typography } }) => ({
+const customTypographyProps: PropertyKey[] = ['hasicon', 'color'];
+
+export const StyledList = styled(MuiList)(({ theme: { typography } }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: typography.pxToRem(22),
     padding: 0,
 }));
 
-export const StyledBadge = styled(Typography)(({ theme: { palette } }) => ({
+export const StyledBadge = styled(MuiTypography)(({ theme: { palette } }) => ({
     backgroundColor: palette.error.light,
     color: palette.error.main,
     borderRadius: '50%',
@@ -20,7 +27,7 @@ export const StyledBadge = styled(Typography)(({ theme: { palette } }) => ({
     alignItems: 'center',
 }));
 
-export const StyledListItemButton = styled(ListItemButton)(
+export const StyledListItemButton = styled(MuiListItemButton)(
     ({ theme: { palette } }) => ({
         padding: 0,
         display: 'flex',
@@ -32,8 +39,8 @@ export const StyledListItemButton = styled(ListItemButton)(
     }),
 );
 
-export const StyledTypography = styled(Typography, {
-    shouldForwardProp: (prop) => prop !== 'hasicon' && prop !== 'color',
+export const StyledTypography = styled(MuiTypography, {
+    shouldForwardProp: (prop) => !customTypographyProps.includes(prop),
 })<StyledTypographyProps>(
     ({ theme: { typography }, hasicon = true, color }) => ({
         display: 'flex',
