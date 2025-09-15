@@ -1,8 +1,9 @@
-import { Drawer, useMediaQuery } from '@mui/material';
+import { Drawer as MuiDrawer, useMediaQuery } from '@mui/material';
 
 import { SideBarContent } from '@components/Sidebar';
 import { theme } from '@theme';
-import { SidebarProps } from '@types';
+
+import { SidebarProps } from './Sidebar.types';
 
 /**
  *
@@ -16,9 +17,9 @@ export const Sidebar = (props: SidebarProps) => {
 
     if (!isDesktop) {
         return (
-            <Drawer open={open} onClose={onClose}>
+            <MuiDrawer open={open} onClose={onClose}>
                 <SideBarContent />
-            </Drawer>
+            </MuiDrawer>
         );
     }
     return <SideBarContent />;

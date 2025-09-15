@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Stack, TextField } from '@mui/material';
-import { Typography } from '@mui/material';
+import { Typography as MuiTypography } from '@mui/material';
 
 import Search from '@assets/icons/search.svg?react';
 import { Icon } from '@components/Icon';
 import { handleInputChange, handleOptionChange } from '@helper';
-import { SearchBarProps } from '@types';
 
-import { StyledAutocomplete } from './SearchBar.styles';
+import { StyledAutocomplete } from './Searchbar.styles';
+import { SearchBarProps } from './Searchbar.types';
 
 /**
  *
@@ -16,7 +16,7 @@ import { StyledAutocomplete } from './SearchBar.styles';
  * @param productList - List of products
  * @returns Search-bar component with autocomplete functionality
  */
-export const SearchBar = (props: SearchBarProps) => {
+export const Searchbar = (props: SearchBarProps) => {
     const { freesolo, productList } = props;
     const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ export const SearchBar = (props: SearchBarProps) => {
                             sx={{ alignItems: 'center' }}
                         >
                             <Icon component={Search} />
-                            <Typography variant="h4">Search</Typography>
+                            <MuiTypography variant="h4">Search</MuiTypography>
                         </Stack>
                     }
                 />

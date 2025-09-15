@@ -1,14 +1,13 @@
 import { Icon } from '@components/Icon';
-import { StyledIconButtonProps } from '@types';
 
 import { StyledIconButton } from './IconButton.styles';
+import { StyledIconButtonProps } from './IconButton.types';
 
 /**
  *
  * @param component - Icon to show
  * @param onClick - Function to handle click event
- * @param customwidth - Custom width of the button
- * @param customheight - Custom height of the button
+ * @param buttonsize - Size of the button
  * @param customcolor - Custom color of the button
  * @param hideinmobile - Boolean value to hide icon in smaller device (default=false)
  * @param hideintablet - Boolean value to hide icon in Medium device (default=false)
@@ -19,8 +18,7 @@ export const IconButton = (props: StyledIconButtonProps) => {
     const {
         component,
         onClick,
-        customwidth,
-        customheight,
+        buttonsize,
         customcolor,
         hideinmobile,
         hideintablet,
@@ -29,8 +27,7 @@ export const IconButton = (props: StyledIconButtonProps) => {
     return (
         <StyledIconButton
             onClick={onClick}
-            customwidth={customwidth}
-            customheight={customheight}
+            buttonsize={buttonsize}
             customcolor={customcolor}
             hideinmobile={hideinmobile}
             hideintablet={hideintablet}
@@ -39,10 +36,8 @@ export const IconButton = (props: StyledIconButtonProps) => {
         >
             <Icon
                 component={component}
-                customwidth={customwidth ? customwidth : 24}
-                customheight={customheight ? customheight : 24}
+                size={buttonsize}
                 customcolor={customcolor}
-                inheritViewBox
             />
         </StyledIconButton>
     );

@@ -1,4 +1,7 @@
-import { HandleInputChangeProps, HandleSearchBarProps } from '@types';
+import {
+    HandleInputChangeProps,
+    HandleSearchBarProps,
+} from '@components/Searchbar';
 
 /**
  *
@@ -30,7 +33,7 @@ export const handleOptionChange = (props: HandleSearchBarProps) => {
  */
 export const handleInputChange = (props: HandleInputChangeProps) => {
     const { value, navigate } = props;
-    if (value === '') {
+    if (!value) {
         void navigate('/');
     }
 };

@@ -1,2 +1,3 @@
-export * from './SearchBar.styles';
-export { SearchBar } from './SearchBar.component';
+export * from './Searchbar.styles';
+export { Searchbar } from './Searchbar.component';
+export * from './Searchbar.types';

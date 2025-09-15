@@ -1,6 +1,6 @@
-import { Autocomplete, styled } from '@mui/material';
+import { Autocomplete as MuiAutocomplete, styled } from '@mui/material';
 
-export const StyledAutocomplete = styled(Autocomplete)(
+export const StyledAutocomplete = styled(MuiAutocomplete)(
     ({ theme: { palette, breakpoints, typography } }) => ({
         background: palette.grey[50],
         display: 'none',

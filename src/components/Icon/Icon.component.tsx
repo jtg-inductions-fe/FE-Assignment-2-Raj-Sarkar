@@ -1,27 +1,22 @@
-import { IconProps } from '@types';
-
 import { StyledSvgIcon } from './Icon.styles';
+import { IconProps } from './Icon.types';
 
 /**
  *
  * @param component - Icon element to render
- * @param customwidth - Custom width
- * @param customheight - Custom height
+ * @param size - Size of icon (sm | md |lg)
  * @param customcolor - Custom color
  * @returns Custom SVGIcon element to render provided icon
  */
-export const Icon = ({
-    component,
-    customwidth,
-    customheight,
-    customcolor,
-    ...props
-}: IconProps) => (
-    <StyledSvgIcon
-        component={component}
-        customwidth={customwidth}
-        customheight={customheight}
-        customcolor={customcolor}
-        {...props}
-    />
-);
+export const Icon = (props: IconProps) => {
+    const { component, size, customcolor } = props;
+
+    return (
+        <StyledSvgIcon
+            component={component}
+            size={size}
+            customcolor={customcolor}
+            inheritViewBox
+        />
+    );
+};

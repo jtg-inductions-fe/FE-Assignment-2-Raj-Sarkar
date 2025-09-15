@@ -2,7 +2,13 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import { Avatar, Box, Popover, Stack, Typography } from '@mui/material';
+import {
+    Avatar as MuiAvatar,
+    Box as MuiBox,
+    Popover as MuiPopover,
+    Stack as MuiStack,
+    Typography as MuiTypography,
+} from '@mui/material';
 
 import Bell from '@assets/icons/bell.svg?react';
 import Logo from '@assets/icons/logo.svg?react';
@@ -10,10 +16,12 @@ import Menu from '@assets/icons/menu.svg?react';
 import ProfileImg from '@assets/imgs/avatar_1.png';
 import { StyledHeaderStack } from '@components/Header';
 import { IconButton } from '@components/IconButton';
-import { SearchBar } from '@components/Searchbar';
-import { PRODUCT_LIST, USERS } from '@constant';
-import { handleClickByNavigate } from '@helper';
-import { HeaderProps } from '@types';
+import { Searchbar } from '@components/Searchbar';
+import { PRODUCT_LIST } from '@constant';
+import { navigateToPage } from '@helper';
+import { userDetails } from '@store';
+
+import { HeaderProps } from './Header.types';
 
 /**
  *
@@ -29,7 +37,7 @@ export const Header = (props: HeaderProps) => {
 
     return (
         <StyledHeaderStack>
-            <Stack
+            <MuiStack
                 direction={'row'}
                 sx={{
                     justifyContent: 'start',
@@ -41,23 +49,19 @@ export const Header = (props: HeaderProps) => {
                 <IconButton
                     component={Menu}
                     hideintablet={true}
-                    customwidth={28}
-                    customheight={28}
+                    buttonsize={'md'}
                     onClick={onMenuClick}
                 />
                 <IconButton
                     component={Logo}
-                    customwidth={35}
-                    customheight={35}
+                    buttonsize={'lg'}
                     hideinmobile={true}
                     showshadow={true}
-                    onClick={() =>
-                        handleClickByNavigate({ navigate, path: '/' })
-                    }
+                    onClick={() => navigateToPage({ navigate, path: '/' })}
                 />
-                <SearchBar productList={PRODUCT_LIST} freesolo={true} />
-            </Stack>
-            <Stack
+                <Searchbar productList={PRODUCT_LIST} freesolo />
+            </MuiStack>
+            <MuiStack
                 direction="row"
                 spacing={3}
                 sx={{
@@ -70,14 +74,14 @@ export const Header = (props: HeaderProps) => {
                     component={Bell}
                     showshadow={true}
                     onClick={() =>
-                        handleClickByNavigate({
+                        navigateToPage({
                             navigate,
                             path: '/notification',
                         })
                     }
                 />
-                <Box>
-                    <Avatar
+                <MuiBox>
+                    <MuiAvatar
                         src={ProfileImg}
                         alt=""
                         component={'button'}
@@ -93,7 +97,7 @@ export const Header = (props: HeaderProps) => {
                         aria-describedby={id}
                         onClick={(e) => setAnchorEl(e.currentTarget)}
                     />
-                    <Popover
+                    <MuiPopover
                         id={id}
                         open={open}
                         anchorEl={anchorEl}
@@ -107,17 +111,17 @@ export const Header = (props: HeaderProps) => {
                             horizontal: 'center',
                         }}
                     >
-                        <Box sx={{ p: 2 }}>
-                            <Typography variant="h3">
-                                {USERS[0].username}
-                            </Typography>
-                            <Typography variant="h4">
-                                {USERS[0].email}
-                            </Typography>
-                        </Box>
-                    </Popover>
-                </Box>
-            </Stack>
+                        <MuiBox sx={{ p: 2 }}>
+                            <MuiTypography variant="h3">
+                                {userDetails?.username}
+                            </MuiTypography>
+                            <MuiTypography variant="h4">
+                                {userDetails?.email}
+                            </MuiTypography>
+                        </MuiBox>
+                    </MuiPopover>
+                </MuiBox>
+            </MuiStack>
         </StyledHeaderStack>
     );
 };

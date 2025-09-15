@@ -1,28 +1,31 @@
-import { IconButton, styled } from '@mui/material';
+import { IconButton as MuiIconButton, styled } from '@mui/material';
 
-import { StyledIconButtonProps } from '@types';
+import { ICON_SIZE } from '@constant';
 
-export const StyledIconButton = styled(IconButton, {
-    shouldForwardProp: (prop) =>
-        prop !== 'customwidth' &&
-        prop !== 'customheight' &&
-        prop !== 'customcolor' &&
-        prop !== 'component' &&
-        prop !== 'hideinmobile' &&
-        prop !== 'hideintablet' &&
-        prop !== 'showshadow',
+import { StyledIconButtonProps } from './IconButton.types';
+
+const customProps: PropertyKey[] = [
+    'buttonsize',
+    'customcolor',
+    'component',
+    'hideinmobile',
+    'hideintablet',
+    'showshadow',
+];
+
+export const StyledIconButton = styled(MuiIconButton, {
+    shouldForwardProp: (prop) => !customProps.includes(prop),
 })<StyledIconButtonProps>(
     ({
         theme,
-        customwidth = 24,
-        customheight = 24,
+        buttonsize = 'sm',
         customcolor,
         hideinmobile = false,
         hideintablet = false,
         showshadow = false,
     }) => ({
-        width: customwidth,
-        height: customheight,
+        width: ICON_SIZE[buttonsize],
+        height: ICON_SIZE[buttonsize],
         color: customcolor ?? theme.palette.grey[900],
         padding: theme.spacing(1),
         boxShadow: showshadow

@@ -10,7 +10,8 @@
             "@router": ["router"],
             "@types": ["types"],
             "@components/*": ["components/*"],
-            "@helper": ["helper"]
+            "@helper": ["helper"],
+            "@store": ["store"]
         }
     }
 }
