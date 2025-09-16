@@ -4,7 +4,10 @@ import {
     useMediaQuery,
 } from '@mui/material';
 
-import { StyledDrawer, StyledMainStack } from '@components/Sidebar';
+import {
+    StyledDrawer,
+    StyledMainStack,
+} from '@components/Sidebar/Sidebar.styles';
 import { SidebarContent, SidebarIcons } from '@components/SidebarContent';
 import { menuData1, MenuData2, menuIcons } from '@constant';
 import { theme } from '@theme';

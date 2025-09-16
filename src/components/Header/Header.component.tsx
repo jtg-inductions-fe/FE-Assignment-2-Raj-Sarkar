@@ -14,7 +14,7 @@ import Bell from '@assets/icons/bell.svg?react';
 import Logo from '@assets/icons/logo.svg?react';
 import Menu from '@assets/icons/menu.svg?react';
 import ProfileImg from '@assets/imgs/avatar_1.png';
-import { StyledHeaderStack } from '@components/Header';
+import { StyledHeaderStack } from '@components/Header/Header.styles';
 import { IconButton } from '@components/IconButton';
 import { Searchbar } from '@components/Searchbar';
 import { PRODUCT_LIST } from '@constant';

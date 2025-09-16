@@ -12,7 +12,7 @@ import {
     StyledList,
     StyledListItemButton,
     StyledTypography,
-} from '@components/SidebarContent';
+} from '@components/SidebarContent/SidebarContent.styles';
 import { handleClickOnListButton, navigateToPage } from '@helper';
 import { theme } from '@theme';
 
