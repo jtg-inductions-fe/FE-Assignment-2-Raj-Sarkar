@@ -1,20 +1,8 @@
 import type { Components } from '@mui/material/styles';
 
 // Local Font files
-import InterRegularTTF from '@assets/fonts/inter/inter-regular.ttf';
-import InterRegularWOFF2 from '@assets/fonts/inter/inter-regular.woff2';
-
-// TODO: Add necessary font face declarations here
-const fontFaceDeclarations = `
-       @font-face {
-        font-display: swap; 
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        src: url(${InterRegularWOFF2}) format('woff2'), 
-        url(${InterRegularTTF}) format('truetype');
-      };
-    `;
+import InterRegularTTF from '@assets/fonts/inter/InterVariable.ttf';
+import InterRegularWOFF2 from '@assets/fonts/inter/InterVariable.woff2';
 
 export const components: Components = {
     MuiCssBaseline: {
@@ -22,7 +10,14 @@ export const components: Components = {
             html: {
                 fontSize: '62.5%',
             },
-            fontFaceDeclarations,
+            '@font-face': {
+                fontDisplay: 'swap',
+                fontFamily: 'Inter',
+                fontStyle: 'normal',
+                fontWeight: '400 700',
+                src: `url(${InterRegularWOFF2}) format('woff2'), 
+                url(${InterRegularTTF}) format('truetype')`,
+            },
         },
     },
 };

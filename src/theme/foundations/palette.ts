@@ -7,9 +7,11 @@ export const palette: PaletteOptions = {
     // TODO: Add necessary colors here
     primary: {
         main: COLORS.PRIMARY.MAIN,
+        light: '#FFFFFF',
     },
     grey: {
-        50: '#FFFFFF',
+        50: '#F9FAFB',
+        200: '#E5E7EB',
         400: '#9CA3AF',
         500: '#6B7280',
         900: '#111827',
