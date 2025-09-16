@@ -5,7 +5,7 @@ export const StyledMainStack = styled(MuiStack)(
         width: typography.pxToRem(302),
         height: 'calc(100vh - 64px)',
         [breakpoints.up('sm')]: {
-            width: typography.pxToRem(250),
+            // width: typography.pxToRem(250),
             height: 'calc(100vh - 70px)',
             top: typography.pxToRem(70),
         },
