@@ -48,7 +48,6 @@ const SidebarItem = (props: SidebarItemProps) => {
                         setSelected,
                     })
                 }
-                sx={{ py: 1 }}
             >
                 <MuiStack direction={'row'} spacing={4}>
                     {item.icon && (

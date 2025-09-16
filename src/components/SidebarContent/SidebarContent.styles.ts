@@ -28,8 +28,9 @@ export const StyledBadge = styled(MuiTypography)(({ theme: { palette } }) => ({
 }));
 
 export const StyledListItemButton = styled(MuiListItemButton)(
-    ({ theme: { palette } }) => ({
-        padding: 0,
+    ({ theme: { palette, spacing } }) => ({
+        padding: spacing(1, 2),
+        borderRadius: spacing(3),
         display: 'flex',
         justifyContent: 'space-between',
         width: '100%',
