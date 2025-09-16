@@ -5,7 +5,7 @@ export const StyledMainStack = styled(MuiStack)(
         width: typography.pxToRem(302),
         height: 'calc(100vh - 64px)',
         [breakpoints.up('sm')]: {
-            // width: typography.pxToRem(250),
+            width: typography.pxToRem(250),
             height: 'calc(100vh - 70px)',
         },
         padding: `${typography.pxToRem(16)} ${typography.pxToRem(20)}`,
@@ -15,6 +15,7 @@ export const StyledMainStack = styled(MuiStack)(
         left: 0,
         top: 70,
         borderRight: `${typography.pxToRem(1)} solid ${palette.grey[200]}`,
+        flexShrink: 0,
     }),
 );
 

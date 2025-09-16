@@ -7,25 +7,25 @@ export const itemData: ImgItem[] = [
     {
         img: ImgPlac2,
         title: 'Placeholder image 2',
-        desktop: { rows: 1, cols: 5 },
+        desktop: { rows: 5, cols: 5 },
         mobile: { rows: 1, cols: 1 },
     },
     {
         img: ImgPlac1,
         title: 'Placeholder image 1',
-        desktop: { rows: 1, cols: 5 },
+        desktop: { rows: 5, cols: 5 },
         mobile: { rows: 1, cols: 1 },
     },
     {
         img: Laptop,
         title: 'Laptop',
-        desktop: { rows: 2, cols: 6 },
+        desktop: { rows: 11, cols: 6 },
         mobile: { rows: 2, cols: 1 },
     },
     {
         img: ImgPlac2,
         title: 'Placeholder image 2',
-        desktop: { rows: 1, cols: 10 },
+        desktop: { rows: 6, cols: 10 },
         mobile: { rows: 1, cols: 1 },
     },
 ];

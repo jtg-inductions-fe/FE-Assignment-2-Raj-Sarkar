@@ -35,3 +35,12 @@ export type SrcsetProps = {
     rows: number;
     cols: number;
 };
+
+/**
+ *
+ * Contains types of props for Image Grid cmponent
+ * @param itemData - list of image items
+ */
+export type ImageGridProps = {
+    itemData: ImgItem[];
+};

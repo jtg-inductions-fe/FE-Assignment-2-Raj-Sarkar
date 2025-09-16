@@ -4,15 +4,18 @@ import {
     useMediaQuery,
 } from '@mui/material';
 
-import { itemData } from '@constant';
 import { srcset } from '@helper';
 import { theme } from '@theme';
 
+import { ImageGridProps } from './ImageGrid.types';
+
 /**
  *
+ * @param itemData - list of image items data
  * @returns Component to render the image items using
  */
-export const ImageGrid = () => {
+export const ImageGrid = (props: ImageGridProps) => {
+    const { itemData } = props;
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
     const data = isDesktop ? itemData : [itemData[2], itemData[3], itemData[1]];
 
@@ -20,7 +23,7 @@ export const ImageGrid = () => {
         <MuiImageList
             variant="quilted"
             cols={isDesktop ? 16 : 1}
-            rowHeight={isDesktop ? 220 : 112}
+            rowHeight={isDesktop ? 3.6 : 112}
             gap={45}
         >
             {data.map((item, index) => {
