@@ -2,12 +2,12 @@ import { NavigateFunction } from 'react-router-dom';
 
 /**
  * Contains types for the menu item data
- * @param id - id of item
- * @param title - title of item
- * @param icon - icon to render
- * @param count - message number count
- * @param to - path to re-direct
- * @param children - menu item list to render dropdown
+ * @property id - id of item
+ * @property title - title of item
+ * @property icon - icon to render
+ * @property count - message number count
+ * @property to - path to re-direct
+ * @property children - menu item list to render dropdown
  */
 export type MenuItem = {
     id: string;
@@ -20,10 +20,10 @@ export type MenuItem = {
 
 /**
  * Contains types for menu icon data
- * @param id - id of item
- * @param label - title of item
- * @param icon - icon to render
- * @param to - path to re-direct
+ * @property id - id of item
+ * @property label - title of item
+ * @property icon - icon to render
+ * @property to - path to re-direct
  */
 export type MenuIcon = {
     id: string;
@@ -34,7 +34,7 @@ export type MenuIcon = {
 
 /**
  * Contains types for component to render the item tree
- * @param item - menu item
+ * @property item - menu item
  */
 export type SidebarItemProps = {
     item: MenuItem;
@@ -42,7 +42,7 @@ export type SidebarItemProps = {
 
 /**
  * Contains types for component to render the items in tree
- * @param menu - menu item list
+ * @property menu - menu item list
  */
 export type SidebarContentProps = {
     menu: MenuItem[];
@@ -50,7 +50,7 @@ export type SidebarContentProps = {
 
 /**
  * Contains types for menu icons component
- * @param iconItems - menu icon list
+ * @property iconItems - menu icon list
  */
 export type SidebarIconsProps = {
     iconItems: MenuIcon[];
@@ -58,10 +58,10 @@ export type SidebarIconsProps = {
 
 /**
  * Contains types of props for handle click event on menu item
- * @param hasChildren - boolean sattus of whether it has children or not
- * @param navigate - function for navigation
- * @param item - menu item
- * @param setSelected - function to change to select state
+ * @property hasChildren - boolean sattus of whether it has children or not
+ * @property navigate - function for navigation
+ * @property item - menu item
+ * @property setSelected - function to change to select state
  */
 export type HandleClickOnListButtonProps = {
     hasChildren: boolean;
@@ -73,8 +73,8 @@ export type HandleClickOnListButtonProps = {
 
 /**
  * Contains types for props of styled typography that will be used to show the title of menu item
- * @param hasicon - boolean status of whether it has icon or not
- * @param color - color of typography
+ * @property hasicon - boolean status of whether it has icon or not
+ * @property color - color of typography
  */
 export type StyledTypographyProps = {
     hasicon?: boolean;

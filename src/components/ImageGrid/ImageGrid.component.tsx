@@ -1,22 +1,20 @@
 import {
     ImageList as MuiImageList,
     ImageListItem as MuiImageListItem,
-    useMediaQuery,
 } from '@mui/material';
 
 import { srcset } from '@helper';
-import { theme } from '@theme';
 
 import { ImageGridProps } from './ImageGrid.types';
 
 /**
  *
  * @param itemData - list of image items data
+ * @param isDesktop - boolean status whether it width is of desktop's or not
  * @returns Component to render the image items using
  */
 export const ImageGrid = (props: ImageGridProps) => {
-    const { itemData } = props;
-    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+    const { itemData, isDesktop } = props;
     const data = isDesktop ? itemData : [itemData[2], itemData[3], itemData[1]];
 
     return (
@@ -30,14 +28,26 @@ export const ImageGrid = (props: ImageGridProps) => {
                 const value = srcset({
                     image: item.img,
                     size: 121,
-                    rows: isDesktop ? item.desktop.cols : item.mobile.cols,
-                    cols: isDesktop ? item.desktop.rows : item.mobile.rows,
+                    cols: isDesktop
+                        ? item.desktopConfig.cols
+                        : item.mobileConfig.cols,
+                    rows: isDesktop
+                        ? item.desktopConfig.rows
+                        : item.mobileConfig.rows,
                 });
                 return (
                     <MuiImageListItem
                         key={index}
-                        cols={isDesktop ? item.desktop.cols : item.mobile.cols}
-                        rows={isDesktop ? item.desktop.rows : item.mobile.rows}
+                        cols={
+                            isDesktop
+                                ? item.desktopConfig.cols
+                                : item.mobileConfig.cols
+                        }
+                        rows={
+                            isDesktop
+                                ? item.desktopConfig.rows
+                                : item.mobileConfig.rows
+                        }
                     >
                         <img
                             src={value.src}

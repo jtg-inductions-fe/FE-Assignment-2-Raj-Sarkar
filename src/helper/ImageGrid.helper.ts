@@ -1,4 +1,4 @@
-import { SrcSet, SrcsetProps } from '@components/ImageGrid';
+import { SrcSet, SrcsetProps } from '@components/ImageGrid/ImageGrid.types';
 
 /**
  *
