@@ -2,7 +2,7 @@ import { CONTAINER_PADDING } from 'constant/containerConstant';
 
 import { Container as MuiContainer, styled } from '@mui/material';
 
-import { StyledContainerProps } from './Container.types';
+import { StyledContainerProps } from './Card.types';
 
 const customProps: PropertyKey[] = ['padding'];
 

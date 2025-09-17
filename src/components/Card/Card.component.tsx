@@ -11,8 +11,8 @@ import Exclamation from '@assets/icons/exclamation_circle.svg?react';
 import { Icon } from '@components/Icon';
 import { theme } from '@theme';
 
-import { StyledContainer } from './Container.styles';
-import { ContainerProps } from './Container.types';
+import { StyledContainer } from './Card.styles';
+import { CardProps } from './Card.types';
 
 /**
  *
@@ -24,7 +24,7 @@ import { ContainerProps } from './Container.types';
  * @param children - children nodes
  * @returns component to be used to wrap the components of a section
  */
-export const Container = (props: ContainerProps) => {
+export const Card = (props: CardProps) => {
     const {
         padding = 'md',
         gap = 'sm',

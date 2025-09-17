@@ -3,7 +3,7 @@ import { dates, sales } from 'constant/chartConstant';
 import { Box } from '@mui/material';
 import { ChartsTooltip, LineChart } from '@mui/x-charts';
 
-import { Container } from '@components/Container';
+import { Card } from '@components/Card';
 import { theme } from '@theme';
 
 import { ChartProps, SalesLineChartProps } from './Chart.types';
@@ -69,13 +69,13 @@ export const Chart = (props: ChartProps) => {
     const { isDesktop } = props;
 
     return (
-        <Container
+        <Card
             padding={isDesktop ? 'xl' : 'sm'}
             gap={isDesktop ? 'md' : 'sm'}
             hasicon={true}
             heading="Sales"
         >
             <SalesLineChart />
-        </Container>
+        </Card>
     );
 };

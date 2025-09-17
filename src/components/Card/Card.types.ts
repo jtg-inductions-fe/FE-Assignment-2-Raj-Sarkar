@@ -9,7 +9,7 @@ import { CONTAINER_GAP, CONTAINER_PADDING } from 'constant/containerConstant';
  * @property subheading - subheading of he container
  * @property children - child nodes
  */
-export type ContainerProps = {
+export type CardProps = {
     padding?: keyof typeof CONTAINER_PADDING;
     gap?: keyof typeof CONTAINER_GAP;
     hasicon?: boolean;
