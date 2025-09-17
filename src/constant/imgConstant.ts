@@ -3,7 +3,7 @@ import ImgPlac2 from '@assets/imgs/image_placeholder_2.png';
 import Laptop from '@assets/imgs/laptop.png';
 import { ImgItem } from '@components/ImageGrid';
 
-export const itemData: ImgItem[] = [
+export const ITEM_DATA: ImgItem[] = [
     {
         img: ImgPlac2,
         title: 'Placeholder image 2',

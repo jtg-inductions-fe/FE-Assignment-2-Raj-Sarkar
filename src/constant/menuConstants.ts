@@ -16,7 +16,7 @@ import {
 
 import { ROUTE_PATH } from './routeConstant';
 
-export const menuData1: MenuItem[] = [
+export const MENU_DATA_1: MenuItem[] = [
     {
         id: '1',
         title: 'Overview',
@@ -61,7 +61,7 @@ export const menuData1: MenuItem[] = [
     },
 ];
 
-export const MenuData2: MenuItem[] = [
+export const MENU_DATA_2: MenuItem[] = [
     {
         id: '1',
         title: 'Docs',
@@ -82,7 +82,7 @@ export const MenuData2: MenuItem[] = [
     },
 ];
 
-export const menuIcons: MenuIcon[] = [
+export const MENU_ICONS: MenuIcon[] = [
     {
         id: '1',
         label: 'Go to adjustments',
