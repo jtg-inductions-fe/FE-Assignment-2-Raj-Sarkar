@@ -2,7 +2,7 @@ import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
 import { Chart } from '@containers/Chart';
 import { ImageGrid } from '@containers/ImageGrid';
-import { Product } from '@components/Product';
+import { Customer } from '@components/Customer';
 import { CUSTOMERS, ITEM_DATA, PRODUCT_LIST } from '@constant';
 import { theme } from '@theme';
 import { salesDataset } from '@models';
