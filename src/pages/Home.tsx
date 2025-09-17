@@ -26,7 +26,6 @@ export const Home = () => {
                 marginTop={4}
             >
                 <Customer customerData={CUSTOMERS} isDesktop={isDesktop} />
-                <Product productData={PRODUCT_LIST} isDesktop={isDesktop} />
             </MuiStack>
         </MuiBox>
     );
