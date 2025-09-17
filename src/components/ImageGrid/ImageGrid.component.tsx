@@ -3,9 +3,7 @@ import {
     ImageListItem as MuiImageListItem,
 } from '@mui/material';
 
-import { srcset } from '@helper';
-
-import { ImageGridProps } from './ImageGrid.types';
+import { ImageGridProps, SrcSet, SrcsetProps } from './ImageGrid.types';
 
 /**
  *
@@ -17,6 +15,22 @@ export const ImageGrid = (props: ImageGridProps) => {
     const { itemData, isDesktop } = props;
     const data = isDesktop ? itemData : [itemData[2], itemData[3], itemData[1]];
 
+    /**
+     *
+     * @param image - image to show
+     * @param size - size of the row height
+     * @param rows - number of rows the image is occupying
+     * @param cols - number of columns the image is occupying
+     * @returns - object with src and srcSet to use in image props
+     */
+    const srcset = (functionProps: SrcsetProps): SrcSet => {
+        const { image, size, rows = 1, cols = 1 } = functionProps;
+        return {
+            src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+            srcSet: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format&dpr=2 2x`,
+        };
+    };
+
     return (
         <MuiImageList
             variant="quilted"
@@ -26,7 +40,7 @@ export const ImageGrid = (props: ImageGridProps) => {
         >
             {data.map((item, index) => {
                 const value = srcset({
-                    image: item.img,
+                    image: item.src,
                     size: 121,
                     cols: isDesktop
                         ? item.desktopConfig.cols

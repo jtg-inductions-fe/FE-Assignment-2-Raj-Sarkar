@@ -17,8 +17,12 @@ import ProfileImg from '@assets/imgs/avatar_1.png';
 import { StyledHeaderStack } from '@components/Header/Header.styles';
 import { IconButton } from '@components/IconButton';
 import { Searchbar } from '@components/Searchbar';
+<<<<<<< HEAD
 import { PRODUCT_LIST, ROUTE_PATH } from '@constant';
 import { navigateToPage } from '@helper';
+=======
+import { PRODUCT_LIST } from '@constant';
+>>>>>>> a097c63 ([RS_A2_04]: Created chart and fixed helpers)
 import { userDetails } from '@store';
 
 import { HeaderProps } from './Header.types';
@@ -59,9 +63,13 @@ export const Header = (props: HeaderProps) => {
                     buttonsize={'lg'}
                     hideinmobile={true}
                     showshadow={true}
+<<<<<<< HEAD
                     onClick={() =>
                         navigateToPage({ navigate, path: ROUTE_PATH.HOME })
                     }
+=======
+                    onClick={() => void navigate('/')}
+>>>>>>> a097c63 ([RS_A2_04]: Created chart and fixed helpers)
                 />
                 <Searchbar productList={PRODUCT_LIST} freesolo />
             </MuiStack>
@@ -78,12 +86,16 @@ export const Header = (props: HeaderProps) => {
                     component={Bell}
                     aria-label="Go to notifications"
                     showshadow={true}
+<<<<<<< HEAD
                     onClick={() =>
                         navigateToPage({
                             navigate,
                             path: ROUTE_PATH.NOTIFICATIONS,
                         })
                     }
+=======
+                    onClick={() => void navigate('/notification')}
+>>>>>>> a097c63 ([RS_A2_04]: Created chart and fixed helpers)
                 />
                 <MuiBox>
                     <MuiAvatar

@@ -5,25 +5,25 @@ import { ImgItem } from '@components/ImageGrid';
 
 export const ITEM_DATA: ImgItem[] = [
     {
-        img: ImgPlac2,
+        src: ImgPlac2,
         title: 'Placeholder image 2',
         desktopConfig: { rows: 5, cols: 5 },
         mobileConfig: { rows: 1, cols: 1 },
     },
     {
-        img: ImgPlac1,
+        src: ImgPlac1,
         title: 'Placeholder image 1',
         desktopConfig: { rows: 5, cols: 5 },
         mobileConfig: { rows: 1, cols: 1 },
     },
     {
-        img: Laptop,
+        src: Laptop,
         title: 'Laptop',
         desktopConfig: { rows: 11, cols: 6 },
         mobileConfig: { rows: 2, cols: 1 },
     },
     {
-        img: ImgPlac2,
+        src: ImgPlac2,
         title: 'Placeholder image 2',
         desktopConfig: { rows: 6, cols: 10 },
         mobileConfig: { rows: 1, cols: 1 },

@@ -1,5 +1,3 @@
-import { NavigateFunction } from 'react-router-dom';
-
 /**
  * Describes structure of product item.
  * @property name - product name
@@ -28,24 +26,18 @@ export type SearchBarProps = {
  * Contains props for option change handling function
  * @property e - event details
  * @property value - value of input field
- * @property productList - list of product items
- * @property navigate - navigateFunction for navigating to different route
  */
 export type HandleSearchBarProps = {
     e: React.SyntheticEvent<Element, Event>;
     value: string;
-    productList: ProductItem[];
-    navigate: NavigateFunction;
 };
 
 /**
  * Contains types of props for handling input change
  * @property e - event details
  * @property value - value of input field
- * @property navigate - navigateFunction for navigating to different route
  */
 export type HandleInputChangeProps = {
     e: React.SyntheticEvent<Element, Event>;
     value: string;
-    navigate: NavigateFunction;
 };
