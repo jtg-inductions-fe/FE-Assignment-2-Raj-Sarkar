@@ -1,8 +1,8 @@
 import { Autocomplete as MuiAutocomplete, styled } from '@mui/material';
 
 export const StyledAutocomplete = styled(MuiAutocomplete)(
-    ({ theme: { palette, breakpoints, typography } }) => ({
-        background: palette.grey[50],
+    ({ theme: { palette, breakpoints, typography, spacing } }) => ({
+        backgroundColor: palette.grey[50],
         display: 'none',
         width: '100%',
         maxWidth: typography.pxToRem(402),
@@ -15,7 +15,7 @@ export const StyledAutocomplete = styled(MuiAutocomplete)(
             boxShadow: `0 ${typography.pxToRem(4)} ${typography.pxToRem(4)} ${palette.grey[400]}`,
         },
         '& .MuiOutlinedInput-root .MuiAutocomplete-input': {
-            padding: `4px 0 5px`,
+            padding: spacing(4, 0, 5),
         },
         '& .MuiOutlinedInput-notchedOutline': {
             border: `${typography.pxToRem(1)} solid ${palette.grey[200]}`,

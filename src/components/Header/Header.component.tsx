@@ -14,10 +14,10 @@ import Bell from '@assets/icons/bell.svg?react';
 import Logo from '@assets/icons/logo.svg?react';
 import Menu from '@assets/icons/menu.svg?react';
 import ProfileImg from '@assets/imgs/avatar_1.png';
-import { StyledHeaderStack } from '@components/Header';
+import { StyledHeaderStack } from '@components/Header/Header.styles';
 import { IconButton } from '@components/IconButton';
 import { Searchbar } from '@components/Searchbar';
-import { PRODUCT_LIST } from '@constant';
+import { PRODUCT_LIST, ROUTE_PATH } from '@constant';
 import { navigateToPage } from '@helper';
 import { userDetails } from '@store';
 
@@ -48,16 +48,20 @@ export const Header = (props: HeaderProps) => {
             >
                 <IconButton
                     component={Menu}
+                    aria-label="Open Menu"
                     hideintablet={true}
                     buttonsize={'md'}
                     onClick={onMenuClick}
                 />
                 <IconButton
+                    aria-label="Go to home"
                     component={Logo}
                     buttonsize={'lg'}
                     hideinmobile={true}
                     showshadow={true}
-                    onClick={() => navigateToPage({ navigate, path: '/' })}
+                    onClick={() =>
+                        navigateToPage({ navigate, path: ROUTE_PATH.HOME })
+                    }
                 />
                 <Searchbar productList={PRODUCT_LIST} freesolo />
             </MuiStack>
@@ -72,11 +76,12 @@ export const Header = (props: HeaderProps) => {
             >
                 <IconButton
                     component={Bell}
+                    aria-label="Go to notifications"
                     showshadow={true}
                     onClick={() =>
                         navigateToPage({
                             navigate,
-                            path: '/notification',
+                            path: ROUTE_PATH.NOTIFICATIONS,
                         })
                     }
                 />
@@ -86,6 +91,7 @@ export const Header = (props: HeaderProps) => {
                         alt=""
                         component={'button'}
                         type="button"
+                        aria-label="See user details"
                         sx={{
                             width: 32,
                             height: 32,
