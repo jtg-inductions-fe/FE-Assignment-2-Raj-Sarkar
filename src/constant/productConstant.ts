@@ -3,39 +3,51 @@ import { ROUTE_PATH } from '@constant';
 
 export const PRODUCT_LIST: ProductItem[] = [
     {
+        id: 'product_1',
         name: 'Restaurant Booking App',
         technology: 'React & Bootstrap Framework',
         sales: 70,
         to: ROUTE_PATH.RESTAURANT_APP,
+        kind: 'product',
     },
     {
+        id: 'product_2',
         name: 'UI Kit',
         technology: 'React & Bootstrap Framework',
         sales: 54,
         to: ROUTE_PATH.UI_KIT,
+        kind: 'product',
     },
     {
+        id: 'product_3',
         name: 'Design System Pro',
         technology: 'Bootstrap Framework',
         sales: 47,
         to: ROUTE_PATH.DESIGN_SYSTEM_PRO,
+        kind: 'product',
     },
     {
+        id: 'product_4',
         name: 'Dashboard',
         technology: 'Tailwind, React',
         sales: 43,
         to: ROUTE_PATH.DASHBOARD,
+        kind: 'product',
     },
     {
+        id: 'product_5',
         name: 'Glassmorphism UI',
         technology: 'Vue Js, Tailwind',
         sales: 38,
         to: ROUTE_PATH.GLASSMORPHISM,
+        kind: 'product',
     },
     {
+        id: 'product_6',
         name: 'Multipurpose Template',
         technology: 'React & Bootstrap Framework',
         sales: 22,
         to: ROUTE_PATH.MULTIPURPOSE_TEMPLATE,
+        kind: 'product',
     },
 ];
