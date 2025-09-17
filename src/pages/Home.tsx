@@ -19,7 +19,7 @@ export const Home = () => {
             <Box
                 sx={{
                     p: 4,
-                    overflowY: 'scroll',
+                    overflowY: 'auto',
                     bgcolor: theme.palette.grey[50],
                 }}
             >

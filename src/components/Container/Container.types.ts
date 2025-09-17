@@ -5,7 +5,7 @@ import { CONTAINER_GAP, CONTAINER_PADDING } from 'constant/containerConstant';
  * @property padding - value of padding
  * @property gap - gap between heading and content
  * @property hasicon - boolean value of whether to show the info icon or not
- * @property heading - heading of he container
+ * @property heading - heading of the container
  * @property subheading - subheading of he container
  * @property children - child nodes
  */

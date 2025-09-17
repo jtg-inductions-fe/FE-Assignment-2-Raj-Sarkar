@@ -53,7 +53,7 @@ const SidebarItem = (props: SidebarItemProps) => {
         <>
             <StyledListItemButton
                 selected={selected}
-                onClick={() => handleClickOnListButton()}
+                onClick={handleClickOnListButton}
             >
                 <MuiStack direction={'row'} spacing={4}>
                     {item.icon && (

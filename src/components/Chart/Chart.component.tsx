@@ -15,6 +15,7 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
     return (
         <Box sx={{ width: '100%' }}>
             <LineChart
+                aria-label="Sales over time"
                 hideLegend
                 xAxis={[
                     {
