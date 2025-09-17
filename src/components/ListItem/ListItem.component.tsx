@@ -22,7 +22,7 @@ export const ListItem = (props: ListItemProps) => {
             direction={'row'}
             justifyContent={'space-between'}
             alignItems={'center'}
-            py={2}
+            paddingY={theme.spacing(2)}
         >
             <MuiStack direction={'row'} spacing={2} alignItems={'center'}>
                 {isCustomer && item.avatar && (
