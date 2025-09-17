@@ -17,7 +17,7 @@ import ProfileImg from '@assets/imgs/avatar_1.png';
 import { StyledHeaderStack } from '@components/Header/Header.styles';
 import { IconButton } from '@components/IconButton';
 import { Searchbar } from '@components/Searchbar';
-import { PRODUCT_LIST } from '@constant';
+import { PRODUCT_LIST, ROUTE_PATH } from '@constant';
 import { navigateToPage } from '@helper';
 import { userDetails } from '@store';
 
@@ -59,7 +59,9 @@ export const Header = (props: HeaderProps) => {
                     buttonsize={'lg'}
                     hideinmobile={true}
                     showshadow={true}
-                    onClick={() => navigateToPage({ navigate, path: '/' })}
+                    onClick={() =>
+                        navigateToPage({ navigate, path: ROUTE_PATH.HOME })
+                    }
                 />
                 <Searchbar productList={PRODUCT_LIST} freesolo />
             </MuiStack>
@@ -79,7 +81,7 @@ export const Header = (props: HeaderProps) => {
                     onClick={() =>
                         navigateToPage({
                             navigate,
-                            path: '/notification',
+                            path: ROUTE_PATH.NOTIFICATIONS,
                         })
                     }
                 />

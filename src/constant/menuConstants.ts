@@ -9,23 +9,28 @@ import InboxIn from '@assets/icons/inbox_in.svg?react';
 import LockClosed from '@assets/icons/lock_closed.svg?react';
 import Bag from '@assets/icons/shopping_bag.svg?react';
 import Support from '@assets/icons/support.svg?react';
-import { MenuIcon, MenuItem } from '@types';
+import {
+    MenuIcon,
+    MenuItem,
+} from '@components/SidebarContent/SidebarContent.types';
+
+import { ROUTE_PATH } from './routeConstant';
 
 export const menuData1: MenuItem[] = [
     {
         id: '1',
         title: 'Overview',
         icon: ChartPie,
-        to: '/overview',
+        to: ROUTE_PATH.OVERVIEW,
     },
     {
         id: '2',
         title: 'Pages',
         icon: Document,
         children: [
-            { id: '2-1', title: 'Product List', to: '/product-list' },
-            { id: '2-2', title: 'Billing', to: '/billing' },
-            { id: '2-3', title: 'Invoice', to: '/invoice' },
+            { id: '21', title: 'Product List', to: ROUTE_PATH.PRODUCT_LIST },
+            { id: '22', title: 'Billing', to: ROUTE_PATH.BILLING },
+            { id: '23', title: 'Invoice', to: ROUTE_PATH.INVOICE },
         ],
     },
     {
@@ -33,9 +38,9 @@ export const menuData1: MenuItem[] = [
         title: 'Sales',
         icon: Bag,
         children: [
-            { id: '3-1', title: 'Product List', to: '/product-list' },
-            { id: '3-2', title: 'Billing', to: '/billing' },
-            { id: '3-3', title: 'Invoice', to: '/invoice' },
+            { id: '31', title: 'Product List', to: ROUTE_PATH.PRODUCT_LIST },
+            { id: '32', title: 'Billing', to: ROUTE_PATH.BILLING },
+            { id: '33', title: 'Invoice', to: ROUTE_PATH.INVOICE },
         ],
     },
     {
@@ -43,15 +48,15 @@ export const menuData1: MenuItem[] = [
         title: 'Messages',
         icon: InboxIn,
         count: 1,
-        to: '/messages',
+        to: ROUTE_PATH.MESSAGES,
     },
     {
         id: '5',
         title: 'Authentication',
         icon: LockClosed,
         children: [
-            { id: '5-1', title: 'Login', to: '/login' },
-            { id: '5-2', title: 'Register', to: '/signup' },
+            { id: '51', title: 'Login', to: ROUTE_PATH.LOGIN },
+            { id: '52', title: 'Register', to: ROUTE_PATH.SIGN_UP },
         ],
     },
 ];
@@ -61,19 +66,19 @@ export const MenuData2: MenuItem[] = [
         id: '1',
         title: 'Docs',
         icon: ClipboardList,
-        to: '/docs',
+        to: ROUTE_PATH.DOCS,
     },
     {
         id: '2',
         title: 'Components',
         icon: Collection,
-        to: '/components',
+        to: ROUTE_PATH.COMPONENTS,
     },
     {
         id: '1',
         title: 'Help',
         icon: Support,
-        to: '/help',
+        to: ROUTE_PATH.HELP,
     },
 ];
 
@@ -82,18 +87,18 @@ export const menuIcons: MenuIcon[] = [
         id: '1',
         label: 'Go to adjustments',
         icon: Adjustment,
-        to: '/adjustment',
+        to: ROUTE_PATH.ADJUSTMENTS,
     },
     {
         id: '2',
         label: 'Go to global',
         icon: Globe,
-        to: '/global',
+        to: ROUTE_PATH.GLOBAL,
     },
     {
         id: '3',
         label: 'Go to settings',
         icon: Cog,
-        to: '/settings',
+        to: ROUTE_PATH.SETTINGS,
     },
 ];
