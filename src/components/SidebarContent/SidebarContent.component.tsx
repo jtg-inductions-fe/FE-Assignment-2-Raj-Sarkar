@@ -32,6 +32,7 @@ const SidebarItem = (props: SidebarItemProps) => {
     const navigate = useNavigate();
     const location = useLocation();
     const hasChildren = item.children ? item.children.length > 0 : false;
+    const isActive = location.pathname === item.to;
 
     /**
      *
@@ -55,7 +56,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                         <Icon
                             component={item.icon}
                             customcolor={
-                                location.pathname == item.to
+                                isActive
                                     ? theme.palette.primary.main
                                     : theme.palette.grey[900]
                             }
@@ -65,7 +66,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                         variant="h3"
                         hasicon={!!item.icon}
                         color={
-                            item.to && item.to === location.pathname
+                            isActive
                                 ? theme.palette.primary.main
                                 : theme.palette.grey[900]
                         }

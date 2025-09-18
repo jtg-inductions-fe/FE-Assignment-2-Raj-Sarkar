@@ -62,7 +62,7 @@ export const Searchbar = (props: SearchBarProps) => {
                         <MuiStack
                             direction={'row'}
                             spacing={2.5}
-                            sx={{ alignItems: 'start' }}
+                            sx={{ alignItems: 'flex-start' }}
                         >
                             <Icon component={Search} />
                             <MuiTypography variant="h4">Search</MuiTypography>

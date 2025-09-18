@@ -1,5 +1,5 @@
 import { ListItem } from '@components/Customer/Customer.types';
-import { ListItemProps } from '@components/ListItem/ListItem.types';
+import type { ListItemProps } from '@components/ListItem/ListItem.types';
 
 /**
  * Props types for list content component
