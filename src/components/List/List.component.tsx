@@ -4,7 +4,7 @@ import {
     Stack as MuiList,
 } from '@mui/material';
 
-import { ListContentProps } from './List.types';
+import type { ListContentProps } from './List.types';
 
 /**
  *
@@ -17,9 +17,9 @@ export const List = (props: ListContentProps) => {
     const length = listData.length;
 
     return (
-        <MuiList>
+        <MuiList role="list">
             {listData.map((item, index) => (
-                <MuiBox key={item.id}>
+                <MuiBox key={item.id} role="listitem">
                     <RenderItem item={item} />
                     {index < length - 1 && <MuiDivider component="hr" />}
                 </MuiBox>

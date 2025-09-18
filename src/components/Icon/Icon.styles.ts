@@ -2,7 +2,7 @@ import { styled, SvgIcon as MuiSvgIcon } from '@mui/material';
 
 import { ICON_SIZE } from '@constant';
 
-import { StyledSvgIconProps } from './Icon.types';
+import type { StyledSvgIconProps } from './Icon.types';
 
 const customProps: PropertyKey[] = ['size', 'customcolor'];
 

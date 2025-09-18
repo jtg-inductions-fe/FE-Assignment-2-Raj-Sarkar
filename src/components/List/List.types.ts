@@ -5,7 +5,7 @@ import { ProductItem } from '@components/Searchbar/Searchbar.types';
 /**
  * Props types for list content component
  * @property listData - list of details of customer/product
- * @property renderItem - component to render each item
+ * @property RenderItem - component to render each item
  */
 export type ListContentProps = {
     listData: CustomerItem[] | ProductItem[];

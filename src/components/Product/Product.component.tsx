@@ -2,7 +2,7 @@ import { Card } from '@components/Card';
 import { List } from '@components/List';
 import { ListItem } from '@components/ListItem';
 
-import { ProductProps } from './Product.types';
+import type { ProductProps } from './Product.types';
 
 /**
  *

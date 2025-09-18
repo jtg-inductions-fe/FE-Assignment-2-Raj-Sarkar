@@ -6,7 +6,7 @@ import {
 
 import { theme } from '@theme';
 
-import { ListItemProps } from './ListItem.types';
+import type { ListItemProps } from './ListItem.types';
 
 /**
  *
