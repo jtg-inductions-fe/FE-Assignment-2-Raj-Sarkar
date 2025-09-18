@@ -1,53 +1,53 @@
-import type { ProductItem } from '@components/Searchbar/Searchbar.types';
+import { ListItem } from '@components/Customer/Customer.types';
 import { ROUTE_PATH } from '@constant';
 
-export const PRODUCT_LIST: ProductItem[] = [
+export const PRODUCT_LIST: ListItem[] = [
     {
         id: 'product_1',
-        name: 'Restaurant Booking App',
-        technology: 'React & Bootstrap Framework',
+        title: 'Restaurant Booking App',
+        description: 'React & Bootstrap Framework',
         sales: 70,
         to: ROUTE_PATH.RESTAURANT_APP,
-        kind: 'product',
+        suffix: 'sales',
     },
     {
         id: 'product_2',
-        name: 'UI Kit',
-        technology: 'React & Bootstrap Framework',
+        title: 'UI Kit',
+        description: 'React & Bootstrap Framework',
         sales: 54,
         to: ROUTE_PATH.UI_KIT,
-        kind: 'product',
+        suffix: 'sales',
     },
     {
         id: 'product_3',
-        name: 'Design System Pro',
-        technology: 'Bootstrap Framework',
+        title: 'Design System Pro',
+        description: 'Bootstrap Framework',
         sales: 47,
         to: ROUTE_PATH.DESIGN_SYSTEM_PRO,
-        kind: 'product',
+        suffix: 'sales',
     },
     {
         id: 'product_4',
-        name: 'Dashboard',
-        technology: 'Tailwind, React',
+        title: 'Dashboard',
+        description: 'Tailwind, React',
         sales: 43,
         to: ROUTE_PATH.DASHBOARD,
-        kind: 'product',
+        suffix: 'sales',
     },
     {
         id: 'product_5',
-        name: 'Glassmorphism UI',
-        technology: 'Vue Js, Tailwind',
+        title: 'Glassmorphism UI',
+        description: 'Vue Js, Tailwind',
         sales: 38,
         to: ROUTE_PATH.GLASSMORPHISM,
-        kind: 'product',
+        suffix: 'sales',
     },
     {
         id: 'product_6',
-        name: 'Multipurpose Template',
-        technology: 'React & Bootstrap Framework',
+        title: 'Multipurpose Template',
+        description: 'React & Bootstrap Framework',
         sales: 22,
         to: ROUTE_PATH.MULTIPURPOSE_TEMPLATE,
-        kind: 'product',
+        suffix: 'sales',
     },
 ];

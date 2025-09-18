@@ -1,7 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Stack, TextField } from '@mui/material';
-import { Typography as MuiTypography } from '@mui/material';
+import {
+    Stack as MuiStack,
+    TextField as MuiTextField,
+    Typography as MuiTypography,
+} from '@mui/material';
 
 import Search from '@assets/icons/search.svg?react';
 import { Icon } from '@components/Icon';
@@ -27,11 +30,10 @@ export const Searchbar = (props: SearchBarProps) => {
     const handleOptionChange = (selectedOption: string) => {
         const prod = productList.find(
             (product) =>
-                product.name.toLocaleLowerCase() ===
-                selectedOption.toLocaleLowerCase(),
+                product.title.toLocaleLowerCase() === value.toLocaleLowerCase(),
         );
         if (prod) {
-            void navigate(prod.to);
+            void navigate(prod.to ? prod.to : '/');
         } else {
             void navigate(`/${selectedOption.toLocaleLowerCase()}`);
         }
@@ -52,19 +54,19 @@ export const Searchbar = (props: SearchBarProps) => {
         <StyledAutocomplete
             id="searchbar"
             freeSolo={freesolo}
-            options={productList.map((prod) => prod.name)}
+            options={productList.map((prod) => prod.title)}
             renderInput={(params) => (
-                <TextField
+                <MuiTextField
                     {...params}
                     label={
-                        <Stack
+                        <MuiStack
                             direction={'row'}
                             spacing={2.5}
-                            sx={{ alignItems: 'center' }}
+                            sx={{ alignItems: 'start' }}
                         >
                             <Icon component={Search} />
                             <MuiTypography variant="h4">Search</MuiTypography>
-                        </Stack>
+                        </MuiStack>
                     }
                 />
             )}

@@ -12,19 +12,8 @@ const customTypographyProps: PropertyKey[] = ['hasicon', 'color'];
 export const StyledList = styled(MuiList)(({ theme: { typography } }) => ({
     display: 'flex',
     flexDirection: 'column',
-    gap: typography.pxToRem(22),
+    gap: typography.pxToRem(14),
     padding: 0,
-}));
-
-export const StyledBadge = styled(MuiTypography)(({ theme: { palette } }) => ({
-    backgroundColor: palette.error.light,
-    color: palette.error.main,
-    borderRadius: '50%',
-    width: 20,
-    height: 20,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
 }));
 
 export const StyledListItemButton = styled(MuiListItemButton)(

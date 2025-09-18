@@ -1,13 +1,15 @@
-import { CONTAINER_GAP } from 'constant/containerConstant';
+import { MouseEvent, useState } from 'react';
 
 import {
     Box as MuiBox,
+    Popover as MuiPopover,
     Stack as MuiStack,
     Typography as MuiTypography,
 } from '@mui/material';
 
 import Exclamation from '@assets/icons/exclamation_circle.svg?react';
-import { Icon } from '@components/Icon';
+import { IconButton } from '@components/IconButton';
+import { CONTAINER_GAP } from '@constant';
 import { theme } from '@theme';
 
 import { StyledContainer } from './Card.styles';
@@ -15,7 +17,7 @@ import type { CardProps } from './Card.types';
 
 /**
  *
- * @param padding - padding of container (default md)
+ * @param size - padding of container (default md)
  * @param gap - gap between heading and content (default sm)
  * @param hasIcon - boolean status of whether there should be info icon or not (default false)
  * @param heading - heading of the container
@@ -25,15 +27,27 @@ import type { CardProps } from './Card.types';
  */
 export const Card = (props: CardProps) => {
     const {
-        padding = 'md',
+        size = 'md',
         gap = 'sm',
         hasIcon = false,
         heading,
         subHeading,
         children,
     } = props;
+    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+
+    const handlePopoverOpen = (event: MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+
     return (
-        <StyledContainer padding={padding}>
+        <StyledContainer size={size}>
             <MuiStack direction={'column'} spacing={CONTAINER_GAP[gap]}>
                 <MuiBox>
                     <MuiStack direction={'row'} spacing={3}>
@@ -43,10 +57,36 @@ export const Card = (props: CardProps) => {
                             </MuiTypography>
                         )}
                         {hasIcon && (
-                            <Icon
-                                component={Exclamation}
-                                htmlColor={theme.palette.primary.light}
-                            />
+                            <MuiBox>
+                                <IconButton
+                                    component={Exclamation}
+                                    customColor={theme.palette.primary.light}
+                                    aria-owns={open ? 'sales-info' : undefined}
+                                    aria-haspopup="true"
+                                    onMouseEnter={handlePopoverOpen}
+                                    onMouseLeave={handlePopoverClose}
+                                />
+                                <MuiPopover
+                                    id="sales-info"
+                                    sx={{ pointerEvents: 'none' }}
+                                    open={open}
+                                    anchorEl={anchorEl}
+                                    anchorOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                    transformOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'left',
+                                    }}
+                                    onClose={handlePopoverClose}
+                                    disableRestoreFocus
+                                >
+                                    <MuiTypography padding={5}>
+                                        Sales chart information
+                                    </MuiTypography>
+                                </MuiPopover>
+                            </MuiBox>
                         )}
                     </MuiStack>
                     {subHeading && (

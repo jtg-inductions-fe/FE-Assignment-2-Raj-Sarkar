@@ -17,7 +17,8 @@ export const palette: PaletteOptions = {
         900: '#111827',
     },
     success: {
-        main: '#DEF7EC',
+        main: '#03543F',
+        light: '#DEF7EC',
     },
     error: {
         main: '#9B1C1C',
@@ -25,5 +26,6 @@ export const palette: PaletteOptions = {
     },
     info: {
         main: '#1E429F',
+        light: '#E1EFFE',
     },
 };

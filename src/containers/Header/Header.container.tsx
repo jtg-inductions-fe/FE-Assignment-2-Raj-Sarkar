@@ -70,12 +70,14 @@ export const Header = (props: HeaderProps) => {
                 justifyContent={'end'}
                 alignItems={'center'}
                 flexGrow={2}
+                spacing={isDesktop ? 3 : 1}
             >
                 <IconButton
                     component={Bell}
                     aria-label="Go to notifications"
                     showShadow={true}
                     customColor={theme.palette.grey[900]}
+                    padding={8}
                     onClick={() => void navigate('/notification')}
                 />
                 <MuiBox>

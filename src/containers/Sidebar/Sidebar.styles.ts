@@ -9,7 +9,7 @@ export const StyledMainStack = styled(MuiStack)(
             height: 'calc(100vh - 70px)',
             top: typography.pxToRem(70),
         },
-        padding: `${typography.pxToRem(16)} ${typography.pxToRem(20)}`,
+        padding: `${typography.pxToRem(12)}`,
         flexDirection: 'column',
         justifyContent: 'space-between',
         position: 'sticky',

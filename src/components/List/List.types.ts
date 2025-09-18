@@ -1,6 +1,5 @@
+import { ListItem } from '@components/Customer/Customer.types';
 import { ListItemProps } from '@components/ListItem/ListItem.types';
-import { ProductItem } from '@components/Searchbar/Searchbar.types';
-import { CustomerItem } from '@containers/Customer/Customer.types';
 
 /**
  * Props types for list content component
@@ -8,7 +7,7 @@ import { CustomerItem } from '@containers/Customer/Customer.types';
  * @property RenderItem - component to render each item
  */
 export type ListContentProps = {
-    listData: CustomerItem[] | ProductItem[];
+    listData: ListItem[];
     RenderItem: React.FC<ListItemProps>;
 };
 

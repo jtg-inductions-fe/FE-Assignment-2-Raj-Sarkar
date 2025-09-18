@@ -15,17 +15,16 @@ import type { ListItemProps } from './ListItem.types';
  */
 export const ListItem = (props: ListItemProps) => {
     const { item } = props;
-    const isCustomer = item.kind === 'customer';
 
     return (
         <MuiStack
             direction={'row'}
             justifyContent={'space-between'}
             alignItems={'center'}
-            paddingY={theme.spacing(2)}
+            paddingY={theme.typography.pxToRem(11)}
         >
             <MuiStack direction={'row'} spacing={2} alignItems={'center'}>
-                {isCustomer && item.avatar && (
+                {item.avatar && (
                     <MuiAvatar
                         src={item.avatar}
                         sx={{
@@ -35,20 +34,37 @@ export const ListItem = (props: ListItemProps) => {
                     />
                 )}
                 <MuiStack>
-                    <MuiTypography variant="h3">
-                        {isCustomer ? item.username : item.name}
+                    <MuiTypography
+                        variant="h3"
+                        sx={{
+                            ...theme.mixins.lineClamp(1),
+                        }}
+                    >
+                        {item.title}
                     </MuiTypography>
                     <MuiTypography
                         variant="body2"
                         color={theme.palette.grey[500]}
+                        sx={{
+                            ...theme.mixins.lineClamp(1),
+                        }}
                     >
-                        {isCustomer ? item.email : item.technology}
+                        {item.description}
                     </MuiTypography>
                 </MuiStack>
             </MuiStack>
-            <MuiTypography variant="h3">
-                {isCustomer ? `$${item.sales}` : `${item.sales} sales`}
-            </MuiTypography>
+            <MuiStack direction={'row'} spacing={1}>
+                {item.sales && (
+                    <MuiTypography variant="h3">
+                        {`${item.prefix ? item.prefix : ''}${item.sales}`}
+                    </MuiTypography>
+                )}
+                {item.suffix && (
+                    <MuiTypography variant="h4" color={theme.palette.grey[500]}>
+                        {item.suffix}
+                    </MuiTypography>
+                )}
+            </MuiStack>
         </MuiStack>
     );
 };

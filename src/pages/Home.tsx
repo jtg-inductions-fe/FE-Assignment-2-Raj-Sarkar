@@ -18,10 +18,21 @@ export const Home = () => {
             <Chart isDesktop={isDesktop} salesData={salesDataset} />
             <MuiStack
                 direction={isDesktop ? 'row' : 'column'}
-                gap={4}
+                gap={isDesktop ? 4 : 2}
                 marginTop={4}
             >
-                <Customer customerData={CUSTOMERS} isDesktop={isDesktop} />
+                <MuiBox sx={{ flexGrow: 0, flexShrink: 0, flexBasis: 380 }}>
+                    <Customer customerData={CUSTOMERS} isDesktop={isDesktop} />
+                </MuiBox>
+                <MuiBox
+                    sx={{
+                        flexGrow: isDesktop ? 1 : 0,
+                        flexShrink: 1,
+                        flexBasis: isDesktop ? 920 : 0,
+                    }}
+                >
+                    <Product productData={PRODUCT_LIST} isDesktop={isDesktop} />
+                </MuiBox>
             </MuiStack>
         </MuiBox>
     );

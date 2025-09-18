@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { CONTAINER_GAP, CONTAINER_PADDING } from 'constant/containerConstant';
+import { CONTAINER_GAP, PADDING_TO_SIZE_MAP } from 'constant/containerConstant';
 
 /**
  * Props for styled container
- * @property padding - padding of container
+ * @property size - padding of container
  */
 export type StyledContainerProps = {
     padding?: keyof typeof CONTAINER_PADDING;

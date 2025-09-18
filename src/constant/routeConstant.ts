@@ -11,7 +11,7 @@ export const ROUTE_PATH = {
     GLASSMORPHISM: '/glassmorphism',
     MULTIPURPOSE_TEMPLATE: '/multipurpose template',
     NOTIFICATIONS: '/notification',
-    OVERVIEW: '/overview',
+    OVERVIEW: '/',
     PRODUCT_LIST: '/product-list',
     BILLING: '/billing',
     INVOICE: '/invoice',
