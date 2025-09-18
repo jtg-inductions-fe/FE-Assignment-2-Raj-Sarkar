@@ -74,7 +74,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                     </StyledTypography>
                 </MuiStack>
                 {item.count !== undefined && (
-                    <Badge type="error" content={String(item.count)} />
+                    <Badge type="error" content={item.count} />
                 )}
                 {hasChildren && (open ? <ExpandLess /> : <ExpandMore />)}
             </StyledListItemButton>

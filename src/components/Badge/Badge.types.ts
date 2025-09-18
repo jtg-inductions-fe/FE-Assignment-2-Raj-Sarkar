@@ -14,5 +14,5 @@ export type StyledBadgeProps = {
  * @property content - content text to show in badge
  */
 export type BadgeProps = StyledBadgeProps & {
-    content: string;
+    content: string | number;
 };
