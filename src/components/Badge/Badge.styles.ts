@@ -1,4 +1,8 @@
-import { styled, Typography as MuiTypography } from '@mui/material';
+import {
+    Box as MuiBox,
+    styled,
+    Typography as MuiTypography,
+} from '@mui/material';
 
 import { BADGE_TYPE_COLORS } from '@constant';
 
@@ -8,12 +12,14 @@ const customProps: PropertyKey[] = ['type'];
 
 export const StyledBadge = styled(MuiTypography, {
     shouldForwardProp: (prop) => !customProps.includes(prop),
-})<StyledBadgeProps>(({ theme: { spacing }, type }) => ({
-    backgroundColor: BADGE_TYPE_COLORS[type]?.['background'],
+})<StyledBadgeProps>(({ type }) => ({
     color: BADGE_TYPE_COLORS[type]?.['text'],
-    borderRadius: spacing(2.5),
+}));
+
+export const StyledBox = styled(MuiBox, {
+    shouldForwardProp: (prop) => !customProps.includes(prop),
+})<StyledBadgeProps>(({ theme: { spacing }, type }) => ({
     padding: spacing(0.5, 2.5),
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    borderRadius: spacing(2.5),
+    backgroundColor: BADGE_TYPE_COLORS[type]?.['background'],
 }));

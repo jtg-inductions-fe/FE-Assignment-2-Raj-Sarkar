@@ -1,9 +1,10 @@
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
-import { CUSTOMERS, ITEM_DATA } from '@constant';
+import { CUSTOMERS, ITEM_DATA, PRODUCT_LIST } from '@constant';
 import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
 import { ImageGrid } from '@containers/ImageGrid';
+import { Product } from '@containers/Product';
 import { salesDataset } from '@models';
 import { theme } from '@theme';
 

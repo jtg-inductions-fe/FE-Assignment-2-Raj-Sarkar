@@ -7,7 +7,7 @@ import { CONTAINER_GAP, PADDING_TO_SIZE_MAP } from 'constant/containerConstant';
  * @property size - padding of container
  */
 export type StyledContainerProps = {
-    padding?: keyof typeof CONTAINER_PADDING;
+    size?: keyof typeof PADDING_TO_SIZE_MAP;
 };
 
 /**

@@ -4,7 +4,7 @@ import { ICON_SIZE } from '@constant';
 
 import type { StyledSvgIconProps } from './Icon.types';
 
-const customProps: PropertyKey[] = ['size', 'customcolor'];
+const customProps: PropertyKey[] = ['size'];
 
 export const StyledSvgIcon = styled(MuiSvgIcon, {
     shouldForwardProp: (prop) => !customProps.includes(prop),

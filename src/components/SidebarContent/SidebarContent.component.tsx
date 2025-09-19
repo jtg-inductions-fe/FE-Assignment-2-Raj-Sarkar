@@ -55,7 +55,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                     {item.icon && (
                         <Icon
                             component={item.icon}
-                            customcolor={
+                            htmlColor={
                                 isActive
                                     ? theme.palette.primary.main
                                     : theme.palette.grey[900]

@@ -6,6 +6,5 @@ export { CUSTOMERS } from './customerConstant';
 export { ICON_SIZE } from './sizeConstant';
 export * from './menuConstants';
 export { ITEM_DATA } from './imgConstant';
-export { dates, sales } from './chartConstant';
 export { PADDING_TO_SIZE_MAP, CONTAINER_GAP } from './containerConstant';
 export { BADGE_TYPE_COLORS } from './badgeConstant';

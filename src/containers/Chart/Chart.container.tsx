@@ -16,7 +16,7 @@ export const Chart = (props: ChartProps) => {
 
     return (
         <Card
-            padding={isDesktop ? 'xl' : 'sm'}
+            size={isDesktop ? 'xl' : 'sm'}
             gap={isDesktop ? 'md' : 'sm'}
             hasIcon
             heading="Sales"

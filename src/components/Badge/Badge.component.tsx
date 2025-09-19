@@ -1,4 +1,4 @@
-import { StyledBadge } from './Badge.styles';
+import { StyledBadge, StyledBox } from './Badge.styles';
 import { BadgeProps } from './Badge.types';
 
 /**
@@ -11,8 +11,10 @@ export const Badge = (props: BadgeProps) => {
     const { type, content } = props;
 
     return (
-        <StyledBadge variant="body2" type={type}>
-            {content}
-        </StyledBadge>
+        <StyledBox type={type}>
+            <StyledBadge variant="body2" type={type}>
+                {content}
+            </StyledBadge>
+        </StyledBox>
     );
 };

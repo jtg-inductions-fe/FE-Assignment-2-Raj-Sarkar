@@ -1,4 +1,4 @@
-import { ProductItem } from '@components/Searchbar/Searchbar.types';
+import { ListItem } from '@types';
 
 /**
  * Props types for product component
@@ -6,6 +6,6 @@ import { ProductItem } from '@components/Searchbar/Searchbar.types';
  * @property isDesktop - boolean value of whether view width is desktop or not
  */
 export type ProductProps = {
-    productData: ProductItem[];
+    productData: ListItem[];
     isDesktop: boolean;
 };

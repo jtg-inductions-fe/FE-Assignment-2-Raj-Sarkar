@@ -1,4 +1,4 @@
-import { ListItem } from '@components/Customer/Customer.types';
+import { ListItem } from '@types';
 /**
  * Contains SearchBar component props
  * @property freesolo - boolean status to make searchbar a freesolo or not

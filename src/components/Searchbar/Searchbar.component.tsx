@@ -30,7 +30,8 @@ export const Searchbar = (props: SearchBarProps) => {
     const handleOptionChange = (selectedOption: string) => {
         const prod = productList.find(
             (product) =>
-                product.title.toLocaleLowerCase() === value.toLocaleLowerCase(),
+                product.title.toLocaleLowerCase() ===
+                selectedOption.toLocaleLowerCase(),
         );
         if (prod) {
             void navigate(prod.to ? prod.to : '/');

@@ -15,7 +15,7 @@ export const Customer = (props: CustomerProps) => {
 
     return (
         <Card
-            padding={isDesktop ? 'lg' : 'md'}
+            size={isDesktop ? 'lg' : 'md'}
             gap={'sm'}
             heading="Latest Customers"
         >

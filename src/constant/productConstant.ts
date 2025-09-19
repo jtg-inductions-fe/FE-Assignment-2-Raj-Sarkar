@@ -1,5 +1,5 @@
-import type { ListItem } from '@components/Customer/Customer.types';
 import { ROUTE_PATH } from '@constant';
+import type { ListItem } from '@types';
 
 export const PRODUCT_LIST: ListItem[] = [
     {
