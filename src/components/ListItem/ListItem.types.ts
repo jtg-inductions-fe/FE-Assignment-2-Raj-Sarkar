@@ -1,5 +1,5 @@
-import { CustomerItem } from '@components/Customer/Customer.types';
 import { ProductItem } from '@components/Searchbar/Searchbar.types';
+import { CustomerItem } from '@containers/Customer/Customer.types';
 
 /**
  * Props type of List Item component

@@ -4,7 +4,7 @@ import Avatar3 from '@assets/imgs/avatar_3.png';
 import Avatar4 from '@assets/imgs/avatar_4.jpg';
 import Avatar5 from '@assets/imgs/avatar_5.jpg';
 import Avatar6 from '@assets/imgs/avatar_6.png';
-import { CustomerItem } from '@components/Customer/Customer.types';
+import { CustomerItem } from '@containers/Customer/Customer.types';
 
 export const CUSTOMERS: CustomerItem[] = [
     {

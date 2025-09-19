@@ -1,11 +1,11 @@
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
+import { CUSTOMERS, ITEM_DATA } from '@constant';
 import { Chart } from '@containers/Chart';
+import { Customer } from '@containers/Customer';
 import { ImageGrid } from '@containers/ImageGrid';
-import { Customer } from '@components/Customer';
-import { CUSTOMERS, ITEM_DATA, PRODUCT_LIST } from '@constant';
-import { theme } from '@theme';
 import { salesDataset } from '@models';
+import { theme } from '@theme';
 
 /**
  * @returns Home page component that contains all component for home page
@@ -13,11 +13,7 @@ import { salesDataset } from '@models';
 export const Home = () => {
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <MuiBox
-            padding={4} 
-            overflow={'auto'} 
-            bgcolor={theme.palette.grey[50]}
-        >
+        <MuiBox padding={4} overflow={'auto'} bgcolor={theme.palette.grey[50]}>
             <ImageGrid imageList={ITEM_DATA} isDesktop={isDesktop} />
             <Chart isDesktop={isDesktop} salesData={salesDataset} />
             <MuiStack
