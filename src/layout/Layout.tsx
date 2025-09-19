@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
-import { Header } from 'containers/Header';
-import { Sidebar } from 'containers/Sidebar';
-import { Outlet } from 'react-router-dom';
-
 import { Box, Stack } from '@mui/material';
+
+import { Header } from '@containers/Header';
+import { Sidebar } from '@containers/Sidebar';
 
 import { LayoutProps } from './Layout.types';
 
@@ -26,7 +25,7 @@ const Layout = (props: LayoutProps) => {
                     <Sidebar open={sidebarOpen} onClose={toggleSidebar} />
                 )}
                 <Box component={'main'} maxWidth={1600} mx={'auto'}>
-                    {children ?? <Outlet />}
+                    {children}
                 </Box>
             </Stack>
         </Box>
