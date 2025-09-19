@@ -1,9 +1,4 @@
 import {
-    StyledDrawer,
-    StyledMainStack,
-} from 'containers/Sidebar/Sidebar.styles';
-
-import {
     Divider as MuiDivider,
     Stack as MuiStack,
     useMediaQuery,
@@ -11,6 +6,10 @@ import {
 
 import { SidebarContent, SidebarIcons } from '@components/SidebarContent';
 import { MENU_DATA_1, MENU_DATA_2, MENU_ICONS } from '@constant';
+import {
+    StyledDrawer,
+    StyledMainStack,
+} from '@containers/Sidebar/Sidebar.styles';
 import { theme } from '@theme';
 
 import type { SidebarProps } from './Sidebar.types';
