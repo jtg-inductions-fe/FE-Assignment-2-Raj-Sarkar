@@ -14,22 +14,19 @@ import Bell from '@assets/icons/bell.svg?react';
 import Logo from '@assets/icons/logo.svg?react';
 import Menu from '@assets/icons/menu.svg?react';
 import ProfileImg from '@assets/imgs/avatar_1.png';
-import {
-    StyledAvatar,
-    StyledHeaderStack,
-} from '@components/Header/Header.styles';
 import { IconButton } from '@components/IconButton';
 import { Searchbar } from '@components/Searchbar';
 import { PRODUCT_LIST } from '@constant';
 import { userDetails } from '@store';
 import { theme } from '@theme';
 
+import { StyledAvatar, StyledHeaderStack } from './Header.styles';
 import type { HeaderProps } from './Header.types';
 
 /**
  *
  * @param onMenuClick - Function to handle click on menu bar
- * @returns Header component that contains icons , searchbar and avatar
+ * @returns Header container that contains icons , searchbar and avatar
  */
 export const Header = (props: HeaderProps) => {
     const { onMenuClick } = props;

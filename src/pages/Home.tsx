@@ -1,8 +1,10 @@
+import { ImageGrid } from 'containers/ImageGrid';
+
 import { Box, useMediaQuery } from '@mui/material';
 
-import { Chart } from '@components/Chart';
-import { ImageGrid } from '@components/ImageGrid';
 import { ITEM_DATA } from '@constant';
+import { Chart } from '@containers/Chart';
+import { salesDataset } from '@models';
 import { theme } from '@theme';
 
 /**
@@ -13,8 +15,8 @@ export const Home = () => {
     return (
         <>
             <Box padding={4} overflow={'auto'}>
-                <ImageGrid itemData={ITEM_DATA} isDesktop={isDesktop} />
-                <Chart isDesktop={isDesktop} />
+                <ImageGrid imageList={ITEM_DATA} isDesktop={isDesktop} />
+                <Chart isDesktop={isDesktop} salesData={salesDataset} />
             </Box>
         </>
     );

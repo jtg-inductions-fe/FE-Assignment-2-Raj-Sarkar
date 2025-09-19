@@ -1,25 +1,16 @@
 /**
- * Contains types for a image item
- * @property src - image to render
- * @property title - title of image
- * @property desktopConfig - number of rows and cols the image will occupy in desktop
- * @property mobileConfig - number of rows and cols the image will occupy in mobile
- */
-export type ImgItem = {
-    src: string;
-    title: string;
-    desktopConfig: { rows: number; cols: number };
-    mobileConfig: { rows: number; cols: number };
-};
-/**
  *
- * Contains types of props for Image Grid cmponent
- * @property itemData - list of image items
- * @property isDesktop - boolean status whether it width is of desktop's or not
+ * Contains types of props for Image Grid component
+ * @property modifiedImageList - modified list of images for rendering image grid component
+ * @property cols - number cols in the grid
+ * @property rowHeight - height of each row in grid
+ * @property gap - gap between two rows
  */
 export type ImageGridProps = {
-    itemData: ImgItem[];
-    isDesktop: boolean;
+    modifiedImageList: ModifiedImgItem[];
+    cols: number;
+    rowHeight: number;
+    gap: number;
 };
 
 /**

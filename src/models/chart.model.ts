@@ -1,6 +1,6 @@
-import type { SalesPoint } from '@types';
+import type { SalesItem } from '@types';
 
-export const salesDataset: ReadonlyArray<SalesPoint> = [
+export const salesDataset: SalesItem[] = [
     { date: new Date(2021, 3, 1), sales: 80000 },
     { date: new Date(2021, 3, 2), sales: 79000 },
     { date: new Date(2021, 3, 3), sales: 120000 },

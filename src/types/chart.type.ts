@@ -3,7 +3,7 @@
  * @property date - date of sales
  * @property sales - amount of sales
  */
-export type SalesPoint = {
+export type SalesItem = {
     date: Date;
     sales: number;
 };

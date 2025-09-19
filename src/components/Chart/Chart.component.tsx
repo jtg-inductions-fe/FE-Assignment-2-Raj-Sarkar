@@ -1,18 +1,21 @@
-import { salesDataset } from 'models';
-
 import { Box } from '@mui/material';
 import { ChartsTooltip, LineChart } from '@mui/x-charts';
 
-import { Card } from '@components/Card';
 import { theme } from '@theme';
 
-import type { ChartProps, SalesLineChartProps } from './Chart.types';
+import type { SalesLineChartProps } from './Chart.types';
 
+/**
+ *
+ * @property yMin - minimum value of y-axis
+ * @property yMax - maximum value of y-axis
+ * @property xMin - minimum value of x axis
+ * @property dates - list of dates
+ * @property sales - list of sales
+ * @returns component to render the chart
+ */
 export const SalesLineChart = (props: SalesLineChartProps) => {
-    const { yMin = 0, yMax = 250000 } = props;
-    const dates = salesDataset.map((data) => data.date);
-    const sales = salesDataset.map((data) => data.sales);
-    const xAxisMin = new Date(dates[0].getTime() - 24 * 60 * 60 * 1000);
+    const { yMin = 0, yMax = 240000, xMin, dates, sales } = props;
 
     return (
         <Box width={'100%'}>
@@ -29,7 +32,7 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
                         tickPlacement: 'end',
                         disableLine: true,
                         disableTicks: true,
-                        min: xAxisMin,
+                        min: xMin,
                         tickLabelStyle: {
                             fontSize: 14,
                             fontWeight: 600,
@@ -64,20 +67,5 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
                 slots={{ tooltip: ChartsTooltip }}
             />
         </Box>
-    );
-};
-
-export const Chart = (props: ChartProps) => {
-    const { isDesktop } = props;
-
-    return (
-        <Card
-            padding={isDesktop ? 'xl' : 'sm'}
-            gap={isDesktop ? 'md' : 'sm'}
-            hasIcon
-            heading="Sales"
-        >
-            <SalesLineChart />
-        </Card>
     );
 };

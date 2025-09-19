@@ -15,7 +15,7 @@ import {
 } from '@components/SidebarContent/SidebarContent.styles';
 import { theme } from '@theme';
 
-import {
+import type {
     SidebarContentProps,
     SidebarIconsProps,
     SidebarItemProps,
@@ -59,7 +59,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                     {item.icon && (
                         <Icon
                             component={item.icon}
-                            customColor={
+                            htmlColor={
                                 selected
                                     ? theme.palette.primary.main
                                     : theme.palette.grey[900]

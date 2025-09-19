@@ -3,32 +3,27 @@ import {
     ImageListItem as MuiImageListItem,
 } from '@mui/material';
 
-import type { ImageGridProps, ModifiedImgItem } from './ImageGrid.types';
+import type { ImageGridProps } from './ImageGrid.types';
 
 /**
  *
- * @param itemData - list of image items data
- * @param isDesktop - boolean status whether it width is of desktop's or not
+ * @param modifiedImageList - modified list of images for rendering image grid component
+ * @param cols - number cols in the grid
+ * @param rowHeight - height of each row in grid
+ * @param gap - gap between two rows
  * @returns Component to render the image items using
  */
 export const ImageGrid = (props: ImageGridProps) => {
-    const { itemData, isDesktop } = props;
-    const data = isDesktop ? itemData : [itemData[2], itemData[3], itemData[1]];
-
-    const newData: ModifiedImgItem[] = data.map((item) => ({
-        title: item.title,
-        src: item.src,
-        config: isDesktop ? item.desktopConfig : item.mobileConfig,
-    }));
+    const { modifiedImageList, cols, rowHeight, gap } = props;
 
     return (
         <MuiImageList
             variant="quilted"
-            cols={isDesktop ? 16 : 1}
-            rowHeight={isDesktop ? 3.6 : 112}
-            gap={45}
+            cols={cols}
+            rowHeight={rowHeight}
+            gap={gap}
         >
-            {newData.map((item, index) => (
+            {modifiedImageList.map((item, index) => (
                 <MuiImageListItem
                     key={index}
                     cols={item.config.cols}

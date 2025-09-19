@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
+import { Header } from 'containers/Header';
+import { Sidebar } from 'containers/Sidebar';
 import { Outlet } from 'react-router-dom';
 
 import { Box, Stack } from '@mui/material';
-
-import { Header } from '@components/Header';
-import { Sidebar } from '@components/Sidebar';
 
 import { LayoutProps } from './Layout.types';
 
@@ -14,7 +13,8 @@ import { LayoutProps } from './Layout.types';
  * @param showSidebar - boolean value to show/hide sidebar
  * @returns Layout component for layout reusability
  */
-const Layout = ({ showSidebar = false, children }: LayoutProps) => {
+const Layout = (props: LayoutProps) => {
+    const { showSidebar = false, children } = props;
     const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
     const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
