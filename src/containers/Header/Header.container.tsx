@@ -45,6 +45,7 @@ export const Header = (props: HeaderProps) => {
                 gap={8}
                 flexGrow={1}
             >
+<<<<<<< HEAD:src/containers/Header/Header.container.tsx
                 {!isDesktop && (
                     <IconButton
                         component={Menu}
@@ -62,6 +63,22 @@ export const Header = (props: HeaderProps) => {
                         onClick={() => void navigate('/')}
                     />
                 )}
+=======
+                <IconButton
+                    component={Menu}
+                    aria-label="Open Menu"
+                    hideintablet={true}
+                    buttonsize={'md'}
+                    onClick={onMenuClick}
+                />
+                <IconButton
+                    aria-label="Go to home"
+                    component={Logo}
+                    buttonsize={'lg'}
+                    showshadow={true}
+                    onClick={() => void navigate('/')}
+                />
+>>>>>>> 576dc83 ([RS_A2_07]: minor change):src/components/Header/Header.component.tsx
                 <Searchbar productList={PRODUCT_LIST} freesolo />
             </MuiStack>
             <MuiStack
@@ -70,6 +87,12 @@ export const Header = (props: HeaderProps) => {
                 alignItems={'center'}
                 flexGrow={2}
                 spacing={isDesktop ? 3 : 1}
+<<<<<<< HEAD:src/containers/Header/Header.container.tsx
+=======
+                justifyContent="end"
+                alignItems="center"
+                flexGrow={2}
+>>>>>>> 576dc83 ([RS_A2_07]: minor change):src/components/Header/Header.component.tsx
             >
                 <IconButton
                     component={Bell}
