@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { Outlet } from 'react-router-dom';
+
 import { Box, Stack } from '@mui/material';
 
 import { Header } from '@containers/Header';
@@ -25,7 +27,7 @@ const Layout = (props: LayoutProps) => {
                     <Sidebar open={sidebarOpen} onClose={toggleSidebar} />
                 )}
                 <Box component={'main'} maxWidth={1600} mx={'auto'}>
-                    {children}
+                    {children ?? <Outlet />}
                 </Box>
             </Stack>
         </Box>
