@@ -1,7 +1,7 @@
 import ImgPlac1 from '@assets/imgs/image_placeholder_1.png';
 import ImgPlac2 from '@assets/imgs/image_placeholder_2.png';
 import Laptop from '@assets/imgs/laptop.png';
-import { ImgItem } from '@components/ImageGrid/ImageGrid.types';
+import type { ImgItem } from '@components/ImageGrid/ImageGrid.types';
 
 export const ITEM_DATA: ImgItem[] = [
     {

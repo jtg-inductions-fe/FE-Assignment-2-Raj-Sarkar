@@ -21,23 +21,3 @@ export type SearchBarProps = {
     freesolo?: boolean;
     productList: ProductItem[];
 };
-
-/**
- * Contains props for option change handling function
- * @property e - event details
- * @property value - value of input field
- */
-export type HandleSearchBarProps = {
-    e: React.SyntheticEvent<Element, Event>;
-    value: string;
-};
-
-/**
- * Contains types of props for handling input change
- * @property e - event details
- * @property value - value of input field
- */
-export type HandleInputChangeProps = {
-    e: React.SyntheticEvent<Element, Event>;
-    value: string;
-};

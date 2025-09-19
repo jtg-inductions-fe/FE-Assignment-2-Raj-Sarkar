@@ -11,7 +11,8 @@
             "@types": ["types"],
             "@components/*": ["components/*"],
             "@helper": ["helper"],
-            "@store": ["store"]
+            "@store": ["store"],
+            "@models": ["models"]
         }
     }
 }

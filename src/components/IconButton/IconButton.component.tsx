@@ -1,43 +1,35 @@
 import { Icon } from '@components/Icon';
+import { theme } from '@theme';
 
 import { StyledIconButton } from './IconButton.styles';
-import { StyledIconButtonProps } from './IconButton.types';
+import type { IconButtonProps } from './IconButton.types';
 
 /**
  *
  * @param component - Icon to show
- * @param onClick - Function to handle click event
- * @param buttonsize - Size of the button
- * @param customcolor - Custom color of the button
- * @param hideinmobile - Boolean value to hide icon in smaller device (default=false)
- * @param hideintablet - Boolean value to hide icon in Medium device (default=false)
- * @param showshadow - Boolean value to show box-shadow (default=false)
+ * @param buttonSize - Size of the button
+ * @param customColor - Custom color of the button
+ * @param showShadow - Boolean value to show box-shadow (default=false)
  * @returns Component for Icon that works as a button
  */
-export const IconButton = (props: StyledIconButtonProps) => {
+export const IconButton = (props: IconButtonProps) => {
     const {
         component,
-        onClick,
-        buttonsize,
-        customcolor,
-        hideinmobile,
-        hideintablet,
-        showshadow,
+        buttonSize,
+        customColor = theme.palette.grey[900],
+        showShadow,
+        ...rest
     } = props;
     return (
         <StyledIconButton
-            onClick={onClick}
-            buttonsize={buttonsize}
-            customcolor={customcolor}
-            hideinmobile={hideinmobile}
-            hideintablet={hideintablet}
-            showshadow={showshadow}
-            {...props}
+            buttonSize={buttonSize}
+            showShadow={showShadow}
+            {...rest}
         >
             <Icon
                 component={component}
-                size={buttonsize}
-                customcolor={customcolor}
+                size={buttonSize}
+                htmlColor={customColor}
             />
         </StyledIconButton>
     );

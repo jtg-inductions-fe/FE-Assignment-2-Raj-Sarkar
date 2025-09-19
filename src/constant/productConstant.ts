@@ -1,4 +1,4 @@
-import { ProductItem } from '@components/Searchbar/Searchbar.types';
+import type { ProductItem } from '@components/Searchbar/Searchbar.types';
 import { ROUTE_PATH } from '@constant';
 
 export const PRODUCT_LIST: ProductItem[] = [

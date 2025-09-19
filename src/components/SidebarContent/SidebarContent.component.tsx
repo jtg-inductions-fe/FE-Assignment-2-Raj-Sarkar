@@ -40,7 +40,7 @@ const SidebarItem = (props: SidebarItemProps) => {
      * If there is children then open/close child list , otherwise navigate to the destination path route.
      * Also toggle the selected state when clicking
      */
-    const handleClickOnListButton = () => {
+    const handleMenuItemClick = () => {
         setSelected((prev) => !prev);
         if (hasChildren) {
             setOpen((prev) => !prev);
@@ -53,13 +53,13 @@ const SidebarItem = (props: SidebarItemProps) => {
         <>
             <StyledListItemButton
                 selected={selected}
-                onClick={handleClickOnListButton}
+                onClick={handleMenuItemClick}
             >
                 <MuiStack direction={'row'} spacing={4}>
                     {item.icon && (
                         <Icon
                             component={item.icon}
-                            customcolor={
+                            customColor={
                                 selected
                                     ? theme.palette.primary.main
                                     : theme.palette.grey[900]

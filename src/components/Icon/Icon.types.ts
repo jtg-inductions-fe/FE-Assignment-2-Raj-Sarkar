@@ -1,15 +1,15 @@
-import { SvgIconProps } from '@mui/material';
+import { SvgIconProps as MuiSvgIconProps } from '@mui/material';
 
 import { ICON_SIZE } from '@constant';
+
+type CustomSvgIconProps = Omit<MuiSvgIconProps, 'children>'>;
 
 /**
  * Contains props for StyledSvgIcon component
  * @property size - custom size of Icon
- * @property customcolor - custom color of Icon
  */
-export type StyledSvgIconProps = SvgIconProps & {
+export type StyledSvgIconProps = CustomSvgIconProps & {
     size?: keyof typeof ICON_SIZE;
-    customcolor?: string;
 };
 
 /**

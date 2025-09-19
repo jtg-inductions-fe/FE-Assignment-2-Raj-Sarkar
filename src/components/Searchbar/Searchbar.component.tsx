@@ -7,11 +7,7 @@ import Search from '@assets/icons/search.svg?react';
 import { Icon } from '@components/Icon';
 
 import { StyledAutocomplete } from './Searchbar.styles';
-import {
-    HandleInputChangeProps,
-    HandleSearchBarProps,
-    SearchBarProps,
-} from './Searchbar.types';
+import type { SearchBarProps } from './Searchbar.types';
 
 /**
  *
@@ -26,38 +22,35 @@ export const Searchbar = (props: SearchBarProps) => {
     /**
      *
      * Clicking on a product will redirect to that page
-     * @param e - event handler for options change
-     * @param value - value of input box
+     * @param selectedOption - value of input box
      */
-    const handleOptionChange = (functionProps: HandleSearchBarProps) => {
-        const { value } = functionProps;
+    const handleOptionChange = (selectedOption: string) => {
         const prod = productList.find(
             (product) =>
-                product.name.toLocaleLowerCase() === value.toLocaleLowerCase(),
+                product.name.toLocaleLowerCase() ===
+                selectedOption.toLocaleLowerCase(),
         );
         if (prod) {
             void navigate(prod.to);
         } else {
-            void navigate(`/${value.toLocaleLowerCase()}`);
+            void navigate(`/${selectedOption.toLocaleLowerCase()}`);
         }
     };
 
     /**
      *
      * Re-direct to home route when Input field is empty
-     * @param e - event handler for input change
-     * @param value - value of input box
+     * @param inputValue - value of input box
      */
-    const handleInputChange = (functionProps: HandleInputChangeProps) => {
-        const { value } = functionProps;
-        if (!value) {
+    const handleInputChange = (inputValue: string) => {
+        if (!inputValue) {
             void navigate('/');
         }
     };
 
     return (
         <StyledAutocomplete
-            id="free-solo-demo"
+            id="searchbar"
             freeSolo={freesolo}
             options={productList.map((prod) => prod.name)}
             renderInput={(params) => (
@@ -75,16 +68,13 @@ export const Searchbar = (props: SearchBarProps) => {
                     }
                 />
             )}
-            onChange={(e, value) => {
+            onChange={(_, value) => {
                 if (typeof value === 'string') {
-                    handleOptionChange({
-                        e,
-                        value,
-                    });
+                    handleOptionChange(value);
                 }
             }}
-            onInputChange={(e, value) => {
-                handleInputChange({ e, value });
+            onInputChange={(_, value) => {
+                handleInputChange(value);
             }}
         />
     );

@@ -1,5 +1,4 @@
 import { CONTAINER_GAP } from 'constant/containerConstant';
-import { Outlet } from 'react-router-dom';
 
 import {
     Box as MuiBox,
@@ -12,15 +11,15 @@ import { Icon } from '@components/Icon';
 import { theme } from '@theme';
 
 import { StyledContainer } from './Card.styles';
-import { CardProps } from './Card.types';
+import type { CardProps } from './Card.types';
 
 /**
  *
  * @param padding - padding of container (default md)
  * @param gap - gap between heading and content (default sm)
- * @param hasicon - boolean status of whether there should be info icon or not (default false)
+ * @param hasIcon - boolean status of whether there should be info icon or not (default false)
  * @param heading - heading of the container
- * @param subheading - subheading of container
+ * @param subHeading - subheading of container
  * @param children - children nodes
  * @returns component to be used to wrap the components of a section
  */
@@ -28,9 +27,9 @@ export const Card = (props: CardProps) => {
     const {
         padding = 'md',
         gap = 'sm',
-        hasicon = false,
+        hasIcon = false,
         heading,
-        subheading,
+        subHeading,
         children,
     } = props;
     return (
@@ -43,20 +42,20 @@ export const Card = (props: CardProps) => {
                                 {heading}
                             </MuiTypography>
                         )}
-                        {hasicon && (
+                        {hasIcon && (
                             <Icon
                                 component={Exclamation}
-                                customcolor={theme.palette.primary.light}
+                                htmlColor={theme.palette.primary.light}
                             />
                         )}
                     </MuiStack>
-                    {subheading && (
+                    {subHeading && (
                         <MuiTypography variant="subtitle1">
-                            {subheading}
+                            {subHeading}
                         </MuiTypography>
                     )}
                 </MuiBox>
-                {children ?? <Outlet />}
+                {children && children}
             </MuiStack>
         </StyledContainer>
     );
