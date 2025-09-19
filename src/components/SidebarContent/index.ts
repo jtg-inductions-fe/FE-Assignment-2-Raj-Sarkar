@@ -1,2 +1,2 @@
-export * from './SidebarContent';
+export * from './SidebarContent.component';
 export * from './SidebarContent.types';

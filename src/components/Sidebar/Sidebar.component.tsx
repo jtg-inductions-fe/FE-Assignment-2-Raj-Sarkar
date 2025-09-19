@@ -9,7 +9,7 @@ import {
     StyledMainStack,
 } from '@components/Sidebar/Sidebar.styles';
 import { SidebarContent, SidebarIcons } from '@components/SidebarContent';
-import { menuData1, MenuData2, menuIcons } from '@constant';
+import { MENU_DATA_1, MENU_DATA_2, MENU_ICONS } from '@constant';
 import { theme } from '@theme';
 
 import { SidebarProps } from './Sidebar.types';
@@ -21,11 +21,11 @@ import { SidebarProps } from './Sidebar.types';
 const SidebarComponent = () => (
     <StyledMainStack>
         <MuiStack spacing={6}>
-            <SidebarContent menu={menuData1} />
+            <SidebarContent menu={MENU_DATA_1} />
             <MuiDivider component="hr" />
-            <SidebarContent menu={MenuData2} />
+            <SidebarContent menu={MENU_DATA_2} />
         </MuiStack>
-        <SidebarIcons iconItems={menuIcons} />
+        <SidebarIcons iconItems={MENU_ICONS} />
     </StyledMainStack>
 );
 

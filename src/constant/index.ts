@@ -5,3 +5,4 @@ export { FONTWEIGHTS } from './fontConstant';
 export { USERS } from './userConstant';
 export { ICON_SIZE } from './sizeConstant';
 export * from './menuConstants';
+export { ITEM_DATA } from './imgConstant';

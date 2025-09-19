@@ -15,7 +15,7 @@ export const StyledAutocomplete = styled(MuiAutocomplete)(
             boxShadow: `0 ${typography.pxToRem(4)} ${typography.pxToRem(4)} ${palette.grey[400]}`,
         },
         '& .MuiOutlinedInput-root .MuiAutocomplete-input': {
-            padding: spacing(4, 0, 5),
+            padding: spacing(1, 0, 1.1),
         },
         '& .MuiOutlinedInput-notchedOutline': {
             border: `${typography.pxToRem(1)} solid ${palette.grey[200]}`,
