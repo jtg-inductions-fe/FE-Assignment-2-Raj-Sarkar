@@ -22,15 +22,13 @@ export const Home = () => {
                 gap={isDesktop ? 4 : 2}
                 marginTop={4}
             >
-                <MuiBox sx={{ flexGrow: 0, flexShrink: 0, flexBasis: 380 }}>
+                <MuiBox flexGrow={0} flexShrink={0} flexBasis={380}>
                     <Customer customerData={CUSTOMERS} isDesktop={isDesktop} />
                 </MuiBox>
                 <MuiBox
-                    sx={{
-                        flexGrow: isDesktop ? 1 : 0,
-                        flexShrink: 1,
-                        flexBasis: isDesktop ? 920 : 0,
-                    }}
+                    flexGrow={isDesktop ? 1 : 0}
+                    flexShrink={1}
+                    flexBasis={isDesktop ? 920 : 0}
                 >
                     <Product productData={PRODUCT_LIST} isDesktop={isDesktop} />
                 </MuiBox>
