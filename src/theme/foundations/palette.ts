@@ -21,6 +21,7 @@ export const palette: PaletteOptions = {
     },
     error: {
         main: '#9B1C1C',
+        light: '#FBD5D5',
     },
     info: {
         main: '#1E429F',

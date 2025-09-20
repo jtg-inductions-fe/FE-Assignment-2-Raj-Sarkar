@@ -8,9 +8,9 @@ const customProps: PropertyKey[] = ['size', 'customcolor'];
 
 export const StyledSvgIcon = styled(MuiSvgIcon, {
     shouldForwardProp: (prop) => !customProps.includes(prop),
-})<StyledSvgIconProps>(({ theme, size = 'sm', customcolor }) => ({
+})<StyledSvgIconProps>(({ size = 'sm' }) => ({
     fontSize: 'inherit',
     width: ICON_SIZE[size],
     height: ICON_SIZE[size],
-    color: customcolor ?? theme.palette.grey[900],
+    fill: 'none',
 }));

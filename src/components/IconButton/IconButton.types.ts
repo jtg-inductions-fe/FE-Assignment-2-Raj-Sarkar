@@ -1,21 +1,28 @@
-import { IconButtonProps } from '@mui/material';
+import { IconButtonProps as MuiIconButtonProps } from '@mui/material';
 
 import { ICON_SIZE } from '@constant';
+
+type CustomIconButtonProps = Omit<
+    MuiIconButtonProps,
+    'size' | 'color' | 'children'
+>;
+
 /**
  * Contains prop types for IconButton component
- * @param buttonsize - size of icon
- * @param customcolor - custom color of icon
- * @param hideinmobile - boolean status whether to hide icon in moile view or not
- * @param hideintablet - boolean status whether to hide icon in tablet view or not
- * @param showshadow - boolean status whether to add shadow or not
- * @param onClick - function to be done on click event
+ * @property buttonSize - size of icon
+ * @property showShadow - boolean status whether to add shadow or not
  */
-export type StyledIconButtonProps = IconButtonProps & {
+export type StyledIconButtonProps = CustomIconButtonProps & {
+    buttonSize?: keyof typeof ICON_SIZE;
+    showShadow?: boolean;
+};
+
+/**
+ * Types of props for IconButton component
+ * @property component - icon component to render
+ * @property customColor - custom color of icon
+ */
+export type IconButtonProps = StyledIconButtonProps & {
     component: React.ElementType;
-    buttonsize?: keyof typeof ICON_SIZE;
-    customcolor?: string;
-    hideinmobile?: boolean;
-    hideintablet?: boolean;
-    showshadow?: boolean;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    customColor?: string;
 };

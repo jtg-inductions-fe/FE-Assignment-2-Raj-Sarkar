@@ -11,13 +11,13 @@ import { NotFound } from '@pages';
 export const routes = createBrowserRouter([
     {
         path: ROUTE_PATH.HOME,
-        element: <Layout showSidebar={true} />,
+        element: <Layout showSidebar />,
         children: [{ index: true, element: <Home /> }],
     },
     {
         path: ROUTE_PATH.NOT_FOUND,
         element: (
-            <Layout showSidebar={false}>
+            <Layout>
                 <NotFound />
             </Layout>
         ),
