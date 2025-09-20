@@ -1,48 +1,26 @@
 /**
- * Contains types for a image item
- * @property img - image to render
- * @property title - title of image
- * @property desktopConfig - number of rows and cols the image will occupy in desktop
- * @property mobileConfig - number of rows and cols the image will occupy in mobile
- */
-export type ImgItem = {
-    img: string;
-    title: string;
-    desktopConfig: { rows: number; cols: number };
-    mobileConfig: { rows: number; cols: number };
-};
-
-/**
- * Contains types for the return object of srcset helper function
- * @property src - source of image
- * @property srcSet - srcSet prop of image
- */
-export type SrcSet = {
-    src: string;
-    srcSet: string;
-};
-
-/**
- * Contains types of all props of helper function
- * @property image - image to render
- * @property size - size of row height
- * @property rows - number of rows the image is occupying
- * @property cols - number of columns the image is occupying
- */
-export type SrcsetProps = {
-    image: string;
-    size: number;
-    rows: number;
-    cols: number;
-};
-
-/**
  *
- * Contains types of props for Image Grid cmponent
- * @property itemData - list of image items
- * @property isDesktop - boolean status whether it width is of desktop's or not
+ * Contains types of props for Image Grid component
+ * @property modifiedImageList - modified list of images for rendering image grid component
+ * @property cols - number cols in the grid
+ * @property rowHeight - height of each row in grid
+ * @property gap - gap between two rows
  */
 export type ImageGridProps = {
-    itemData: ImgItem[];
-    isDesktop: boolean;
+    modifiedImageList: ModifiedImgItem[];
+    cols: number;
+    rowHeight: number;
+    gap: number;
+};
+
+/**
+ * Type for modified mapped image data
+ * @property src - source of image
+ * @property title - title of image
+ * @property config - holds the number of rows & columns the image will take to render
+ */
+export type ModifiedImgItem = {
+    src: string;
+    title: string;
+    config: { rows: number; cols: number };
 };

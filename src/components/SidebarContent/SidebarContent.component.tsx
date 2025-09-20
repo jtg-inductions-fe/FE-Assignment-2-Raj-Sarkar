@@ -13,10 +13,9 @@ import {
     StyledListItemButton,
     StyledTypography,
 } from '@components/SidebarContent/SidebarContent.styles';
-import { handleClickOnListButton, navigateToPage } from '@helper';
 import { theme } from '@theme';
 
-import {
+import type {
     SidebarContentProps,
     SidebarIconsProps,
     SidebarItemProps,
@@ -35,25 +34,32 @@ const SidebarItem = (props: SidebarItemProps) => {
 
     const hasChildren = item.children ? item.children.length > 0 : false;
 
+    /**
+     *
+     * @description - handles click event on a menu item.
+     * If there is children then open/close child list , otherwise navigate to the destination path route.
+     * Also toggle the selected state when clicking
+     */
+    const handleMenuItemClick = () => {
+        setSelected((prev) => !prev);
+        if (hasChildren) {
+            setOpen((prev) => !prev);
+        } else {
+            void navigate(item.to ? item.to : '/');
+        }
+    };
+
     return (
         <>
             <StyledListItemButton
                 selected={selected}
-                onClick={() =>
-                    handleClickOnListButton({
-                        hasChildren,
-                        setOpen,
-                        navigate,
-                        item,
-                        setSelected,
-                    })
-                }
+                onClick={handleMenuItemClick}
             >
                 <MuiStack direction={'row'} spacing={4}>
                     {item.icon && (
                         <Icon
                             component={item.icon}
-                            customcolor={
+                            htmlColor={
                                 selected
                                     ? theme.palette.primary.main
                                     : theme.palette.grey[900]
@@ -123,7 +129,7 @@ export const SidebarIcons = (props: SidebarIconsProps) => {
                     key={icon.id}
                     aria-label={icon.label}
                     component={icon.icon}
-                    onClick={() => navigateToPage({ navigate, path: icon.to })}
+                    onClick={() => void navigate(icon.to)}
                 />
             ))}
         </MuiStack>

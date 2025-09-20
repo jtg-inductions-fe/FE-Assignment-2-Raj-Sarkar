@@ -1,4 +1,9 @@
-import { Stack as MuiStack, styled } from '@mui/material';
+import {
+    Avatar as MuiAvatar,
+    AvatarProps as MuiAvatarProps,
+    Stack as MuiStack,
+    styled,
+} from '@mui/material';
 
 export const StyledHeaderStack = styled(MuiStack)(
     ({ theme: { palette, typography, breakpoints, spacing } }) => ({
@@ -13,6 +18,20 @@ export const StyledHeaderStack = styled(MuiStack)(
         borderBottom: `${typography.pxToRem(1)} solid ${palette.grey[200]}`,
         [breakpoints.up('sm')]: {
             padding: spacing(3, 5),
+        },
+    }),
+);
+
+export const StyledAvatar = styled(MuiAvatar)<MuiAvatarProps>(
+    ({ theme: { spacing, palette } }) => ({
+        width: 32,
+        height: 32,
+        cursor: 'pointer',
+        border: 'none',
+        outline: 'none',
+        padding: 0,
+        '&:focus': {
+            outline: `${spacing(0.25)} solid ${palette.grey[900]}`,
         },
     }),
 );

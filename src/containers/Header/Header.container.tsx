@@ -3,103 +3,87 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
-    Avatar as MuiAvatar,
     Box as MuiBox,
     Popover as MuiPopover,
     Stack as MuiStack,
     Typography as MuiTypography,
+    useMediaQuery,
 } from '@mui/material';
 
 import Bell from '@assets/icons/bell.svg?react';
 import Logo from '@assets/icons/logo.svg?react';
 import Menu from '@assets/icons/menu.svg?react';
 import ProfileImg from '@assets/imgs/avatar_1.png';
-import { StyledHeaderStack } from '@components/Header/Header.styles';
 import { IconButton } from '@components/IconButton';
 import { Searchbar } from '@components/Searchbar';
-import { PRODUCT_LIST, ROUTE_PATH } from '@constant';
-import { navigateToPage } from '@helper';
+import { PRODUCT_LIST } from '@constant';
 import { userDetails } from '@store';
+import { theme } from '@theme';
 
-import { HeaderProps } from './Header.types';
+import { StyledAvatar, StyledHeaderStack } from './Header.styles';
+import type { HeaderProps } from './Header.types';
 
 /**
  *
  * @param onMenuClick - Function to handle click on menu bar
- * @returns Header component that contains icons , searchbar and avatar
+ * @returns Header container that contains icons , searchbar and avatar
  */
 export const Header = (props: HeaderProps) => {
     const { onMenuClick } = props;
     const navigate = useNavigate();
-    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
+    const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
 
     return (
         <StyledHeaderStack>
             <MuiStack
                 direction={'row'}
-                sx={{
-                    justifyContent: 'start',
-                    alignItems: 'center',
-                    gap: 8,
-                    flexGrow: 1,
-                }}
+                justifyContent={'start'}
+                alignItems={'center'}
+                gap={8}
+                flexGrow={1}
             >
-                <IconButton
-                    component={Menu}
-                    aria-label="Open Menu"
-                    hideintablet={true}
-                    buttonsize={'md'}
-                    onClick={onMenuClick}
-                />
-                <IconButton
-                    aria-label="Go to home"
-                    component={Logo}
-                    buttonsize={'lg'}
-                    hideinmobile={true}
-                    showshadow={true}
-                    onClick={() =>
-                        navigateToPage({ navigate, path: ROUTE_PATH.HOME })
-                    }
-                />
+                {!isDesktop && (
+                    <IconButton
+                        component={Menu}
+                        aria-label="Open Menu"
+                        buttonSize={'md'}
+                        onClick={onMenuClick}
+                    />
+                )}
+                {isDesktop && (
+                    <IconButton
+                        aria-label="Go to home"
+                        component={Logo}
+                        buttonSize={'lg'}
+                        showShadow={true}
+                        onClick={() => void navigate('/')}
+                    />
+                )}
                 <Searchbar productList={PRODUCT_LIST} freesolo />
             </MuiStack>
             <MuiStack
                 direction="row"
                 spacing={3}
-                sx={{
-                    justifyContent: 'end',
-                    alignItems: 'center',
-                    flexGrow: 2,
-                }}
+                justifyContent={'end'}
+                alignItems={'center'}
+                flexGrow={2}
             >
                 <IconButton
                     component={Bell}
                     aria-label="Go to notifications"
-                    showshadow={true}
-                    onClick={() =>
-                        navigateToPage({
-                            navigate,
-                            path: ROUTE_PATH.NOTIFICATIONS,
-                        })
-                    }
+                    showShadow={true}
+                    customColor={theme.palette.grey[900]}
+                    onClick={() => void navigate('/notification')}
                 />
                 <MuiBox>
-                    <MuiAvatar
+                    <StyledAvatar
                         src={ProfileImg}
                         alt=""
                         component={'button'}
-                        type="button"
                         aria-label="See user details"
-                        sx={{
-                            width: 32,
-                            height: 32,
-                            cursor: 'pointer',
-                            border: 'none',
-                            outline: 'none',
-                            p: 0,
-                        }}
                         aria-describedby={id}
                         onClick={(e) => setAnchorEl(e.currentTarget)}
                     />
@@ -117,7 +101,7 @@ export const Header = (props: HeaderProps) => {
                             horizontal: 'center',
                         }}
                     >
-                        <MuiBox sx={{ p: 2 }}>
+                        <MuiBox padding={3}>
                             <MuiTypography variant="h3">
                                 {userDetails?.username}
                             </MuiTypography>

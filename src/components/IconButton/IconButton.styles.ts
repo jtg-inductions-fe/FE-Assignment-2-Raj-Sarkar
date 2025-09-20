@@ -2,38 +2,19 @@ import { IconButton as MuiIconButton, styled } from '@mui/material';
 
 import { ICON_SIZE } from '@constant';
 
-import { StyledIconButtonProps } from './IconButton.types';
+import type { StyledIconButtonProps } from './IconButton.types';
 
-const customProps: PropertyKey[] = [
-    'buttonsize',
-    'customcolor',
-    'component',
-    'hideinmobile',
-    'hideintablet',
-    'showshadow',
-];
+const customProps: PropertyKey[] = ['buttonSize', 'showShadow'];
 
 export const StyledIconButton = styled(MuiIconButton, {
     shouldForwardProp: (prop) => !customProps.includes(prop),
 })<StyledIconButtonProps>(
-    ({
-        theme,
-        buttonsize = 'sm',
-        customcolor,
-        hideinmobile = false,
-        hideintablet = false,
-        showshadow = false,
-    }) => ({
-        width: ICON_SIZE[buttonsize],
-        height: ICON_SIZE[buttonsize],
-        color: customcolor ?? theme.palette.grey[900],
+    ({ theme, buttonSize = 'sm', showShadow = false }) => ({
+        width: ICON_SIZE[buttonSize],
+        height: ICON_SIZE[buttonSize],
         padding: theme.spacing(1),
-        boxShadow: showshadow
+        boxShadow: showShadow
             ? `0 ${theme.typography.pxToRem(4)} ${theme.typography.pxToRem(4)} ${theme.palette.grey[400]}`
             : '',
-        display: hideinmobile ? 'none' : 'inline-flex',
-        [theme.breakpoints.up('sm')]: {
-            display: hideintablet ? 'none' : 'inline-flex',
-        },
     }),
 );

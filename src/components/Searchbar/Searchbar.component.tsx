@@ -5,10 +5,9 @@ import { Typography as MuiTypography } from '@mui/material';
 
 import Search from '@assets/icons/search.svg?react';
 import { Icon } from '@components/Icon';
-import { handleInputChange, handleOptionChange } from '@helper';
 
 import { StyledAutocomplete } from './Searchbar.styles';
-import { SearchBarProps } from './Searchbar.types';
+import type { SearchBarProps } from './Searchbar.types';
 
 /**
  *
@@ -20,9 +19,38 @@ export const Searchbar = (props: SearchBarProps) => {
     const { freesolo, productList } = props;
     const navigate = useNavigate();
 
+    /**
+     *
+     * Clicking on a product will redirect to that page
+     * @param selectedOption - value of input box
+     */
+    const handleOptionChange = (selectedOption: string) => {
+        const prod = productList.find(
+            (product) =>
+                product.name.toLocaleLowerCase() ===
+                selectedOption.toLocaleLowerCase(),
+        );
+        if (prod) {
+            void navigate(prod.to);
+        } else {
+            void navigate(`/${selectedOption.toLocaleLowerCase()}`);
+        }
+    };
+
+    /**
+     *
+     * Re-direct to home route when Input field is empty
+     * @param inputValue - value of input box
+     */
+    const handleInputChange = (inputValue: string) => {
+        if (!inputValue) {
+            void navigate('/');
+        }
+    };
+
     return (
         <StyledAutocomplete
-            id="free-solo-demo"
+            id="searchbar"
             freeSolo={freesolo}
             options={productList.map((prod) => prod.name)}
             renderInput={(params) => (
@@ -40,18 +68,13 @@ export const Searchbar = (props: SearchBarProps) => {
                     }
                 />
             )}
-            onChange={(e, value) => {
+            onChange={(_, value) => {
                 if (typeof value === 'string') {
-                    handleOptionChange({
-                        e,
-                        value,
-                        productList,
-                        navigate,
-                    });
+                    handleOptionChange(value);
                 }
             }}
-            onInputChange={(e, value) => {
-                handleInputChange({ e, value, navigate });
+            onInputChange={(_, value) => {
+                handleInputChange(value);
             }}
         />
     );

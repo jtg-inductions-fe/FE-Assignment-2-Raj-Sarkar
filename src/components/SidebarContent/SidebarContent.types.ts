@@ -1,5 +1,3 @@
-import { NavigateFunction } from 'react-router-dom';
-
 /**
  * Contains types for the menu item data
  * @property id - id of item
@@ -54,21 +52,6 @@ export type SidebarContentProps = {
  */
 export type SidebarIconsProps = {
     iconItems: MenuIcon[];
-};
-
-/**
- * Contains types of props for handle click event on menu item
- * @property hasChildren - boolean sattus of whether it has children or not
- * @property navigate - function for navigation
- * @property item - menu item
- * @property setSelected - function to change to select state
- */
-export type HandleClickOnListButtonProps = {
-    hasChildren: boolean;
-    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    navigate: NavigateFunction;
-    item: MenuItem;
-    setSelected: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 /**

@@ -52,6 +52,14 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
         fontSize: typographyUtil.pxToRem(16),
         fontWeight: FONTWEIGHTS.fontWeightLight,
     },
+    subtitle1: {
+        fontSize: typographyUtil.pxToRem(14),
+        fontWeight: FONTWEIGHTS.fontWeightMedium,
+    },
+    subtitle2: {
+        fontSize: typographyUtil.pxToRem(14),
+        fontWeight: FONTWEIGHTS.fontWeightLight,
+    },
     body2: {
         fontSize: typographyUtil.pxToRem(12),
         fontWeight: FONTWEIGHTS.fontWeightLight,

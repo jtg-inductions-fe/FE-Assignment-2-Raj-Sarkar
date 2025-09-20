@@ -3,60 +3,35 @@ import {
     ImageListItem as MuiImageListItem,
 } from '@mui/material';
 
-import { srcset } from '@helper';
-
-import { ImageGridProps } from './ImageGrid.types';
+import type { ImageGridProps } from './ImageGrid.types';
 
 /**
  *
- * @param itemData - list of image items data
- * @param isDesktop - boolean status whether it width is of desktop's or not
+ * @param modifiedImageList - modified list of images for rendering image grid component
+ * @param cols - number cols in the grid
+ * @param rowHeight - height of each row in grid
+ * @param gap - gap between two rows
  * @returns Component to render the image items using
  */
 export const ImageGrid = (props: ImageGridProps) => {
-    const { itemData, isDesktop } = props;
-    const data = isDesktop ? itemData : [itemData[2], itemData[3], itemData[1]];
+    const { modifiedImageList, cols, rowHeight, gap } = props;
 
     return (
         <MuiImageList
             variant="quilted"
-            cols={isDesktop ? 16 : 1}
-            rowHeight={isDesktop ? 3.6 : 112}
-            gap={45}
+            cols={cols}
+            rowHeight={rowHeight}
+            gap={gap}
         >
-            {data.map((item, index) => {
-                const value = srcset({
-                    image: item.img,
-                    size: 121,
-                    cols: isDesktop
-                        ? item.desktopConfig.cols
-                        : item.mobileConfig.cols,
-                    rows: isDesktop
-                        ? item.desktopConfig.rows
-                        : item.mobileConfig.rows,
-                });
-                return (
-                    <MuiImageListItem
-                        key={index}
-                        cols={
-                            isDesktop
-                                ? item.desktopConfig.cols
-                                : item.mobileConfig.cols
-                        }
-                        rows={
-                            isDesktop
-                                ? item.desktopConfig.rows
-                                : item.mobileConfig.rows
-                        }
-                    >
-                        <img
-                            src={value.src}
-                            srcSet={value.srcSet}
-                            alt={item.title}
-                        />
-                    </MuiImageListItem>
-                );
-            })}
+            {modifiedImageList.map((item, index) => (
+                <MuiImageListItem
+                    key={index}
+                    cols={item.config.cols}
+                    rows={item.config.rows}
+                >
+                    <img src={item.src} alt={item.title} />
+                </MuiImageListItem>
+            ))}
         </MuiImageList>
     );
 };
