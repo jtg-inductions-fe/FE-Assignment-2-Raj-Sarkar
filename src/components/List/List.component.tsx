@@ -1,9 +1,6 @@
-import {
-    Box as MuiBox,
-    Divider as MuiDivider,
-    Stack as MuiList,
-} from '@mui/material';
+import { Divider as MuiDivider, Stack as MuiList } from '@mui/material';
 
+import { StyledBox } from './List.styles';
 import type { ListContentProps } from './List.types';
 
 /**
@@ -19,10 +16,10 @@ export const List = (props: ListContentProps) => {
     return (
         <MuiList role="list">
             {listData.map((item, index) => (
-                <MuiBox key={item.id} role="listitem">
+                <StyledBox key={item.id} role="listitem" component="li">
                     <RenderItem item={item} />
                     {index < length - 1 && <MuiDivider component="hr" />}
-                </MuiBox>
+                </StyledBox>
             ))}
         </MuiList>
     );

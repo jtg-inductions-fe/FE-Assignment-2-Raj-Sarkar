@@ -11,3 +11,11 @@ export type ListContentProps = {
     listData: CustomerItem[] | ProductItem[];
     RenderItem: React.FC<ListItemProps>;
 };
+
+/**
+ * Types of props of styled box
+ * @property component - component to render as the box
+ */
+export type StyledBoxProps = {
+    component: string;
+};

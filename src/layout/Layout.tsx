@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Outlet } from 'react-router-dom';
 
-import { Box, Stack } from '@mui/material';
+import { Box as MuiBox, Stack as MuiStack } from '@mui/material';
 
 import { Header } from '@containers/Header';
 import { Sidebar } from '@containers/Sidebar';
@@ -20,17 +20,15 @@ const Layout = (props: LayoutProps) => {
     const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
     return (
-        <Box>
+        <MuiBox maxWidth={1800} mx={'auto'}>
             <Header onMenuClick={toggleSidebar} />
-            <Stack direction="row">
+            <MuiStack direction="row">
                 {showSidebar && (
                     <Sidebar open={sidebarOpen} onClose={toggleSidebar} />
                 )}
-                <Box component={'main'} maxWidth={1600} mx={'auto'}>
-                    {children ?? <Outlet />}
-                </Box>
-            </Stack>
-        </Box>
+                <MuiBox component={'main'}>{children ?? <Outlet />}</MuiBox>
+            </MuiStack>
+        </MuiBox>
     );
 };
 
