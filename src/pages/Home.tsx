@@ -1,11 +1,14 @@
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
+import { TableRow } from '@components/TableRow/TableRow.component';
 import { CUSTOMERS, ITEM_DATA, PRODUCT_LIST } from '@constant';
 import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
 import { ImageGrid } from '@containers/ImageGrid';
 import { Product } from '@containers/Product';
+import { Transaction } from '@containers/Table/Transaction.container';
 import { salesDataset } from '@models';
+import { ColumnData, transactionDetails } from '@store';
 import { theme } from '@theme';
 
 /**
@@ -32,6 +35,12 @@ export const Home = () => {
                     <Product productData={PRODUCT_LIST} isDesktop={isDesktop} />
                 </MuiBox>
             </MuiStack>
+            <Transaction
+                transactionData={transactionDetails}
+                isDesktop={isDesktop}
+                RowRenderer={TableRow}
+                columnData={ColumnData}
+            />
         </MuiBox>
     );
 };

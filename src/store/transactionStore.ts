@@ -1,6 +1,6 @@
-import type { transactionItem } from 'types/transactionItem.type';
+import type { ColumnType, TransactionItem } from '@types';
 
-export const transactionDetails: transactionItem[] = [
+export const transactionDetails: TransactionItem[] = [
     {
         transactionId: 'transaction-1',
         name: 'Bonnie Green',
@@ -56,3 +56,30 @@ export const transactionDetails: transactionItem[] = [
         transactionStatus: 2,
     },
 ] as const;
+
+export const ColumnData: ColumnType[] = [
+    {
+        id: 'col-1',
+        title: 'Transaction',
+        width: '21%',
+        showInMobile: true,
+    },
+    {
+        id: 'col-2',
+        title: 'Date & time',
+        width: '28%',
+        showInMobile: true,
+    },
+    {
+        id: 'col-3',
+        title: 'Amount',
+        width: '32%',
+        showInMobile: false,
+    },
+    {
+        id: 'col-4',
+        title: 'Status',
+        width: '19%',
+        showInMobile: false,
+    },
+];

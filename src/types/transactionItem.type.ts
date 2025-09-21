@@ -17,3 +17,17 @@ export type TransactionItem = {
     transactionType: 1 | 2;
     transactionStatus: 1 | 2 | 3;
 };
+
+/**
+ * Types of props for column data
+ * @property id - id of column
+ * @property title - title of column
+ * @property width - width of column
+ * @property showInMobile - boolean value to show/hide in mobile
+ */
+export type ColumnType = {
+    id: string;
+    title: string;
+    width: string;
+    showInMobile: boolean;
+};
