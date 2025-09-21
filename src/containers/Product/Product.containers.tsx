@@ -14,11 +14,7 @@ export const Product = (props: ProductProps) => {
     const { productData, isDesktop } = props;
 
     return (
-        <Card
-            padding={isDesktop ? 'lg' : 'md'}
-            gap={'sm'}
-            heading="Top products"
-        >
+        <Card size={isDesktop ? 'lg' : 'md'} gap={'sm'} heading="Top products">
             <List listData={productData} RenderItem={ListItem} />
         </Card>
     );

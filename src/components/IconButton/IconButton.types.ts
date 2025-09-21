@@ -11,10 +11,12 @@ type CustomIconButtonProps = Omit<
  * Contains prop types for IconButton component
  * @property buttonSize - size of icon
  * @property showShadow - boolean status whether to add shadow or not
+ * @property padding - padding of button
  */
 export type StyledIconButtonProps = CustomIconButtonProps & {
     buttonSize?: keyof typeof ICON_SIZE;
     showShadow?: boolean;
+    padding?: number;
 };
 
 /**

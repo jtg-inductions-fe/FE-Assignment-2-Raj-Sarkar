@@ -1,4 +1,4 @@
-export const CONTAINER_PADDING = {
+export const PADDING_TO_SIZE_MAP = {
     sm: 2,
     md: 4,
     lg: 6,

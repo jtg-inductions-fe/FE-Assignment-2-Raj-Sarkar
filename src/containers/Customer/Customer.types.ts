@@ -1,19 +1,4 @@
-/**
- * Types for customer details
- * @property id - customer id
- * @property avatar - image of customer
- * @property username - name of customer
- * @property email - email of customer
- * @property sales - amount of sales of customer
- */
-export type CustomerItem = {
-    id: string;
-    avatar: string;
-    username: string;
-    email: string;
-    sales: number;
-    kind: 'customer';
-};
+import { ListItem } from '@types';
 
 /**
  * Props types for customer component
@@ -21,7 +6,7 @@ export type CustomerItem = {
  * @property isDesktop -  boolean value view width is desktop or not
  */
 export type CustomerProps = {
-    customerData: CustomerItem[];
+    customerData: ListItem[];
     isDesktop: boolean;
 };
 
@@ -30,5 +15,5 @@ export type CustomerProps = {
  * @property customerData - list of customer details
  */
 export type CustomerContentProps = {
-    customerData: CustomerItem[];
+    customerData: ListItem[];
 };

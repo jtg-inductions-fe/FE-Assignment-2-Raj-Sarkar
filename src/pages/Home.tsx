@@ -1,9 +1,10 @@
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
-import { CUSTOMERS, ITEM_DATA } from '@constant';
+import { CUSTOMERS, ITEM_DATA, PRODUCT_LIST } from '@constant';
 import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
 import { ImageGrid } from '@containers/ImageGrid';
+import { Product } from '@containers/Product';
 import { salesDataset } from '@models';
 import { theme } from '@theme';
 
@@ -18,10 +19,18 @@ export const Home = () => {
             <Chart isDesktop={isDesktop} salesData={salesDataset} />
             <MuiStack
                 direction={isDesktop ? 'row' : 'column'}
-                gap={4}
-                marginTop={4}
+                gap={isDesktop ? 4 : 0}
             >
-                <Customer customerData={CUSTOMERS} isDesktop={isDesktop} />
+                <MuiBox flexGrow={0} flexShrink={0} flexBasis={380}>
+                    <Customer customerData={CUSTOMERS} isDesktop={isDesktop} />
+                </MuiBox>
+                <MuiBox
+                    flexGrow={isDesktop ? 1 : 0}
+                    flexShrink={1}
+                    flexBasis={isDesktop ? 920 : 0}
+                >
+                    <Product productData={PRODUCT_LIST} isDesktop={isDesktop} />
+                </MuiBox>
             </MuiStack>
         </MuiBox>
     );

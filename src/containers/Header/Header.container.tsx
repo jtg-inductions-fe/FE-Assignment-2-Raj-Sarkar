@@ -66,16 +66,17 @@ export const Header = (props: HeaderProps) => {
             </MuiStack>
             <MuiStack
                 direction="row"
-                spacing={3}
                 justifyContent={'end'}
                 alignItems={'center'}
                 flexGrow={2}
+                spacing={isDesktop ? 3 : 1}
             >
                 <IconButton
                     component={Bell}
                     aria-label="Go to notifications"
-                    showShadow={true}
+                    showShadow={isDesktop}
                     customColor={theme.palette.grey[900]}
+                    padding={8}
                     onClick={() => void navigate('/notification')}
                 />
                 <MuiBox>

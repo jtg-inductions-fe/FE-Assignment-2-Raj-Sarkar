@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Collapse as MuiCollapse, Stack as MuiStack } from '@mui/material';
 
+import { Badge } from '@components/Badge';
 import { Icon } from '@components/Icon';
 import { IconButton } from '@components/IconButton';
 import {
-    StyledBadge,
     StyledList,
     StyledListItemButton,
     StyledTypography,
@@ -30,9 +30,9 @@ const SidebarItem = (props: SidebarItemProps) => {
     const { item } = props;
     const [open, setOpen] = useState<boolean>(false);
     const navigate = useNavigate();
-    const [selected, setSelected] = useState<boolean>(false);
-
+    const location = useLocation();
     const hasChildren = item.children ? item.children.length > 0 : false;
+    const isActive = location.pathname === item.to;
 
     /**
      *
@@ -40,8 +40,7 @@ const SidebarItem = (props: SidebarItemProps) => {
      * If there is children then open/close child list , otherwise navigate to the destination path route.
      * Also toggle the selected state when clicking
      */
-    const handleMenuItemClick = () => {
-        setSelected((prev) => !prev);
+    const handleClickOnListButton = () => {
         if (hasChildren) {
             setOpen((prev) => !prev);
         } else {
@@ -51,16 +50,13 @@ const SidebarItem = (props: SidebarItemProps) => {
 
     return (
         <>
-            <StyledListItemButton
-                selected={selected}
-                onClick={handleMenuItemClick}
-            >
+            <StyledListItemButton onClick={handleClickOnListButton}>
                 <MuiStack direction={'row'} spacing={4}>
                     {item.icon && (
                         <Icon
                             component={item.icon}
                             htmlColor={
-                                selected
+                                isActive
                                     ? theme.palette.primary.main
                                     : theme.palette.grey[900]
                             }
@@ -70,7 +66,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                         variant="h3"
                         hasicon={!!item.icon}
                         color={
-                            selected
+                            isActive
                                 ? theme.palette.primary.main
                                 : theme.palette.grey[900]
                         }
@@ -79,7 +75,7 @@ const SidebarItem = (props: SidebarItemProps) => {
                     </StyledTypography>
                 </MuiStack>
                 {item.count !== undefined && (
-                    <StyledBadge variant="body2">{item.count}</StyledBadge>
+                    <Badge type="error" content={item.count} />
                 )}
                 {hasChildren && (open ? <ExpandLess /> : <ExpandMore />)}
             </StyledListItemButton>
