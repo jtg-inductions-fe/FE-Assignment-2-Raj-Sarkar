@@ -12,7 +12,7 @@ export const StyledContainer = styled(MuiContainer, {
     ({ theme: { palette, spacing, typography }, size = 'md' }) => ({
         backgroundColor: palette.primary.light,
         borderRadius: spacing(4),
-        marginTop: spacing(8),
+        marginTop: spacing(4),
         boxShadow: `0 ${typography.pxToRem(1)} ${typography.pxToRem(3)} ${palette.grey[200]}`,
         '&.MuiContainer-root': {
             padding: spacing(PADDING_TO_SIZE_MAP[size]),

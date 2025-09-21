@@ -19,8 +19,7 @@ export const Home = () => {
             <Chart isDesktop={isDesktop} salesData={salesDataset} />
             <MuiStack
                 direction={isDesktop ? 'row' : 'column'}
-                gap={isDesktop ? 4 : 2}
-                marginTop={4}
+                gap={isDesktop ? 4 : 0}
             >
                 <MuiBox flexGrow={0} flexShrink={0} flexBasis={380}>
                     <Customer customerData={CUSTOMERS} isDesktop={isDesktop} />

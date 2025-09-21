@@ -47,7 +47,7 @@ export const Card = (props: CardProps) => {
     const open = Boolean(anchorEl);
 
     return (
-        <StyledContainer size={size}>
+        <StyledContainer size={size} maxWidth={false}>
             <MuiStack direction={'column'} spacing={CONTAINER_GAP[gap]}>
                 <MuiBox>
                     <MuiStack direction={'row'} spacing={3}>
