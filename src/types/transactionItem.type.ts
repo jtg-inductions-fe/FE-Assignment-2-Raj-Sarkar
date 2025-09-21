@@ -22,12 +22,28 @@ export type TransactionItem = {
  * Types of props for column data
  * @property id - id of column
  * @property title - title of column
- * @property width - width of column
+ * @property desktopConfig - width of column in desktop
+ * @property mobileConfig - width of column in mobile
  * @property showInMobile - boolean value to show/hide in mobile
  */
 export type ColumnType = {
     id: string;
     title: string;
-    width: string;
     showInMobile: boolean;
+    desktopConfig: { width: string };
+    mobileConfig: { width: string };
+};
+
+/**
+ * Types of props for column data
+ * @property id - id of column
+ * @property title - title of column
+ * @property width - width of column
+ * @property showInMobile - boolean value to show/hide in mobile
+ */
+export type ModifiedColumnType = {
+    id: string;
+    title: string;
+    showInMobile: boolean;
+    width: string;
 };

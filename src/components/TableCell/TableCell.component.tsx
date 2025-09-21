@@ -32,6 +32,7 @@ export const TableCell = (props: TableCellProps) => {
         contentHeading,
         isBgGrey = false,
         showBorder = false,
+        isDesktop,
     } = props;
 
     return (
@@ -41,10 +42,13 @@ export const TableCell = (props: TableCellProps) => {
             isBgGrey={isBgGrey}
         >
             {contentNormal && (
-                <MuiTypography variant="subtitle2">
+                <MuiTypography variant={isDesktop ? 'subtitle2' : 'body2'}>
                     {contentNormal}
                     {contentBold && (
-                        <MuiTypography component="span" variant="subtitle1">
+                        <MuiTypography
+                            component="span"
+                            variant={isDesktop ? 'subtitle1' : 'body1'}
+                        >
                             {contentBold}
                         </MuiTypography>
                     )}
@@ -52,7 +56,7 @@ export const TableCell = (props: TableCellProps) => {
             )}
             {contentLight && (
                 <MuiTypography
-                    variant="subtitle1"
+                    variant={isDesktop ? 'subtitle1' : 'body2'}
                     color={theme.palette.grey[500]}
                 >
                     {contentLight}

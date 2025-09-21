@@ -61,25 +61,29 @@ export const ColumnData: ColumnType[] = [
     {
         id: 'col-1',
         title: 'TRANSACTION',
-        width: '21%',
+        desktopConfig: { width: '21%' },
+        mobileConfig: { width: '70%' },
         showInMobile: true,
     },
     {
         id: 'col-2',
         title: 'DATE & TIME',
-        width: '28%',
+        desktopConfig: { width: '28%' },
+        mobileConfig: { width: '30%' },
         showInMobile: true,
     },
     {
         id: 'col-3',
         title: 'AMOUNT',
-        width: '32%',
+        desktopConfig: { width: '32%' },
+        mobileConfig: { width: '32%' },
         showInMobile: false,
     },
     {
         id: 'col-4',
         title: 'STATUS',
-        width: '19%',
+        desktopConfig: { width: '19%' },
+        mobileConfig: { width: '19%' },
         showInMobile: false,
     },
 ];

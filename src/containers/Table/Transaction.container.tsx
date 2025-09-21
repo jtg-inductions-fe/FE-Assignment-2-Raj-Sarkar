@@ -7,6 +7,7 @@ import {
 
 import { Card } from '@components/Card';
 import { TableCell } from '@components/TableCell';
+import type { ModifiedColumnType } from '@types';
 
 import type { TableProps, TransactionProps } from './Transaction.types';
 
@@ -18,7 +19,7 @@ import type { TableProps, TransactionProps } from './Transaction.types';
  * @returns component to render transaction data
  */
 const Table = (props: TableProps) => {
-    const { transactionData, columnData, RowRenderer } = props;
+    const { transactionData, columnData, RowRenderer, isDesktop } = props;
 
     return (
         <MuiTable>
@@ -31,6 +32,7 @@ const Table = (props: TableProps) => {
                             contentHeading={item.title}
                             isBgGrey={true}
                             showBorder={true}
+                            isDesktop={isDesktop}
                         />
                     ))}
                 </MuiTableRow>
@@ -41,6 +43,7 @@ const Table = (props: TableProps) => {
                         key={item.transactionId}
                         rowItem={item}
                         columnData={columnData}
+                        isDesktop={isDesktop}
                     />
                 ))}
             </MuiTableBody>
@@ -58,9 +61,19 @@ const Table = (props: TableProps) => {
  */
 export const Transaction = (props: TransactionProps) => {
     const { isDesktop, transactionData, columnData, RowRenderer } = props;
-    const modifiedColunData = isDesktop
+    const visibleColunData = isDesktop
         ? columnData
         : columnData.filter((item) => item.showInMobile);
+    const modifiedColunData: ModifiedColumnType[] = visibleColunData.map(
+        (item) => ({
+            id: item.id,
+            title: item.title,
+            showInMobile: item.showInMobile,
+            width: isDesktop
+                ? item.desktopConfig.width
+                : item.mobileConfig.width,
+        }),
+    );
     return (
         <Card
             heading="Transaction"
@@ -70,6 +83,7 @@ export const Transaction = (props: TransactionProps) => {
                 columnData={modifiedColunData}
                 transactionData={transactionData}
                 RowRenderer={RowRenderer}
+                isDesktop={isDesktop}
             />
         </Card>
     );

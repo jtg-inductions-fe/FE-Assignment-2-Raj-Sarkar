@@ -10,7 +10,7 @@ import type { TableRowProps } from './TableRow.types';
  * @returns component for rendering a row
  */
 export const TableRow = (props: TableRowProps) => {
-    const { rowItem, columnData } = props;
+    const { rowItem, columnData, isDesktop } = props;
 
     const formatDate = (isoString: string) => {
         const date = new Date(isoString);
@@ -32,6 +32,7 @@ export const TableRow = (props: TableRowProps) => {
                                 key={'name'}
                                 contentNormal={`Payment ${rowItem.transactionType == 1 ? 'from' : 'refund to'} `}
                                 contentBold={rowItem.name}
+                                isDesktop={isDesktop}
                             />
                         );
                     case 'DATE & TIME':
@@ -39,6 +40,7 @@ export const TableRow = (props: TableRowProps) => {
                             <TableCell
                                 key={'date-time'}
                                 contentLight={formatDate(rowItem.time)}
+                                isDesktop={isDesktop}
                             />
                         );
                     case 'AMOUNT':
@@ -46,6 +48,7 @@ export const TableRow = (props: TableRowProps) => {
                             <TableCell
                                 key={'amount'}
                                 contentLarge={`${rowItem.transactionType === 2 ? '-' : ''} ${rowItem.currency}${rowItem.amount}`}
+                                isDesktop={isDesktop}
                             />
                         );
                     case 'STATUS':
@@ -66,6 +69,7 @@ export const TableRow = (props: TableRowProps) => {
                                           ? 'success'
                                           : 'error'
                                 }
+                                isDesktop={isDesktop}
                             />
                         );
                     default:

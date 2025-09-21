@@ -20,6 +20,7 @@ export type StyledTableCellProps = {
  * @param badgeContent - content of badge
  * @param badgeType - type of badge
  * @param contentHeading - content of heading
+ * @property isDesktop - boolean value of view width is of desktop or not
  */
 export type TableCellProps = StyledTableCellProps &
     MuiTableCellProps & {
@@ -31,4 +32,5 @@ export type TableCellProps = StyledTableCellProps &
         contentHeading?: string;
         badgeContent?: string;
         badgeType?: 'error' | 'success' | 'info';
+        isDesktop: boolean;
     };
