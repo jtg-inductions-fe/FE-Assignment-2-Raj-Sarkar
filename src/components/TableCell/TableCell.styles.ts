@@ -11,6 +11,6 @@ export const StyledTableCell = styled(MuiTableCell, {
         borderBottom: showBorder
             ? `${typography.pxToRem(1)} solid ${palette.grey[200]}`
             : 'none',
-        backgroundColor: isBgGrey ? palette.grey[50] : 'none',
+        backgroundColor: isBgGrey ? palette.grey[50] : 'transparent',
     }),
 );

@@ -25,36 +25,36 @@ export const TableRow = (props: TableRowProps) => {
     return (
         <StyledTableRow>
             {columnData.map((col) => {
-                switch (col.title) {
-                    case 'TRANSACTION':
+                switch (col.id) {
+                    case 'col-1':
                         return (
                             <TableCell
-                                key={'name'}
-                                contentNormal={`Payment ${rowItem.transactionType == 1 ? 'from' : 'refund to'} `}
+                                key={col.id}
+                                contentNormal={`Payment ${rowItem.transactionType === 1 ? 'from' : 'refund to'} `}
                                 contentBold={rowItem.name}
                                 isDesktop={isDesktop}
                             />
                         );
-                    case 'DATE & TIME':
+                    case 'col-2':
                         return (
                             <TableCell
-                                key={'date-time'}
+                                key={col.id}
                                 contentLight={formatDate(rowItem.time)}
                                 isDesktop={isDesktop}
                             />
                         );
-                    case 'AMOUNT':
+                    case 'col-3':
                         return (
                             <TableCell
-                                key={'amount'}
-                                contentLarge={`${rowItem.transactionType === 2 ? '-' : ''} ${rowItem.currency}${rowItem.amount}`}
+                                key={col.id}
+                                contentLarge={`${rowItem.transactionType === 2 ? '-' : ''}${rowItem.currency}${rowItem.amount}`}
                                 isDesktop={isDesktop}
                             />
                         );
-                    case 'STATUS':
+                    case 'col-4':
                         return (
                             <TableCell
-                                key={'status'}
+                                key={col.id}
                                 badgeContent={
                                     rowItem.transactionStatus === 1
                                         ? 'in progress'

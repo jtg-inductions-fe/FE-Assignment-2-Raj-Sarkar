@@ -6,7 +6,7 @@ import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
 import { ImageGrid } from '@containers/ImageGrid';
 import { Product } from '@containers/Product';
-import { Transaction } from '@containers/Table/Transaction.container';
+import { Transaction } from '@containers/Transaction';
 import { salesDataset } from '@models';
 import { ColumnData, transactionDetails } from '@store';
 import { theme } from '@theme';

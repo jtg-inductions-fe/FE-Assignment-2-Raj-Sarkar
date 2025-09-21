@@ -56,7 +56,7 @@ export const TableCell = (props: TableCellProps) => {
             )}
             {contentLight && (
                 <MuiTypography
-                    variant={isDesktop ? 'subtitle1' : 'body2'}
+                    variant={isDesktop ? 'subtitle2' : 'body2'}
                     color={theme.palette.grey[500]}
                 >
                     {contentLight}

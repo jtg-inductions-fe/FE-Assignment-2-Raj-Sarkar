@@ -22,7 +22,7 @@ const Table = (props: TableProps) => {
     const { transactionData, columnData, RowRenderer, isDesktop } = props;
 
     return (
-        <MuiTable>
+        <MuiTable aria-label="Transactions table">
             <MuiTableHead>
                 <MuiTableRow>
                     {columnData.map((item) => (
@@ -61,10 +61,10 @@ const Table = (props: TableProps) => {
  */
 export const Transaction = (props: TransactionProps) => {
     const { isDesktop, transactionData, columnData, RowRenderer } = props;
-    const visibleColunData = isDesktop
+    const visibleColumnData = isDesktop
         ? columnData
         : columnData.filter((item) => item.showInMobile);
-    const modifiedColunData: ModifiedColumnType[] = visibleColunData.map(
+    const modifiedColumnData: ModifiedColumnType[] = visibleColumnData.map(
         (item) => ({
             id: item.id,
             title: item.title,
@@ -80,7 +80,7 @@ export const Transaction = (props: TransactionProps) => {
             subHeading="This is a list of latest transactions."
         >
             <Table
-                columnData={modifiedColunData}
+                columnData={modifiedColumnData}
                 transactionData={transactionData}
                 RowRenderer={RowRenderer}
                 isDesktop={isDesktop}
