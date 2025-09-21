@@ -5,7 +5,7 @@ import {
     Typography as MuiTypography,
 } from '@mui/material';
 
-import { StyledTypographyProps } from './SidebarContent.types';
+import type { StyledTypographyProps } from './SidebarContent.types';
 
 const customTypographyProps: PropertyKey[] = ['hasicon', 'color'];
 
