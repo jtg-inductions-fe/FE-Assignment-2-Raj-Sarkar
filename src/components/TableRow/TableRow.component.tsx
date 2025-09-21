@@ -1,13 +1,14 @@
-import {
-    TableCell as MuiTableCell,
-    TableRow as MuiTableRow,
-    Typography as MuiTypography,
-} from '@mui/material';
-
 import { TableCell } from '@components/TableCell';
 
+import { StyledTableRow } from './TableRow.styles';
 import type { TableRowProps } from './TableRow.types';
 
+/**
+ *
+ * @param rowItem - data in in a row of transaction table
+ * @param columnData - data columns
+ * @returns component for rendering a row
+ */
 export const TableRow = (props: TableRowProps) => {
     const { rowItem, columnData } = props;
 
@@ -22,40 +23,48 @@ export const TableRow = (props: TableRowProps) => {
     };
 
     return (
-        <MuiTableRow>
+        <StyledTableRow>
             {columnData.map((col) => {
                 switch (col.title) {
-                    case 'Transaction':
+                    case 'TRANSACTION':
                         return (
-                            <MuiTableCell key={'name'}>
-                                <MuiTypography></MuiTypography>
-                                {`Payment ${rowItem.transactionType == 1 ? 'from' : 'refund to'} ${rowItem.name}`}
-                            </MuiTableCell>
+                            <TableCell
+                                key={'name'}
+                                contentNormal={`Payment ${rowItem.transactionType == 1 ? 'from' : 'refund to'} `}
+                                contentBold={rowItem.name}
+                            />
                         );
-                    case 'Date & time':
+                    case 'DATE & TIME':
                         return (
                             <TableCell
                                 key={'date-time'}
-                                content={formatDate(rowItem.time)}
+                                contentLight={formatDate(rowItem.time)}
                             />
                         );
-                    case 'Amount':
+                    case 'AMOUNT':
                         return (
                             <TableCell
                                 key={'amount'}
-                                content={`${rowItem.currency}${rowItem.name}`}
+                                contentLarge={`${rowItem.transactionType === 2 ? '-' : ''} ${rowItem.currency}${rowItem.amount}`}
                             />
                         );
-                    case 'Status':
+                    case 'STATUS':
                         return (
                             <TableCell
                                 key={'status'}
-                                content={
+                                badgeContent={
                                     rowItem.transactionStatus === 1
-                                        ? 'Pending'
+                                        ? 'in progress'
                                         : rowItem.transactionStatus === 2
-                                          ? 'Success'
-                                          : 'Failed'
+                                          ? 'completed'
+                                          : 'cancelled'
+                                }
+                                badgeType={
+                                    rowItem.transactionStatus === 1
+                                        ? 'info'
+                                        : rowItem.transactionStatus === 2
+                                          ? 'success'
+                                          : 'error'
                                 }
                             />
                         );
@@ -63,6 +72,6 @@ export const TableRow = (props: TableRowProps) => {
                         return null;
                 }
             })}
-        </MuiTableRow>
+        </StyledTableRow>
     );
 };

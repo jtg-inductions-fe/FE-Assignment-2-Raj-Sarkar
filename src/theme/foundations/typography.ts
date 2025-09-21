@@ -60,6 +60,10 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
         fontSize: typographyUtil.pxToRem(14),
         fontWeight: FONTWEIGHTS.fontWeightLight,
     },
+    body1: {
+        fontSize: typographyUtil.pxToRem(12),
+        fontWeight: FONTWEIGHTS.fontWeightMedium,
+    },
     body2: {
         fontSize: typographyUtil.pxToRem(12),
         fontWeight: FONTWEIGHTS.fontWeightLight,

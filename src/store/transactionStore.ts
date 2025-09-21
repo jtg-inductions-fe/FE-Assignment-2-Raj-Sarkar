@@ -60,25 +60,25 @@ export const transactionDetails: TransactionItem[] = [
 export const ColumnData: ColumnType[] = [
     {
         id: 'col-1',
-        title: 'Transaction',
+        title: 'TRANSACTION',
         width: '21%',
         showInMobile: true,
     },
     {
         id: 'col-2',
-        title: 'Date & time',
+        title: 'DATE & TIME',
         width: '28%',
         showInMobile: true,
     },
     {
         id: 'col-3',
-        title: 'Amount',
+        title: 'AMOUNT',
         width: '32%',
         showInMobile: false,
     },
     {
         id: 'col-4',
-        title: 'Status',
+        title: 'STATUS',
         width: '19%',
         showInMobile: false,
     },

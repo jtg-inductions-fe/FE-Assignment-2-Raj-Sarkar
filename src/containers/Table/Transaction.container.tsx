@@ -2,7 +2,7 @@ import {
     Table as MuiTable,
     TableBody as MuiTableBody,
     TableHead as MuiTableHead,
-    TableRow,
+    TableRow as MuiTableRow,
 } from '@mui/material';
 
 import { Card } from '@components/Card';
@@ -12,6 +12,9 @@ import type { TableProps, TransactionProps } from './Transaction.types';
 
 /**
  * @description passes each row to renderer component
+ * @param transactionData - data set of transactions
+ * @param columnData - data of columns
+ * @param RowRenderer - component to render the transaction data items
  * @returns component to render transaction data
  */
 const Table = (props: TableProps) => {
@@ -20,15 +23,17 @@ const Table = (props: TableProps) => {
     return (
         <MuiTable>
             <MuiTableHead>
-                <TableRow>
+                <MuiTableRow>
                     {columnData.map((item) => (
                         <TableCell
                             key={item.id}
                             width={item.width}
-                            content={item.title}
+                            contentHeading={item.title}
+                            isBgGrey={true}
+                            showBorder={true}
                         />
                     ))}
-                </TableRow>
+                </MuiTableRow>
             </MuiTableHead>
             <MuiTableBody>
                 {transactionData.map((item) => (
@@ -43,6 +48,14 @@ const Table = (props: TableProps) => {
     );
 };
 
+/**
+ *
+ * @param transactionData - data set of transactions
+ * @param columnData - data of columns
+ * @param RowRenderer - component to render the transaction data items
+ * @param isDesktop - boolean value of view width is of desktop or not
+ * @returns component to render transaction data
+ */
 export const Transaction = (props: TransactionProps) => {
     const { isDesktop, transactionData, columnData, RowRenderer } = props;
     const modifiedColunData = isDesktop
