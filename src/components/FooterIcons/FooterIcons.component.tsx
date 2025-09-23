@@ -19,6 +19,7 @@ export const FooterIcons = (props: FooterIconsProps) => {
                     key={item.id}
                     component={item.icon}
                     onClick={() => (window.location.href = item.to)}
+                    aria-label={item.label}
                 />
             ))}
         </MuiStack>

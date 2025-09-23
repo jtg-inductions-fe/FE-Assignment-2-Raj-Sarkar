@@ -14,7 +14,7 @@ export const FOOTER_ICONS: MenuIcon[] = [
         to: ROUTE_PATH.FACEBOOK,
     },
     {
-        id: 'twiiter',
+        id: 'twitter',
         icon: Twitter,
         label: 'twitter',
         to: ROUTE_PATH.TWITTER,
@@ -26,9 +26,9 @@ export const FOOTER_ICONS: MenuIcon[] = [
         to: ROUTE_PATH.GITHUB,
     },
     {
-        id: 'dribble',
+        id: 'dribbble',
         icon: Dribbble,
-        label: 'dribble',
+        label: 'dribbble',
         to: ROUTE_PATH.DRIBBBLE,
     },
-] as const;
+];

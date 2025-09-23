@@ -1,8 +1,7 @@
-import { FOOTER_ICONS } from 'constant/footerConstants';
-
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
 import { TableRow } from '@components/TableRow/TableRow.component';
+import { FOOTER_ICONS } from '@constant';
 import { CUSTOMERS, ITEM_DATA, PRODUCT_LIST } from '@constant';
 import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
