@@ -5,7 +5,7 @@ import { FooterIcons } from '@components/FooterIcons';
 import { theme } from '@theme';
 
 import { StyledStack } from './Footer.styles';
-import { FooterProps } from './Footer.types';
+import type { FooterProps } from './Footer.types';
 
 /**
  *

@@ -1,4 +1,4 @@
-import { ListItem } from '@types';
+import type { ListItem } from '@types';
 
 /**
  * Props types for customer component

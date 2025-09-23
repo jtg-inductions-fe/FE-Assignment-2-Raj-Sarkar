@@ -1,5 +1,3 @@
-import { ImageListProps as MuiImageListProps } from '@mui/material';
-
 /**
  *
  * Contains types of props for Image Grid component
@@ -8,7 +6,7 @@ import { ImageListProps as MuiImageListProps } from '@mui/material';
  * @property rowHeight - height of each row in grid
  * @property gap - gap between two rows
  */
-export type ImageGridProps = MuiImageListProps & {
+export type ImageGridProps = {
     modifiedImageList: ModifiedImgItem[];
     cols: number;
     rowHeight: number;
