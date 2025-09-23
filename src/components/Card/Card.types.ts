@@ -1,13 +1,20 @@
 import React from 'react';
 
-import { CONTAINER_GAP, PADDING_TO_SIZE_MAP } from 'constant/containerConstant';
+import {
+    CONTAINER_GAP,
+    CONTAINER_MARGIN,
+    PADDING_TO_SIZE_MAP,
+} from 'constant/containerConstant';
+
+import { ContainerProps as MuiContainerProps } from '@mui/material';
 
 /**
  * Props for styled container
  * @property size - padding of container
  */
-export type StyledContainerProps = {
+export type StyledContainerProps = MuiContainerProps & {
     size?: keyof typeof PADDING_TO_SIZE_MAP;
+    margin?: keyof typeof CONTAINER_MARGIN;
 };
 
 /**
@@ -17,6 +24,7 @@ export type StyledContainerProps = {
  * @property heading - heading of the container
  * @property subHeading - subheading of he container
  * @property children - child nodes
+ * @property hasHeadingPadding - boolean value of heading has padding or not
  */
 export type CardProps = StyledContainerProps & {
     gap?: keyof typeof CONTAINER_GAP;
@@ -24,4 +32,5 @@ export type CardProps = StyledContainerProps & {
     heading?: string;
     subHeading?: string;
     children?: React.ReactNode;
+    hasHeadingPadding?: boolean;
 };

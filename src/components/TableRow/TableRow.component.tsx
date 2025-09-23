@@ -10,7 +10,7 @@ import type { TableRowProps } from './TableRow.types';
  * @returns component for rendering a row
  */
 export const TableRow = (props: TableRowProps) => {
-    const { rowItem, columnData, isDesktop } = props;
+    const { rowItem, columnData, isDesktop, ...rest } = props;
 
     const formatDate = (isoString: string) => {
         const date = new Date(isoString);
@@ -23,7 +23,7 @@ export const TableRow = (props: TableRowProps) => {
     };
 
     return (
-        <StyledTableRow>
+        <StyledTableRow {...rest}>
             {columnData.map((col) => {
                 switch (col.id) {
                     case 'col-1':

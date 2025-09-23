@@ -32,11 +32,12 @@ export const StyledListItemButton = styled(MuiListItemButton)(
 export const StyledTypography = styled(MuiTypography, {
     shouldForwardProp: (prop) => !customTypographyProps.includes(prop),
 })<StyledTypographyProps>(
-    ({ theme: { typography }, hasicon = true, color }) => ({
+    ({ theme: { typography, mixins }, hasicon = true, color }) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         paddingLeft: hasicon ? 0 : typography.pxToRem(40),
         color: color,
+        ...mixins.lineClamp(1),
     }),
 );

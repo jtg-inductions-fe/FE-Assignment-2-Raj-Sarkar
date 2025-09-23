@@ -76,7 +76,7 @@ export const Transaction = (props: TransactionProps) => {
     );
     return (
         <Card
-            heading="Transaction"
+            heading="Transactions"
             subHeading="This is a list of latest transactions."
         >
             <Table

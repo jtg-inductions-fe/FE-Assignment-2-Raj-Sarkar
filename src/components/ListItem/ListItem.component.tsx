@@ -1,9 +1,6 @@
-import {
-    Avatar as MuiAvatar,
-    Stack as MuiStack,
-    Typography as MuiTypography,
-} from '@mui/material';
+import { Avatar as MuiAvatar, Stack as MuiStack } from '@mui/material';
 
+import { Typography } from '@components/Typography';
 import { theme } from '@theme';
 
 import type { ListItemProps } from './ListItem.types';
@@ -34,15 +31,15 @@ export const ListItem = (props: ListItemProps) => {
                     />
                 )}
                 <MuiStack>
-                    <MuiTypography
+                    <Typography
                         variant="h3"
                         sx={{
                             ...theme.mixins.lineClamp(1),
                         }}
                     >
                         {item.title}
-                    </MuiTypography>
-                    <MuiTypography
+                    </Typography>
+                    <Typography
                         variant="body2"
                         color={theme.palette.grey[500]}
                         sx={{
@@ -50,19 +47,19 @@ export const ListItem = (props: ListItemProps) => {
                         }}
                     >
                         {item.description}
-                    </MuiTypography>
+                    </Typography>
                 </MuiStack>
             </MuiStack>
             <MuiStack direction={'row'} spacing={1}>
                 {item.sales && (
-                    <MuiTypography variant="h3">
+                    <Typography variant="h3">
                         {`${item.prefix ? item.prefix : ''}${item.sales}`}
-                    </MuiTypography>
+                    </Typography>
                 )}
                 {item.suffix && (
-                    <MuiTypography variant="h4" color={theme.palette.grey[500]}>
+                    <Typography variant="h4" color={theme.palette.grey[500]}>
                         {item.suffix}
-                    </MuiTypography>
+                    </Typography>
                 )}
             </MuiStack>
         </MuiStack>

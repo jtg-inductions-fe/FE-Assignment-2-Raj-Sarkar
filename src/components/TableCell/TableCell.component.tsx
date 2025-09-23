@@ -1,6 +1,7 @@
 import { Typography as MuiTypography } from '@mui/material';
 
 import { Badge } from '@components/Badge';
+import { Typography } from '@components/Typography';
 import { theme } from '@theme';
 
 import { StyledTableCell } from './TableCell.styles';
@@ -42,7 +43,7 @@ export const TableCell = (props: TableCellProps) => {
             isBgGrey={isBgGrey}
         >
             {contentNormal && (
-                <MuiTypography variant={isDesktop ? 'subtitle2' : 'body2'}>
+                <Typography variant={isDesktop ? 'subtitle2' : 'body2'}>
                     {contentNormal}
                     {contentBold && (
                         <MuiTypography
@@ -52,26 +53,26 @@ export const TableCell = (props: TableCellProps) => {
                             {contentBold}
                         </MuiTypography>
                     )}
-                </MuiTypography>
+                </Typography>
             )}
             {contentLight && (
-                <MuiTypography
+                <Typography
                     variant={isDesktop ? 'subtitle2' : 'body2'}
                     color={theme.palette.grey[500]}
                 >
                     {contentLight}
-                </MuiTypography>
+                </Typography>
             )}
             {contentLarge && (
-                <MuiTypography variant="h3">{contentLarge}</MuiTypography>
+                <Typography variant="h3">{contentLarge}</Typography>
             )}
             {badgeType && badgeContent && (
                 <Badge content={badgeContent} type={badgeType} />
             )}
             {contentHeading && (
-                <MuiTypography variant="body1" color={theme.palette.grey[500]}>
+                <Typography variant="body1" color={theme.palette.grey[500]}>
                     {contentHeading}
-                </MuiTypography>
+                </Typography>
             )}
         </StyledTableCell>
     );

@@ -4,11 +4,11 @@ import {
     Box as MuiBox,
     Popover as MuiPopover,
     Stack as MuiStack,
-    Typography as MuiTypography,
 } from '@mui/material';
 
 import Exclamation from '@assets/icons/exclamation_circle.svg?react';
 import { IconButton } from '@components/IconButton';
+import { Typography } from '@components/Typography';
 import { CONTAINER_GAP } from '@constant';
 import { theme } from '@theme';
 
@@ -33,6 +33,9 @@ export const Card = (props: CardProps) => {
         heading,
         subHeading,
         children,
+        hasHeadingPadding = false,
+        margin = 'sm',
+        ...rest
     } = props;
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
@@ -47,14 +50,16 @@ export const Card = (props: CardProps) => {
     const open = Boolean(anchorEl);
 
     return (
-        <StyledContainer size={size} maxWidth={false}>
+        <StyledContainer size={size} margin={margin} maxWidth={false} {...rest}>
             <MuiStack direction={'column'} spacing={CONTAINER_GAP[gap]}>
                 <MuiBox>
-                    <MuiStack direction={'row'} spacing={3}>
+                    <MuiStack
+                        direction={'row'}
+                        spacing={3}
+                        paddingY={hasHeadingPadding ? 3.5 : 0}
+                    >
                         {heading && (
-                            <MuiTypography variant="h2">
-                                {heading}
-                            </MuiTypography>
+                            <Typography variant="h2">{heading}</Typography>
                         )}
                         {hasIcon && (
                             <MuiBox>
@@ -82,20 +87,20 @@ export const Card = (props: CardProps) => {
                                     onClose={handlePopoverClose}
                                     disableRestoreFocus
                                 >
-                                    <MuiTypography padding={5}>
+                                    <Typography padding={5}>
                                         Sales chart information
-                                    </MuiTypography>
+                                    </Typography>
                                 </MuiPopover>
                             </MuiBox>
                         )}
                     </MuiStack>
                     {subHeading && (
-                        <MuiTypography
+                        <Typography
                             variant="subtitle2"
                             color={theme.palette.grey[500]}
                         >
                             {subHeading}
-                        </MuiTypography>
+                        </Typography>
                     )}
                 </MuiBox>
                 {children && children}
