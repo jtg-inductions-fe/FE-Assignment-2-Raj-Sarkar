@@ -15,12 +15,12 @@ export const ListItem = (props: ListItemProps) => {
 
     return (
         <MuiStack
-            direction={'row'}
-            justifyContent={'space-between'}
-            alignItems={'center'}
-            paddingY={theme.typography.pxToRem(11)}
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            paddingY={theme.typography.pxToRem(8)}
         >
-            <MuiStack direction={'row'} spacing={2} alignItems={'center'}>
+            <MuiStack direction="row" spacing={2} alignItems="center">
                 {item.avatar && (
                     <MuiAvatar
                         src={item.avatar}
@@ -31,26 +31,13 @@ export const ListItem = (props: ListItemProps) => {
                     />
                 )}
                 <MuiStack>
-                    <Typography
-                        variant="h3"
-                        sx={{
-                            ...theme.mixins.lineClamp(1),
-                        }}
-                    >
-                        {item.title}
-                    </Typography>
-                    <Typography
-                        variant="body2"
-                        color={theme.palette.grey[500]}
-                        sx={{
-                            ...theme.mixins.lineClamp(1),
-                        }}
-                    >
+                    <Typography variant="h3">{item.title}</Typography>
+                    <Typography variant="body2" color={theme.palette.grey[500]}>
                         {item.description}
                     </Typography>
                 </MuiStack>
             </MuiStack>
-            <MuiStack direction={'row'} spacing={1}>
+            <MuiStack direction="row" spacing={1}>
                 {item.sales && (
                     <Typography variant="h3">
                         {`${item.prefix ? item.prefix : ''}${item.sales}`}

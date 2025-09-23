@@ -13,11 +13,11 @@ import {
 import Bell from '@assets/icons/bell.svg?react';
 import Logo from '@assets/icons/logo.svg?react';
 import Menu from '@assets/icons/menu.svg?react';
-import ProfileImg from '@assets/imgs/avatar_1.png';
+import ProfileImg from '@assets/imgs/avatar_3.svg';
 import { IconButton } from '@components/IconButton';
 import { Searchbar } from '@components/Searchbar';
-import { PRODUCT_LIST } from '@constant';
-import { userDetails } from '@store';
+import { PRODUCT_LIST } from '@data';
+import { userDetails } from '@data';
 import { theme } from '@theme';
 
 import { StyledAvatar, StyledHeaderStack } from './Header.styles';
@@ -39,9 +39,9 @@ export const Header = (props: HeaderProps) => {
     return (
         <StyledHeaderStack>
             <MuiStack
-                direction={'row'}
-                justifyContent={'start'}
-                alignItems={'center'}
+                direction="row"
+                justifyContent="start"
+                alignItems="center"
                 gap={8}
                 flexGrow={1}
             >
@@ -49,7 +49,7 @@ export const Header = (props: HeaderProps) => {
                     <IconButton
                         component={Menu}
                         aria-label="Open Menu"
-                        buttonSize={'md'}
+                        buttonSize="md"
                         onClick={onMenuClick}
                     />
                 )}
@@ -57,7 +57,7 @@ export const Header = (props: HeaderProps) => {
                     <IconButton
                         aria-label="Go to home"
                         component={Logo}
-                        buttonSize={'lg'}
+                        buttonSize="lg"
                         showShadow={true}
                         onClick={() => void navigate('/')}
                     />
@@ -66,8 +66,8 @@ export const Header = (props: HeaderProps) => {
             </MuiStack>
             <MuiStack
                 direction="row"
-                justifyContent={'end'}
-                alignItems={'center'}
+                justifyContent="end"
+                alignItems="center"
                 flexGrow={2}
                 spacing={isDesktop ? 3 : 1}
             >
@@ -83,7 +83,7 @@ export const Header = (props: HeaderProps) => {
                     <StyledAvatar
                         src={ProfileImg}
                         alt=""
-                        component={'button'}
+                        component="button"
                         aria-label="See user details"
                         aria-describedby={id}
                         onClick={(e) => setAnchorEl(e.currentTarget)}

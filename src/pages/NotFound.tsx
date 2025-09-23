@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@mui/material';
 
-import NotFoundImage from '@assets/imgs/not_found.png';
+import NotFoundImage from '@assets/imgs/not_found.svg';
 import { NotFound as NotFoundComponent } from '@components/NotFound';
 import { theme } from '@theme';
 

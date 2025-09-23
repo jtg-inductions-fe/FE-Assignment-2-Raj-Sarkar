@@ -21,7 +21,7 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
     const { yMin = 0, yMax = 240000, xMin, dates, sales } = props;
 
     return (
-        <MuiBox width={'100%'}>
+        <MuiBox width="100%">
             <MuiLineChart
                 aria-label="Sales over time"
                 hideLegend

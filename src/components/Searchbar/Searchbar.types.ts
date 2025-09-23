@@ -1,4 +1,4 @@
-import { ListItem } from '@types';
+import { ListItem } from '@models';
 /**
  * Contains SearchBar component props
  * @property freesolo - boolean status to make searchbar a freesolo or not

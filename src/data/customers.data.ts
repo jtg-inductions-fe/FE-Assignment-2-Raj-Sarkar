@@ -1,10 +1,10 @@
-import Avatar1 from '@assets/imgs/avatar_1.png';
-import Avatar2 from '@assets/imgs/avatar_2.png';
-import Avatar3 from '@assets/imgs/avatar_3.png';
-import Avatar4 from '@assets/imgs/avatar_4.jpg';
-import Avatar5 from '@assets/imgs/avatar_5.jpg';
-import Avatar6 from '@assets/imgs/avatar_6.png';
-import { ListItem } from '@types';
+import Avatar1 from '@assets/imgs/avatar_1.svg';
+import Avatar2 from '@assets/imgs/avatar_2.svg';
+import Avatar3 from '@assets/imgs/avatar_3.svg';
+import Avatar4 from '@assets/imgs/avatar_4.svg';
+import Avatar5 from '@assets/imgs/avatar_5.svg';
+import Avatar6 from '@assets/imgs/avatar_6.svg';
+import { ListItem } from '@models';
 
 export const CUSTOMERS: ListItem[] = [
     {

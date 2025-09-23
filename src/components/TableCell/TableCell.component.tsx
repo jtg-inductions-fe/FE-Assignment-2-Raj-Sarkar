@@ -19,6 +19,8 @@ import { TableCellProps } from './TableCell.types';
  * @param contentHeading - content of heading
  * @param isBgGrey - boolean value whether background is grey or not
  * @param showBorder - boolean value whether to show border
+ * @param contentNormalVariant - variant for normal font text
+ * @param contentBoldVariant - variant for bold font text
  * @returns component to render a cell
  */
 export const TableCell = (props: TableCellProps) => {
@@ -33,7 +35,8 @@ export const TableCell = (props: TableCellProps) => {
         contentHeading,
         isBgGrey = false,
         showBorder = false,
-        isDesktop,
+        contentNormalVariant = 'body2',
+        contentBoldVariant = 'body1',
     } = props;
 
     return (
@@ -43,12 +46,12 @@ export const TableCell = (props: TableCellProps) => {
             isBgGrey={isBgGrey}
         >
             {contentNormal && (
-                <Typography variant={isDesktop ? 'subtitle2' : 'body2'}>
+                <Typography variant={contentNormalVariant}>
                     {contentNormal}
                     {contentBold && (
                         <MuiTypography
                             component="span"
-                            variant={isDesktop ? 'subtitle1' : 'body1'}
+                            variant={contentBoldVariant}
                         >
                             {contentBold}
                         </MuiTypography>
@@ -57,7 +60,7 @@ export const TableCell = (props: TableCellProps) => {
             )}
             {contentLight && (
                 <Typography
-                    variant={isDesktop ? 'subtitle2' : 'body2'}
+                    variant={contentNormalVariant}
                     color={theme.palette.grey[500]}
                 >
                     {contentLight}

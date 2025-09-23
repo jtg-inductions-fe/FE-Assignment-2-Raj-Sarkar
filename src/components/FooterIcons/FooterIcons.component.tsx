@@ -13,7 +13,7 @@ export const FooterIcons = (props: FooterIconsProps) => {
     const { iconData } = props;
 
     return (
-        <MuiStack direction={'row'} spacing={6}>
+        <MuiStack direction="row" spacing={6}>
             {iconData.map((item) => (
                 <IconButton
                     key={item.id}

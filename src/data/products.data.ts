@@ -1,5 +1,5 @@
 import { ROUTE_PATH } from '@constant';
-import type { ListItem } from '@types';
+import type { ListItem } from '@models';
 
 export const PRODUCT_LIST: ListItem[] = [
     {

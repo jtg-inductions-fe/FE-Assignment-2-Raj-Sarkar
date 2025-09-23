@@ -1,4 +1,4 @@
-import type { ColumnType, TransactionItem } from '@types';
+import type { ColumnType, TransactionItem } from '@models';
 
 export const transactionDetails: TransactionItem[] = [
     {
@@ -57,7 +57,7 @@ export const transactionDetails: TransactionItem[] = [
     },
 ] as const;
 
-export const ColumnData: ColumnType[] = [
+export const columnData: ColumnType[] = [
     {
         id: 'col-1',
         title: 'TRANSACTION',

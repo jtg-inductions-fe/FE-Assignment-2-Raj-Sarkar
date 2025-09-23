@@ -5,7 +5,7 @@
  * @property heading - heading text for the page
  * @property description - description for the page
  * @property buttonContent - text content inside the button
- * @property href - path to be re-directed upon clicking the button
+ * @property buttonHref - path to be re-directed upon clicking the button
  * @property isDesktop - boolean value for view width is desktop or not
  */
 export type NotFoundProps = {

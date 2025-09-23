@@ -13,7 +13,7 @@ import type { NotFoundProps } from './NotFound.types';
  * @param heading - heading text for the page
  * @param description - description for the page
  * @param buttonContent - text content inside the button
- * @param href - path to be re-directed upon clicking the button
+ * @param buttonHref - path to be re-directed upon clicking the button
  * @param isDesktop - boolean value for view width is desktop or not
  */
 export const NotFound = (props: NotFoundProps) => {
@@ -28,25 +28,23 @@ export const NotFound = (props: NotFoundProps) => {
     } = props;
 
     return (
-        <MuiStack alignItems={'center'} gap={4} width={'100vw'}>
+        <MuiStack alignItems="center" gap={4} width="100vw">
             <img src={image} alt={imageAlt} width={isDesktop ? '60%' : '90%'} />
-            <MuiStack gap={5.5} alignItems={'center'} paddingX={4}>
+            <MuiStack gap={5.5} alignItems="center" paddingX={4}>
                 <MuiStack gap={2.5}>
-                    <Typography variant="h1" lines={3} textAlign={'center'}>
+                    <Typography variant="h1" lines={3} textAlign="center">
                         {heading}
                     </Typography>
                     <Typography
                         variant="h4"
                         lines={5}
                         color={theme.palette.grey[500]}
-                        textAlign={'center'}
+                        textAlign="center"
                     >
                         {description}
                     </Typography>
                 </MuiStack>
-                <Button buttonHref={buttonHref} buttonContent={buttonContent}>
-                    {buttonContent}
-                </Button>
+                <Button buttonHref={buttonHref} buttonContent={buttonContent} />
             </MuiStack>
         </MuiStack>
     );

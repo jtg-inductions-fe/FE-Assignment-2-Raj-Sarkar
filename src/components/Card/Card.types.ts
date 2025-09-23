@@ -1,12 +1,12 @@
 import React from 'react';
 
+import { ContainerProps as MuiContainerProps } from '@mui/material';
+
 import {
     CONTAINER_GAP,
     CONTAINER_MARGIN,
     PADDING_TO_SIZE_MAP,
-} from 'constant/containerConstant';
-
-import { ContainerProps as MuiContainerProps } from '@mui/material';
+} from '@constant';
 
 /**
  * Props for styled container

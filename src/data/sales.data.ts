@@ -1,4 +1,4 @@
-import type { SalesItem } from '@types';
+import type { SalesItem } from '@models';
 
 export const salesDataset: SalesItem[] = [
     { date: new Date(2021, 3, 1), sales: 80000 },

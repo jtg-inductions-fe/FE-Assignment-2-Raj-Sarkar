@@ -51,10 +51,10 @@ export const Card = (props: CardProps) => {
 
     return (
         <StyledContainer size={size} margin={margin} maxWidth={false} {...rest}>
-            <MuiStack direction={'column'} spacing={CONTAINER_GAP[gap]}>
+            <MuiStack direction="column" spacing={CONTAINER_GAP[gap]}>
                 <MuiBox>
                     <MuiStack
-                        direction={'row'}
+                        direction="row"
                         spacing={3}
                         paddingY={hasHeadingPadding ? 3.5 : 0}
                     >

@@ -1,7 +1,6 @@
-import { Typography as MuiTypography } from '@mui/material';
-
 import { Card } from '@components/Card';
 import { FooterIcons } from '@components/FooterIcons';
+import { Typography } from '@components/Typography';
 import { theme } from '@theme';
 
 import { StyledStack } from './Footer.styles';
@@ -20,11 +19,11 @@ export const Footer = (props: FooterProps) => {
         <Card size="xl">
             <StyledStack
                 direction={isDesktop ? 'row' : 'column'}
-                justifyContent={'space-between'}
+                justifyContent="space-between"
             >
-                <MuiTypography variant="h4" color={theme.palette.grey[500]}>
+                <Typography variant="h4" color={theme.palette.grey[500]}>
                     &copy; 2021 Themesberg, LLC. All rights reserved.
-                </MuiTypography>
+                </Typography>
                 <FooterIcons iconData={iconData} />
             </StyledStack>
         </Card>
