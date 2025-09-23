@@ -17,7 +17,12 @@ import { theme } from '@theme';
 export const Home = () => {
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <MuiBox padding={4} overflow="auto" bgcolor={theme.palette.grey[50]}>
+        <MuiBox
+            padding={4}
+            overflow="auto"
+            bgcolor={theme.palette.grey[50]}
+            width={isDesktop ? 'auto' : '100vw'}
+        >
             <ImageGrid imageList={ITEM_DATA} isDesktop={isDesktop} />
             <Chart isDesktop={isDesktop} salesData={salesDataset} />
             <MuiStack

@@ -46,7 +46,7 @@ export const TableCell = (props: TableCellProps) => {
             isBgGrey={isBgGrey}
         >
             {contentNormal && (
-                <Typography variant={contentNormalVariant}>
+                <Typography variant={contentNormalVariant} lines={2}>
                     {contentNormal}
                     {contentBold && (
                         <MuiTypography
@@ -62,6 +62,7 @@ export const TableCell = (props: TableCellProps) => {
                 <Typography
                     variant={contentNormalVariant}
                     color={theme.palette.grey[500]}
+                    lines={2}
                 >
                     {contentLight}
                 </Typography>
@@ -73,7 +74,11 @@ export const TableCell = (props: TableCellProps) => {
                 <Badge content={badgeContent} type={badgeType} />
             )}
             {contentHeading && (
-                <Typography variant="body1" color={theme.palette.grey[500]}>
+                <Typography
+                    variant="body1"
+                    color={theme.palette.grey[500]}
+                    lines={2}
+                >
                     {contentHeading}
                 </Typography>
             )}

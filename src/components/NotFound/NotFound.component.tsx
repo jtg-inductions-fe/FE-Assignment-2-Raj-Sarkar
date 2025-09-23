@@ -32,7 +32,7 @@ export const NotFound = (props: NotFoundProps) => {
             <img src={image} alt={imageAlt} width={isDesktop ? '60%' : '90%'} />
             <MuiStack gap={5.5} alignItems="center" paddingX={4}>
                 <MuiStack gap={2.5}>
-                    <Typography variant="h1" lines={3} textAlign="center">
+                    <Typography variant="h1" lines={4} textAlign="center">
                         {heading}
                     </Typography>
                     <Typography

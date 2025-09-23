@@ -21,7 +21,11 @@ export const Footer = (props: FooterProps) => {
                 direction={isDesktop ? 'row' : 'column'}
                 justifyContent="space-between"
             >
-                <Typography variant="h4" color={theme.palette.grey[500]}>
+                <Typography
+                    variant="h4"
+                    color={theme.palette.grey[500]}
+                    lines={3}
+                >
                     &copy; 2021 Themesberg, LLC. All rights reserved.
                 </Typography>
                 <FooterIcons iconData={iconData} />

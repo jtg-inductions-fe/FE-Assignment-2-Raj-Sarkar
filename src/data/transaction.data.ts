@@ -62,14 +62,14 @@ export const columnData: ColumnType[] = [
         id: 'col-1',
         title: 'TRANSACTION',
         desktopConfig: { width: '21%' },
-        mobileConfig: { width: '70%' },
+        mobileConfig: { width: '65%' },
         showInMobile: true,
     },
     {
         id: 'col-2',
         title: 'DATE & TIME',
         desktopConfig: { width: '28%' },
-        mobileConfig: { width: '30%' },
+        mobileConfig: { width: '35%' },
         showInMobile: true,
     },
     {
