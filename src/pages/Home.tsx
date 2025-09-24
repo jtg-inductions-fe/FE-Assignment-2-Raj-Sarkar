@@ -1,9 +1,11 @@
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
 import { TableRow } from '@components/TableRow/TableRow.component';
+import { FOOTER_ICONS } from '@constant';
 import { CUSTOMERS, ITEM_DATA, PRODUCT_LIST } from '@constant';
 import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
+import { Footer } from '@containers/Footer';
 import { ImageGrid } from '@containers/ImageGrid';
 import { Product } from '@containers/Product';
 import { Transaction } from '@containers/Transaction';
@@ -41,6 +43,7 @@ export const Home = () => {
                 RowRenderer={TableRow}
                 columnData={ColumnData}
             />
+            <Footer iconData={FOOTER_ICONS} isDesktop={isDesktop} />
         </MuiBox>
     );
 };

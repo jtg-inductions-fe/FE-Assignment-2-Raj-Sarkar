@@ -9,10 +9,8 @@ import InboxIn from '@assets/icons/inbox_in.svg?react';
 import LockClosed from '@assets/icons/lock_closed.svg?react';
 import Bag from '@assets/icons/shopping_bag.svg?react';
 import Support from '@assets/icons/support.svg?react';
-import type {
-    MenuIcon,
-    MenuItem,
-} from '@components/SidebarContent/SidebarContent.types';
+import type { MenuItem } from '@components/SidebarContent/SidebarContent.types';
+import type { MenuIcon } from '@types';
 
 import { ROUTE_PATH } from './routeConstant';
 

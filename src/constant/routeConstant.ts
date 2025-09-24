@@ -24,4 +24,8 @@ export const ROUTE_PATH = {
     ADJUSTMENTS: '/adjustments',
     GLOBAL: '/global',
     SETTINGS: '/settings',
+    FACEBOOK: 'https://www.facebook.com/',
+    GITHUB: 'https://www.github.com/',
+    TWITTER: 'https://www.x.com/',
+    DRIBBBLE: 'https://www.dribbble.com/',
 } as const;
