@@ -90,7 +90,10 @@ export const Card = (props: CardProps) => {
                         )}
                     </MuiStack>
                     {subHeading && (
-                        <MuiTypography variant="subtitle1">
+                        <MuiTypography
+                            variant="subtitle2"
+                            color={theme.palette.grey[500]}
+                        >
                             {subHeading}
                         </MuiTypography>
                     )}

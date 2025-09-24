@@ -22,4 +22,5 @@ export const StyledBox = styled(MuiBox, {
     padding: spacing(0.5, 2.5),
     borderRadius: spacing(2.5),
     backgroundColor: BADGE_TYPE_COLORS[type]?.['background'],
+    width: 'fit-content',
 }));
