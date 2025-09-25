@@ -1,4 +1,4 @@
-import type { MenuIcon } from '@types';
+import type { MenuIcon } from '@models';
 
 /**
  * Contains types for the menu item data

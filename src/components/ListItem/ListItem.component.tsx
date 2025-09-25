@@ -1,9 +1,6 @@
-import {
-    Avatar as MuiAvatar,
-    Stack as MuiStack,
-    Typography as MuiTypography,
-} from '@mui/material';
+import { Avatar as MuiAvatar, Stack as MuiStack } from '@mui/material';
 
+import { Typography } from '@components/Typography';
 import { theme } from '@theme';
 
 import type { ListItemProps } from './ListItem.types';
@@ -18,12 +15,12 @@ export const ListItem = (props: ListItemProps) => {
 
     return (
         <MuiStack
-            direction={'row'}
-            justifyContent={'space-between'}
-            alignItems={'center'}
-            paddingY={theme.typography.pxToRem(11)}
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            paddingY={theme.typography.pxToRem(8)}
         >
-            <MuiStack direction={'row'} spacing={2} alignItems={'center'}>
+            <MuiStack direction="row" spacing={2} alignItems="center">
                 {item.avatar && (
                     <MuiAvatar
                         src={item.avatar}
@@ -34,35 +31,22 @@ export const ListItem = (props: ListItemProps) => {
                     />
                 )}
                 <MuiStack>
-                    <MuiTypography
-                        variant="h3"
-                        sx={{
-                            ...theme.mixins.lineClamp(1),
-                        }}
-                    >
-                        {item.title}
-                    </MuiTypography>
-                    <MuiTypography
-                        variant="body2"
-                        color={theme.palette.grey[500]}
-                        sx={{
-                            ...theme.mixins.lineClamp(1),
-                        }}
-                    >
+                    <Typography variant="h3">{item.title}</Typography>
+                    <Typography variant="body2" color={theme.palette.grey[500]}>
                         {item.description}
-                    </MuiTypography>
+                    </Typography>
                 </MuiStack>
             </MuiStack>
-            <MuiStack direction={'row'} spacing={1}>
+            <MuiStack direction="row" spacing={1}>
                 {item.sales && (
-                    <MuiTypography variant="h3">
+                    <Typography variant="h3">
                         {`${item.prefix ? item.prefix : ''}${item.sales}`}
-                    </MuiTypography>
+                    </Typography>
                 )}
                 {item.suffix && (
-                    <MuiTypography variant="h4" color={theme.palette.grey[500]}>
+                    <Typography variant="h4" color={theme.palette.grey[500]}>
                         {item.suffix}
-                    </MuiTypography>
+                    </Typography>
                 )}
             </MuiStack>
         </MuiStack>

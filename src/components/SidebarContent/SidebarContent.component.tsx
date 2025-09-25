@@ -51,7 +51,7 @@ const SidebarItem = (props: SidebarItemProps) => {
     return (
         <>
             <StyledListItemButton onClick={handleClickOnListButton}>
-                <MuiStack direction={'row'} spacing={4}>
+                <MuiStack direction="row" spacing={4}>
                     {item.icon && (
                         <Icon
                             component={item.icon}
@@ -119,7 +119,7 @@ export const SidebarIcons = (props: SidebarIconsProps) => {
     const navigate = useNavigate();
 
     return (
-        <MuiStack direction={'row'} spacing={5.5} justifyContent={'center'}>
+        <MuiStack direction="row" spacing={5.5} justifyContent="center">
             {iconItems.map((icon) => (
                 <IconButton
                     key={icon.id}

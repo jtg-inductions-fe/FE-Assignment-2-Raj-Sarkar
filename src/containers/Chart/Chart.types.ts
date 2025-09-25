@@ -1,4 +1,4 @@
-import type { SalesItem } from '@types';
+import type { SalesItem } from '@models';
 
 /**
  * Props for Chart component

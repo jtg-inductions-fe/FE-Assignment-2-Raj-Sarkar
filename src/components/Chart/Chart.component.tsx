@@ -1,5 +1,8 @@
-import { Box } from '@mui/material';
-import { ChartsTooltip, LineChart } from '@mui/x-charts';
+import { Box as MuiBox } from '@mui/material';
+import {
+    ChartsTooltip as MuiChartsTooltip,
+    LineChart as MuiLineChart,
+} from '@mui/x-charts';
 
 import { theme } from '@theme';
 
@@ -18,8 +21,8 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
     const { yMin = 0, yMax = 240000, xMin, dates, sales } = props;
 
     return (
-        <Box width={'100%'}>
-            <LineChart
+        <MuiBox width="100%">
+            <MuiLineChart
                 aria-label="Sales over time"
                 hideLegend
                 xAxis={[
@@ -64,8 +67,8 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
                     },
                 ]}
                 height={418}
-                slots={{ tooltip: ChartsTooltip }}
+                slots={{ tooltip: MuiChartsTooltip }}
             />
-        </Box>
+        </MuiBox>
     );
 };

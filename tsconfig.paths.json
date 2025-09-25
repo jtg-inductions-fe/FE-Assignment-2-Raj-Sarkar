@@ -8,11 +8,11 @@
             "@pages": ["pages"],
             "@layout": ["layout"],
             "@router": ["router"],
-            "@types": ["types"],
+            "@models": ["models"],
             "@components/*": ["components/*"],
             "@helper": ["helper"],
             "@store": ["store"],
-            "@models": ["models"],
+            "@data": ["data"],
             "@containers/*": ["containers/*"]
         }
     }

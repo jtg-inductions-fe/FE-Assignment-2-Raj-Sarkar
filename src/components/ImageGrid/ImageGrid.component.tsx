@@ -1,8 +1,6 @@
-import {
-    ImageList as MuiImageList,
-    ImageListItem as MuiImageListItem,
-} from '@mui/material';
+import { ImageListItem as MuiImageListItem } from '@mui/material';
 
+import { StyledImageList } from './ImageGrid.styles';
 import type { ImageGridProps } from './ImageGrid.types';
 
 /**
@@ -14,14 +12,15 @@ import type { ImageGridProps } from './ImageGrid.types';
  * @returns Component to render the image items using
  */
 export const ImageGrid = (props: ImageGridProps) => {
-    const { modifiedImageList, cols, rowHeight, gap } = props;
+    const { modifiedImageList, cols, rowHeight, gap, ...rest } = props;
 
     return (
-        <MuiImageList
+        <StyledImageList
             variant="quilted"
             cols={cols}
             rowHeight={rowHeight}
             gap={gap}
+            {...rest}
         >
             {modifiedImageList.map((item, index) => (
                 <MuiImageListItem
@@ -32,6 +31,6 @@ export const ImageGrid = (props: ImageGridProps) => {
                     <img src={item.src} alt={item.title} />
                 </MuiImageListItem>
             ))}
-        </MuiImageList>
+        </StyledImageList>
     );
 };

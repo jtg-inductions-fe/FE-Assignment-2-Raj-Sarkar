@@ -1,3 +1,5 @@
+import { Box as MuiBox } from '@mui/material';
+
 import { Card } from '@components/Card';
 import { List } from '@components/List';
 import { ListItem } from '@components/ListItem';
@@ -14,8 +16,18 @@ export const Product = (props: ProductProps) => {
     const { productData, isDesktop } = props;
 
     return (
-        <Card size={isDesktop ? 'lg' : 'md'} gap={'sm'} heading="Top products">
-            <List listData={productData} RenderItem={ListItem} />
-        </Card>
+        <MuiBox
+            flexGrow={isDesktop ? 1 : 0}
+            flexShrink={1}
+            flexBasis={isDesktop ? 920 : 0}
+        >
+            <Card
+                size={isDesktop ? 'lg' : 'md'}
+                gap="sm"
+                heading="Top products"
+            >
+                <List listData={productData} RenderItem={ListItem} />
+            </Card>
+        </MuiBox>
     );
 };

@@ -1,4 +1,4 @@
-import { ImgItem } from '@types';
+import { ImgItem } from '@models';
 
 /**
  *

@@ -7,23 +7,27 @@ import type { TableRowProps } from './TableRow.types';
  *
  * @param rowItem - data in in a row of transaction table
  * @param columnData - data columns
+ * @param contentNormalVariant - variant for normal font text
+ * @param contentBoldVariant - variant for bold font text
+ * @param badgeContent - content of badge
+ * @param badgeType - type of badge
+ * @param formatDate - function to format date & time
  * @returns component for rendering a row
  */
 export const TableRow = (props: TableRowProps) => {
-    const { rowItem, columnData, isDesktop } = props;
-
-    const formatDate = (isoString: string) => {
-        const date = new Date(isoString);
-
-        return date.toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric',
-        });
-    };
+    const {
+        rowItem,
+        columnData,
+        contentNormalVariant,
+        contentBoldVariant,
+        badgeContent,
+        badgeType,
+        formatDate,
+        ...rest
+    } = props;
 
     return (
-        <StyledTableRow>
+        <StyledTableRow {...rest}>
             {columnData.map((col) => {
                 switch (col.id) {
                     case 'col-1':
@@ -32,7 +36,8 @@ export const TableRow = (props: TableRowProps) => {
                                 key={col.id}
                                 contentNormal={`Payment ${rowItem.transactionType === 1 ? 'from' : 'refund to'} `}
                                 contentBold={rowItem.name}
-                                isDesktop={isDesktop}
+                                contentBoldVariant={contentBoldVariant}
+                                contentNormalVariant={contentNormalVariant}
                             />
                         );
                     case 'col-2':
@@ -40,7 +45,7 @@ export const TableRow = (props: TableRowProps) => {
                             <TableCell
                                 key={col.id}
                                 contentLight={formatDate(rowItem.time)}
-                                isDesktop={isDesktop}
+                                contentNormalVariant={contentNormalVariant}
                             />
                         );
                     case 'col-3':
@@ -48,28 +53,14 @@ export const TableRow = (props: TableRowProps) => {
                             <TableCell
                                 key={col.id}
                                 contentLarge={`${rowItem.transactionType === 2 ? '-' : ''}${rowItem.currency}${rowItem.amount}`}
-                                isDesktop={isDesktop}
                             />
                         );
                     case 'col-4':
                         return (
                             <TableCell
                                 key={col.id}
-                                badgeContent={
-                                    rowItem.transactionStatus === 1
-                                        ? 'in progress'
-                                        : rowItem.transactionStatus === 2
-                                          ? 'completed'
-                                          : 'cancelled'
-                                }
-                                badgeType={
-                                    rowItem.transactionStatus === 1
-                                        ? 'info'
-                                        : rowItem.transactionStatus === 2
-                                          ? 'success'
-                                          : 'error'
-                                }
-                                isDesktop={isDesktop}
+                                badgeContent={badgeContent}
+                                badgeType={badgeType}
                             />
                         );
                     default:

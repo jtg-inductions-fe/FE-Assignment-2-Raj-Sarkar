@@ -1,4 +1,7 @@
-import type { TableCellProps as MuiTableCellProps } from '@mui/material';
+import type {
+    TableCellProps as MuiTableCellProps,
+    TypographyVariant as MuiTypographyVariant,
+} from '@mui/material';
 
 /**
  * Props for styled table cell
@@ -12,15 +15,16 @@ export type StyledTableCellProps = {
 
 /**
  * Types for TableCell component
- * @param width - width of column
- * @param contentLight - content text for light font
- * @param contentNormal - content text for normal font
- * @param contentBold - content text for bold font
- * @param contentLarge - content text for large font
- * @param badgeContent - content of badge
- * @param badgeType - type of badge
- * @param contentHeading - content of heading
- * @property isDesktop - boolean value of view width is of desktop or not
+ * @property width - width of column
+ * @property contentLight - content text for light font
+ * @property contentNormal - content text for normal font
+ * @property contentBold - content text for bold font
+ * @property contentLarge - content text for large font
+ * @property badgeContent - content of badge
+ * @property badgeType - type of badge
+ * @property contentHeading - content of heading
+ * @property contentNormalVariant - variant for normal font text
+ * @property contentBoldVariant - variant for bold font text
  */
 export type TableCellProps = StyledTableCellProps &
     MuiTableCellProps & {
@@ -32,5 +36,6 @@ export type TableCellProps = StyledTableCellProps &
         contentHeading?: string;
         badgeContent?: string;
         badgeType?: 'error' | 'success' | 'info';
-        isDesktop: boolean;
+        contentNormalVariant?: MuiTypographyVariant;
+        contentBoldVariant?: MuiTypographyVariant;
     };

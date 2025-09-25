@@ -7,7 +7,7 @@ import {
 
 import { Card } from '@components/Card';
 import { TableCell } from '@components/TableCell';
-import type { ModifiedColumnType } from '@types';
+import type { ModifiedColumnType } from '@models';
 
 import type { TableProps, TransactionProps } from './Transaction.types';
 
@@ -16,10 +16,26 @@ import type { TableProps, TransactionProps } from './Transaction.types';
  * @param transactionData - data set of transactions
  * @param columnData - data of columns
  * @param RowRenderer - component to render the transaction data items
+ * @param isDesktop - boolean value of view width is dsktop or not
  * @returns component to render transaction data
  */
 const Table = (props: TableProps) => {
     const { transactionData, columnData, RowRenderer, isDesktop } = props;
+
+    /**
+     *
+     * @param isoString
+     * @returns
+     */
+    const formatDate = (timeString: string) => {
+        const date = new Date(timeString);
+
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+        });
+    };
 
     return (
         <MuiTable aria-label="Transactions table">
@@ -32,7 +48,6 @@ const Table = (props: TableProps) => {
                             contentHeading={item.title}
                             isBgGrey={true}
                             showBorder={true}
-                            isDesktop={isDesktop}
                         />
                     ))}
                 </MuiTableRow>
@@ -43,7 +58,23 @@ const Table = (props: TableProps) => {
                         key={item.transactionId}
                         rowItem={item}
                         columnData={columnData}
-                        isDesktop={isDesktop}
+                        contentNormalVariant={isDesktop ? 'subtitle2' : 'body2'}
+                        contentBoldVariant={isDesktop ? 'subtitle1' : 'body1'}
+                        badgeContent={
+                            item.transactionStatus === 1
+                                ? 'In progress'
+                                : item.transactionStatus === 2
+                                  ? 'Completed'
+                                  : 'Cancelled'
+                        }
+                        badgeType={
+                            item.transactionStatus === 1
+                                ? 'info'
+                                : item.transactionStatus === 2
+                                  ? 'success'
+                                  : 'error'
+                        }
+                        formatDate={formatDate}
                     />
                 ))}
             </MuiTableBody>
@@ -76,7 +107,7 @@ export const Transaction = (props: TransactionProps) => {
     );
     return (
         <Card
-            heading="Transaction"
+            heading="Transactions"
             subHeading="This is a list of latest transactions."
         >
             <Table

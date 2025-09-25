@@ -2,7 +2,7 @@ import Dribbble from '@assets/icons/dribble.svg?react';
 import Facebook from '@assets/icons/facebook.svg?react';
 import Github from '@assets/icons/github.svg?react';
 import Twitter from '@assets/icons/nav_link.svg?react';
-import type { MenuIcon } from '@types';
+import type { MenuIcon } from '@models';
 
 import { ROUTE_PATH } from './routeConstant';
 

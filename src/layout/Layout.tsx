@@ -20,13 +20,13 @@ const Layout = (props: LayoutProps) => {
     const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
     return (
-        <MuiBox maxWidth={1800} mx={'auto'}>
+        <MuiBox maxWidth={1800} mx="auto">
             <Header onMenuClick={toggleSidebar} />
             <MuiStack direction="row">
                 {showSidebar && (
                     <Sidebar open={sidebarOpen} onClose={toggleSidebar} />
                 )}
-                <MuiBox component={'main'}>{children ?? <Outlet />}</MuiBox>
+                <MuiBox component="main">{children ?? <Outlet />}</MuiBox>
             </MuiStack>
         </MuiBox>
     );

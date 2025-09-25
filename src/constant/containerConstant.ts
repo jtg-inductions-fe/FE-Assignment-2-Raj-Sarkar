@@ -7,5 +7,10 @@ export const PADDING_TO_SIZE_MAP = {
 
 export const CONTAINER_GAP = {
     sm: 4,
-    md: 8,
+    md: 8.5,
+} as const;
+
+export const CONTAINER_MARGIN = {
+    sm: 4,
+    md: 6.5,
 } as const;

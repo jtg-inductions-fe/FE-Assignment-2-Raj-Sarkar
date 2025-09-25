@@ -1,7 +1,7 @@
-import ImgPlac1 from '@assets/imgs/image_placeholder_1.png';
-import ImgPlac2 from '@assets/imgs/image_placeholder_2.png';
-import Laptop from '@assets/imgs/laptop.png';
-import type { ImgItem } from '@types';
+import ImgPlac1 from '@assets/imgs/image_placeholder_1.svg';
+import ImgPlac2 from '@assets/imgs/image_placeholder_2.svg';
+import Laptop from '@assets/imgs/laptop.svg';
+import type { ImgItem } from '@models';
 
 export const ITEM_DATA: ImgItem[] = [
     {

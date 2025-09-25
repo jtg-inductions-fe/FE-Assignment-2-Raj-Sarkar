@@ -20,6 +20,8 @@ export const Chart = (props: ChartProps) => {
             gap={isDesktop ? 'md' : 'sm'}
             hasIcon
             heading="Sales"
+            hasHeadingPadding={true}
+            margin="md"
         >
             <SalesLineChart
                 dates={dates}

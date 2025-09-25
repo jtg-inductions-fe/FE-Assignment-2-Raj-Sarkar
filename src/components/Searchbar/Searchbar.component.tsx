@@ -61,7 +61,7 @@ export const Searchbar = (props: SearchBarProps) => {
                     {...params}
                     label={
                         <MuiStack
-                            direction={'row'}
+                            direction="row"
                             spacing={2.5}
                             sx={{ alignItems: 'flex-start' }}
                         >

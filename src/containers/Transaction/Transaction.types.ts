@@ -1,5 +1,7 @@
+import type { TableProps as MuiTableProps } from '@mui/material';
+
 import type { TableRowProps } from '@components/TableRow/TableRow.types';
-import type { ColumnType, ModifiedColumnType, TransactionItem } from '@types';
+import type { ColumnType, ModifiedColumnType, TransactionItem } from '@models';
 
 /**
  * types for table component
@@ -8,7 +10,7 @@ import type { ColumnType, ModifiedColumnType, TransactionItem } from '@types';
  * @property RowRenderer - component to render the transaction data items
  * @property isDesktop - boolean value of view width is of desktop or not
  */
-export type TableProps = {
+export type TableProps = MuiTableProps & {
     transactionData: TransactionItem[];
     columnData: ModifiedColumnType[];
     RowRenderer: React.FC<TableRowProps>;
