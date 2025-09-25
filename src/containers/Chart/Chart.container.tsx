@@ -7,6 +7,7 @@ import { ChartProps } from './Chart.types';
 /**
  *
  * @param isDesktop - boolean status of view width is desktop or not
+ * @param salesData - sales data set
  * @returns container that calls chart component
  */
 export const Chart = (props: ChartProps) => {

@@ -66,9 +66,13 @@ export const columnDef: TableColumnDef<TransactionItem>[] = [
     {
         columnName: 'transaction',
         rowRenderer: (props) => (
-            <Typography variant="subtitle2">
-                {`Payment ${props.transactionType === 1 ? 'from' : 'refund to'}`}
-                <Typography variant="subtitle1" component="span">
+            <Typography variant="subtitle2" lines={2}>
+                {`Payment ${props.transactionType === 1 ? 'from ' : 'refund to '}`}
+                <Typography
+                    variant="subtitle1"
+                    component="span"
+                    sx={{ display: 'inline' }}
+                >
                     {props.transactionName}
                 </Typography>
             </Typography>

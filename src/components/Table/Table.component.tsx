@@ -7,6 +7,8 @@ import {
 
 import { TableCell } from '@components/TableCell';
 import { TableRow } from '@components/TableRow';
+import { Typography } from '@components/Typography';
+import { theme } from '@theme';
 
 import { TableProps } from './Table.types';
 
@@ -30,7 +32,12 @@ export const Table = <TValue,>(props: TableProps<TValue>) => {
                             showBorder={true}
                             width={item.width}
                         >
-                            {item.columnName.toLocaleUpperCase()}
+                            <Typography
+                                variant="body1"
+                                color={theme.palette.grey[500]}
+                            >
+                                {item.columnName.toLocaleUpperCase()}
+                            </Typography>
                         </TableCell>
                     ))}
                 </MuiTableRow>

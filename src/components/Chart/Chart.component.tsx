@@ -1,59 +1,11 @@
 import { Box as MuiBox } from '@mui/material';
-import {
-    ChartsTooltip as MuiChartsTooltip,
-    chartsTooltipClasses,
-    // ChartsTooltipContainer,
-    LineChart as MuiLineChart,
-    // useItemTooltip,
-} from '@mui/x-charts';
+import { LineChart as MuiLineChart } from '@mui/x-charts';
 
-// import { Typography } from '@components/Typography';
+import { CustomTooltip } from '@components/CustomTooltip';
 import { FONTWEIGHTS } from '@constant';
 import { theme } from '@theme';
 
 import type { SalesLineChartProps } from './Chart.types';
-
-// function CustomTooltip() {
-//   const config = useItemTooltip();
-//   if (item === null) {
-//     return null;
-//   }
-
-//   const {
-//     formattedValue,
-//     color,
-//   } = item;
-
-//   const { label } = series;
-//   return (
-//     <ChartsTooltipContainer>
-//       <MuiBox
-//         sx={{
-//           p: 1,
-//           bgcolor: theme.palette.primary.light,
-//           border: `${theme.spacing(0.25)} solid ${theme.palette.grey[50]}`,
-//           borderRadius: 1,
-//         }}
-//       >
-//         <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-//           {label}
-//         </Typography>
-//         <MuiBox sx={{ display: 'flex', alignItems: 'center', mt: 0.5 }}>
-//           <MuiBox
-//             sx={{
-//               width: 10,
-//               height: 10,
-//               bgcolor: color,
-//               borderRadius: '50%',
-//               mr: 1,
-//             }}
-//           />
-//           <Typography variant="body2">{`Value: ${formattedValue}`}</Typography>
-//         </MuiBox>
-//       </MuiBox>
-//     </ChartsTooltipContainer>
-//   );
-// }
 
 /**
  *
@@ -90,7 +42,6 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
                         valueFormatter: (val: Date) =>
                             `${val.toLocaleString('default', { day: '2-digit', month: 'short' })}`,
                         tickInterval: dates,
-                        tickPlacement: 'end',
                         disableLine: true,
                         disableTicks: true,
                         min: xMin,
@@ -124,42 +75,17 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
                         label: 'Sales:',
                         valueFormatter: (v) => `$${(v! / 1000).toFixed(0)}k`,
                         color: theme.palette.primary.main,
-                        showMark: false,
+                        showMark: true,
                     },
                 ]}
                 height={418}
-                // slots={{tooltip:CustomTooltip}}
-                slots={{ tooltip: MuiChartsTooltip }}
+                slots={{ tooltip: CustomTooltip }}
                 slotProps={{
                     tooltip: {
-                        sx: {
-                            [`& .${chartsTooltipClasses.mark}`]: {
-                                '& > *': {
-                                    display: 'none ',
-                                },
-                                '&::after': {
-                                    content: '""',
-                                    display: 'block',
-                                    width: 10,
-                                    height: 10,
-                                    borderRadius: '50%',
-                                    backgroundColor: theme.palette.primary.main,
-                                },
-                            },
-                            [`& .${chartsTooltipClasses.paper}`]: {
-                                padding: theme.spacing(2.5, 2.5, 5),
-                                borderRadius: theme.spacing(4),
-                            },
-                            [`& .${chartsTooltipClasses.labelCell}`]: {
-                                fontSize: theme.typography.pxToRem(16),
-                                fontWeight: FONTWEIGHTS.fontWeightLight,
-                                borderBottom: 0,
-                            },
-                            [`& .${chartsTooltipClasses.valueCell}`]: {
-                                fontSize: theme.typography.pxToRem(16),
-                                fontWeight: FONTWEIGHTS.fontWeightMedium,
-                            },
-                        },
+                        trigger: 'item',
+                    },
+                    mark: {
+                        opacity: 0,
                     },
                 }}
             />
