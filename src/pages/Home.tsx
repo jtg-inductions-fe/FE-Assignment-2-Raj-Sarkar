@@ -1,6 +1,6 @@
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
-import { ITEM_DATA, FOOTER_ICONS } from '@constant';
+import { FOOTER_ICONS, ITEM_DATA } from '@constant';
 import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
 import { Footer } from '@containers/Footer';

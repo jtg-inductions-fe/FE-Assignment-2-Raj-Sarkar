@@ -7,7 +7,7 @@ import { FooterIconsProps } from './FooterIcons.types';
 /**
  *
  * @param IconData - data of icon details
- * @returns
+ * @returns component for footer icons rendering
  */
 export const FooterIcons = (props: FooterIconsProps) => {
     const { iconData } = props;

@@ -77,17 +77,44 @@ export const columnDef: TableColumnDef<TransactionItem>[] = [
                 </Typography>
             </Typography>
         ),
+        mobileRowRenderer: (props) => (
+            <Typography variant="body2" lines={2}>
+                {`Payment ${props.transactionType === 1 ? 'from ' : 'refund to '}`}
+                <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{ display: 'inline' }}
+                >
+                    {props.transactionName}
+                </Typography>
+            </Typography>
+        ),
         width: '21%',
+        mobileWidth: '65%',
         showInMobile: true,
     },
     {
         columnName: 'date & time',
         rowRenderer: (props) => (
-            <Typography variant="subtitle2" color={theme.palette.grey[500]}>
+            <Typography
+                variant="subtitle2"
+                color={theme.palette.grey[500]}
+                lines={2}
+            >
+                {formatDate(props.transactionTime)}
+            </Typography>
+        ),
+        mobileRowRenderer: (props) => (
+            <Typography
+                variant="body2"
+                color={theme.palette.grey[500]}
+                lines={2}
+            >
                 {formatDate(props.transactionTime)}
             </Typography>
         ),
         width: '28%',
+        mobileWidth: '35%',
         showInMobile: true,
     },
     {

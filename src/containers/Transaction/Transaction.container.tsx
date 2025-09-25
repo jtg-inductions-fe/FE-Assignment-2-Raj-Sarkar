@@ -17,6 +17,22 @@ export const Transaction = (props: TransactionProps) => {
     const modifiedColumnData: TableColumnDef<TransactionItem>[] = isDesktop
         ? columnData
         : columnData.filter((item) => item.showInMobile === !isDesktop);
+    const modifiedMappedColumnData: TableColumnDef<TransactionItem>[] =
+        modifiedColumnData.map((item) => ({
+            rowRenderer: isDesktop
+                ? item.rowRenderer
+                : item.mobileRowRenderer
+                  ? item.mobileRowRenderer
+                  : item.rowRenderer,
+            columnName: item.columnName,
+            showInMobile: item.showInMobile,
+            width: isDesktop
+                ? item.width
+                : item.mobileWidth
+                  ? item.mobileWidth
+                  : item.width,
+        }));
+
     return (
         <Card
             heading="Transactions"
@@ -24,7 +40,7 @@ export const Transaction = (props: TransactionProps) => {
         >
             <Table
                 transactionData={transactionData}
-                columnDef={modifiedColumnData}
+                columnDef={modifiedMappedColumnData}
             />
         </Card>
     );

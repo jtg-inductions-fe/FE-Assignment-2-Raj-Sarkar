@@ -6,6 +6,7 @@ export const PADDING_TO_SIZE_MAP = {
 } as const;
 
 export const CONTAINER_GAP = {
+    none: 0,
     sm: 4,
     md: 8.5,
 } as const;

@@ -22,6 +22,8 @@ export type TableProps<TValue> = MuiTableProps & {
 export type TableColumnDef<TValue> = {
     columnName: string;
     rowRenderer: (props: TValue) => React.ReactNode;
+    mobileRowRenderer?: (props: TValue) => React.ReactNode;
     width: string;
+    mobileWidth?: string;
     showInMobile: boolean;
 };
