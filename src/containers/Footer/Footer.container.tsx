@@ -20,6 +20,7 @@ export const Footer = (props: FooterProps) => {
             <StyledStack
                 direction={isDesktop ? 'row' : 'column'}
                 justifyContent="space-between"
+                marginTop={0}
             >
                 <Typography
                     variant="h4"

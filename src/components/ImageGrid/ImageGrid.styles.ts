@@ -1,8 +1,12 @@
 import { ImageList as MuiImageList, styled } from '@mui/material';
 
-export const StyledImageList = styled(MuiImageList)(
-    ({ theme: { spacing } }) => ({
-        margin: 0,
-        marginTop: spacing(4.75),
-    }),
-);
+import { StyledImageListProps } from './ImageGrid.types';
+
+const customProps: PropertyKey[] = ['marginTop'];
+
+export const StyledImageList = styled(MuiImageList, {
+    shouldForwardProp: (prop) => !customProps.includes(prop),
+})<StyledImageListProps>(({ theme: { spacing }, marginTop }) => ({
+    margin: 0,
+    marginTop: spacing(marginTop),
+}));

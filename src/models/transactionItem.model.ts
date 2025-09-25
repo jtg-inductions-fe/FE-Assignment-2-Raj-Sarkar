@@ -1,3 +1,7 @@
+import type { TableCellProps } from '@components/TableCell/TableCell.types';
+import type { TableCellBadgeProps } from '@components/TableCellBadge/TableCellBadge.types';
+import type { ModifiedTransactionItem } from '@containers/Transaction/Transaction.types';
+
 /**
  * Types of each transaction item
  * @property transactionId - unique id of transaction
@@ -10,10 +14,10 @@
  */
 export type TransactionItem = {
     transactionId: string;
-    name: string;
-    time: string;
-    amount: number;
-    currency: string;
+    transactionName: string;
+    transactionTime: string;
+    transactionAmount: number;
+    transactionCurrency: string;
     transactionType: 1 | 2;
     transactionStatus: 1 | 2 | 3;
 };
@@ -26,12 +30,15 @@ export type TransactionItem = {
  * @property mobileConfig - width of column in mobile
  * @property showInMobile - boolean value to show/hide in mobile
  */
-export type ColumnType = {
+export type ColumnType<TValue> = {
     id: string;
+    key: keyof ModifiedTransactionItem;
     title: string;
     showInMobile: boolean;
     desktopConfig: { width: string };
     mobileConfig: { width: string };
+    cellRenderer: (props: TValue) => React.ReactNode;
+    // cellRendererProps: TableCellProps | TableCellBadgeProps;
 };
 
 /**
@@ -43,7 +50,11 @@ export type ColumnType = {
  */
 export type ModifiedColumnType = {
     id: string;
+    key: keyof ModifiedTransactionItem;
     title: string;
     showInMobile: boolean;
     width: string;
+    cellRenderer: (
+        props: TableCellProps | TableCellBadgeProps,
+    ) => React.ReactNode;
 };

@@ -1,8 +1,9 @@
-import { Avatar as MuiAvatar, Stack as MuiStack } from '@mui/material';
+import { Stack as MuiStack } from '@mui/material';
 
 import { Typography } from '@components/Typography';
 import { theme } from '@theme';
 
+import { StyledAvatar } from './ListItem.styles';
 import type { ListItemProps } from './ListItem.types';
 
 /**
@@ -22,13 +23,7 @@ export const ListItem = (props: ListItemProps) => {
         >
             <MuiStack direction="row" spacing={2} alignItems="center">
                 {item.avatar && (
-                    <MuiAvatar
-                        src={item.avatar}
-                        sx={{
-                            width: 32,
-                            height: 32,
-                        }}
-                    />
+                    <StyledAvatar src={item.avatar} alt={item.title} />
                 )}
                 <MuiStack>
                     <Typography variant="h3">{item.title}</Typography>

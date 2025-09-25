@@ -1,5 +1,6 @@
 import { Card } from '@components/Card';
 import { SalesLineChart } from '@components/Chart';
+import { FONTWEIGHTS } from '@constant';
 
 import { ChartProps } from './Chart.types';
 
@@ -12,7 +13,7 @@ export const Chart = (props: ChartProps) => {
     const { isDesktop, salesData } = props;
     const dates = salesData.map((data) => data.date);
     const sales = salesData.map((data) => data.sales);
-    const xMin = new Date(dates[0].getTime() - 24 * 60 * 60 * 1000);
+    const xMin = new Date(dates[0].getTime() - 6 * 60 * 60 * 1000);
 
     return (
         <Card
@@ -29,6 +30,12 @@ export const Chart = (props: ChartProps) => {
                 xMin={xMin}
                 yMin={0}
                 yMax={240000}
+                yPosition={isDesktop ? 'left' : 'none'}
+                xWeight={
+                    isDesktop
+                        ? FONTWEIGHTS.fontWeightMedium
+                        : FONTWEIGHTS.fontWeightLight
+                }
             />
         </Card>
     );

@@ -9,10 +9,12 @@ import type { ImageGridProps } from './ImageGrid.types';
  * @param cols - number cols in the grid
  * @param rowHeight - height of each row in grid
  * @param gap - gap between two rows
+ * @param marginTop - top margin of imagelist
  * @returns Component to render the image items using
  */
 export const ImageGrid = (props: ImageGridProps) => {
-    const { modifiedImageList, cols, rowHeight, gap, ...rest } = props;
+    const { modifiedImageList, cols, rowHeight, gap, marginTop, ...rest } =
+        props;
 
     return (
         <StyledImageList
@@ -21,6 +23,7 @@ export const ImageGrid = (props: ImageGridProps) => {
             rowHeight={rowHeight}
             gap={gap}
             {...rest}
+            marginTop={marginTop}
         >
             {modifiedImageList.map((item, index) => (
                 <MuiImageListItem

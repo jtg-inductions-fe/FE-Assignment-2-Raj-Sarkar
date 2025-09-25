@@ -10,8 +10,8 @@ export type StyledTableCellProps = {
     isBgGrey?: boolean;
 };
 
-/**
- * Types for TableCell component
- *
- */
-export type TableCellProps = StyledTableCellProps & MuiTableCellProps;
+export type TableCellBadgeProps = MuiTableCellProps &
+    StyledTableCellProps & {
+        content: string;
+        badgeType: 'success' | 'error' | 'info';
+    };

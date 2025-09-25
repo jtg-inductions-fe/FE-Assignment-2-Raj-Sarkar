@@ -25,7 +25,8 @@ export const ImageGrid = (props: ImageGridProps) => {
             modifiedImageList={newData}
             cols={isDesktop ? 16 : 1}
             rowHeight={isDesktop ? 3.6 : 112}
-            gap={45}
+            gap={isDesktop ? 45 : 18}
+            marginTop={isDesktop ? 4.75 : 0.5}
         />
     );
 };
