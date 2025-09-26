@@ -66,6 +66,7 @@ export const Card = (props: CardProps) => {
                                 <IconButton
                                     component={Exclamation}
                                     customColor={theme.palette.primary.light}
+                                    aria-label="info icon"
                                     aria-owns={open ? 'sales-info' : undefined}
                                     aria-haspopup="true"
                                     onMouseEnter={handlePopoverOpen}
@@ -87,7 +88,7 @@ export const Card = (props: CardProps) => {
                                     onClose={handlePopoverClose}
                                     disableRestoreFocus
                                 >
-                                    <Typography padding={5}>
+                                    <Typography variant="subtitle1" padding={5}>
                                         Sales chart information
                                     </Typography>
                                 </MuiPopover>

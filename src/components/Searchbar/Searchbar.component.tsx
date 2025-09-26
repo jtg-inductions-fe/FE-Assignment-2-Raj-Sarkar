@@ -1,13 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
-import {
-    Stack as MuiStack,
-    TextField as MuiTextField,
-    Typography as MuiTypography,
-} from '@mui/material';
+import { InputAdornment, TextField as MuiTextField } from '@mui/material';
 
 import Search from '@assets/icons/search.svg?react';
-import { Icon } from '@components/Icon';
 
 import { StyledAutocomplete } from './Searchbar.styles';
 import type { SearchBarProps } from './Searchbar.types';
@@ -59,16 +54,17 @@ export const Searchbar = (props: SearchBarProps) => {
             renderInput={(params) => (
                 <MuiTextField
                     {...params}
-                    label={
-                        <MuiStack
-                            direction="row"
-                            spacing={2.5}
-                            sx={{ alignItems: 'flex-start' }}
-                        >
-                            <Icon component={Search} />
-                            <MuiTypography variant="h4">Search</MuiTypography>
-                        </MuiStack>
-                    }
+                    placeholder="Search"
+                    slotProps={{
+                        input: {
+                            ...params.InputProps,
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <Search />
+                                </InputAdornment>
+                            ),
+                        },
+                    }}
                 />
             )}
             onChange={(_, value) => {

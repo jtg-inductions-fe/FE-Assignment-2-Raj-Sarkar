@@ -7,7 +7,7 @@ import { FooterIconsProps } from './FooterIcons.types';
 /**
  *
  * @param IconData - data of icon details
- * @returns
+ * @returns component for footer icons rendering
  */
 export const FooterIcons = (props: FooterIconsProps) => {
     const { iconData } = props;
@@ -18,7 +18,7 @@ export const FooterIcons = (props: FooterIconsProps) => {
                 <IconButton
                     key={item.id}
                     component={item.icon}
-                    onClick={() => (window.location.href = item.to)}
+                    onClick={() => window.open(item.to, '_blank')}
                     aria-label={item.label}
                 />
             ))}

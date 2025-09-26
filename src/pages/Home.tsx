@@ -1,14 +1,19 @@
 import { Box as MuiBox, Stack as MuiStack, useMediaQuery } from '@mui/material';
 
-import { TableRow } from '@components/TableRow/TableRow.component';
-import { ITEM_DATA, FOOTER_ICONS } from '@constant';
+import { FOOTER_ICONS, ITEM_DATA } from '@constant';
 import { Chart } from '@containers/Chart';
 import { Customer } from '@containers/Customer';
 import { Footer } from '@containers/Footer';
 import { ImageGrid } from '@containers/ImageGrid';
 import { Product } from '@containers/Product';
 import { Transaction } from '@containers/Transaction';
-import { CUSTOMERS, PRODUCT_LIST, salesDataset, columnData, transactionDetails } from '@data';
+import {
+    columnDef,
+    CUSTOMERS,
+    PRODUCT_LIST,
+    salesDataset,
+    transactionDetails,
+} from '@data';
 import { theme } from '@theme';
 
 /**
@@ -17,12 +22,7 @@ import { theme } from '@theme';
 export const Home = () => {
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <MuiBox
-            padding={4}
-            overflow="auto"
-            bgcolor={theme.palette.grey[50]}
-            width={isDesktop ? 'auto' : '100vw'}
-        >
+        <MuiBox padding={4} overflow="auto" bgcolor={theme.palette.grey[50]}>
             <ImageGrid imageList={ITEM_DATA} isDesktop={isDesktop} />
             <Chart isDesktop={isDesktop} salesData={salesDataset} />
             <MuiStack
@@ -34,9 +34,8 @@ export const Home = () => {
             </MuiStack>
             <Transaction
                 transactionData={transactionDetails}
+                columnData={columnDef}
                 isDesktop={isDesktop}
-                RowRenderer={TableRow}
-                columnData={columnData}
             />
             <Footer iconData={FOOTER_ICONS} isDesktop={isDesktop} />
         </MuiBox>

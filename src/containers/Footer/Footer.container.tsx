@@ -16,10 +16,11 @@ export const Footer = (props: FooterProps) => {
     const { iconData, isDesktop } = props;
 
     return (
-        <Card size="xl">
+        <Card size="xl" gap="none">
             <StyledStack
                 direction={isDesktop ? 'row' : 'column'}
                 justifyContent="space-between"
+                marginTop={0}
             >
                 <Typography
                     variant="h4"

@@ -28,7 +28,7 @@ export const NotFound = (props: NotFoundProps) => {
     } = props;
 
     return (
-        <MuiStack alignItems="center" gap={4} width="100vw">
+        <MuiStack alignItems="center" gap={4} width="100%">
             <img src={image} alt={imageAlt} width={isDesktop ? '60%' : '90%'} />
             <MuiStack gap={5.5} alignItems="center" paddingX={4}>
                 <MuiStack gap={2.5}>

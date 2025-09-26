@@ -11,3 +11,7 @@ export {
 } from './containerConstant';
 export { BADGE_TYPE_COLORS } from './badgeConstant';
 export { FOOTER_ICONS } from './footerConstants';
+export {
+    STATUS_TO_BADGE_TYPE_MAP,
+    STATUS_TO_CONTENT_MAP,
+} from './transactionConstant';

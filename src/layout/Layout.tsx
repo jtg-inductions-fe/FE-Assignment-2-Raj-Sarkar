@@ -26,7 +26,9 @@ const Layout = (props: LayoutProps) => {
                 {showSidebar && (
                     <Sidebar open={sidebarOpen} onClose={toggleSidebar} />
                 )}
-                <MuiBox component="main">{children ?? <Outlet />}</MuiBox>
+                <MuiBox component="main" width={'100%'}>
+                    {children ?? <Outlet />}
+                </MuiBox>
             </MuiStack>
         </MuiBox>
     );
