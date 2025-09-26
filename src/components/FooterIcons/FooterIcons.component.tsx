@@ -18,7 +18,7 @@ export const FooterIcons = (props: FooterIconsProps) => {
                 <IconButton
                     key={item.id}
                     component={item.icon}
-                    onClick={() => (window.location.href = item.to)}
+                    onClick={() => window.open(item.to, '_blank')}
                     aria-label={item.label}
                 />
             ))}
