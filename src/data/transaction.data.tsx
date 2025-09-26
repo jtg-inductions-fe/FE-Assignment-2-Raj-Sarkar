@@ -1,6 +1,7 @@
 import { Badge } from '@components/Badge';
 import { TableColumnDef } from '@components/Table/Table.types';
 import { Typography } from '@components/Typography';
+import { STATUS_TO_BADGE_TYPE_MAP, STATUS_TO_CONTENT_MAP } from '@constant';
 import { formatDate } from '@helper';
 import type { TransactionItem } from '@models';
 import { theme } from '@theme';
@@ -131,20 +132,8 @@ export const columnDef: TableColumnDef<TransactionItem>[] = [
         columnName: 'status',
         rowRenderer: (props) => (
             <Badge
-                type={
-                    props.transactionStatus === 1
-                        ? 'success'
-                        : props.transactionStatus === 2
-                          ? 'info'
-                          : 'error'
-                }
-                content={
-                    props.transactionStatus === 1
-                        ? 'Completed'
-                        : props.transactionStatus === 2
-                          ? 'In progress'
-                          : 'Cancelled'
-                }
+                type={STATUS_TO_BADGE_TYPE_MAP[props.transactionStatus]}
+                content={STATUS_TO_CONTENT_MAP[props.transactionStatus]}
             />
         ),
         width: '19%',
