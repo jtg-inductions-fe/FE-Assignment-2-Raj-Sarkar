@@ -4,7 +4,7 @@ import type {
     TypographyUtils,
 } from '@mui/material/styles/createTypography';
 
-import { HTML_FONT_SIZE } from '@constant';
+import { FONTWEIGHTS, HTML_FONT_SIZE, LINE_HEIGHT } from '@constant';
 
 /* Custom px to rem function */
 const typographyUtil: TypographyUtils = {
@@ -32,13 +32,48 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
 
     h1: {
         fontSize: typographyUtil.pxToRem(30),
-        fontWeight: 700,
+        fontWeight: FONTWEIGHTS.fontWeightMedium,
         lineHeight: typographyUtil.pxToRem(45),
 
         [theme.breakpoints.up('md')]: {
             fontSize: typographyUtil.pxToRem(48),
             lineHeight: typographyUtil.pxToRem(62.5),
         },
+    },
+    h2: {
+        fontSize: typographyUtil.pxToRem(20),
+        fontWeight: FONTWEIGHTS.fontWeightMedium,
+        lineHeight: LINE_HEIGHT,
+    },
+    h3: {
+        fontSize: typographyUtil.pxToRem(16),
+        fontWeight: FONTWEIGHTS.fontWeightRegular,
+        lineHeight: LINE_HEIGHT,
+    },
+    h4: {
+        fontSize: typographyUtil.pxToRem(16),
+        fontWeight: FONTWEIGHTS.fontWeightLight,
+        lineHeight: LINE_HEIGHT,
+    },
+    subtitle1: {
+        fontSize: typographyUtil.pxToRem(14),
+        fontWeight: FONTWEIGHTS.fontWeightMedium,
+        lineHeight: LINE_HEIGHT,
+    },
+    subtitle2: {
+        fontSize: typographyUtil.pxToRem(14),
+        fontWeight: FONTWEIGHTS.fontWeightLight,
+        lineHeight: LINE_HEIGHT,
+    },
+    body1: {
+        fontSize: typographyUtil.pxToRem(12),
+        fontWeight: FONTWEIGHTS.fontWeightMedium,
+        lineHeight: LINE_HEIGHT,
+    },
+    body2: {
+        fontSize: typographyUtil.pxToRem(12),
+        fontWeight: FONTWEIGHTS.fontWeightLight,
+        lineHeight: LINE_HEIGHT,
     },
 });
 
