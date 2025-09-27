@@ -24,6 +24,9 @@ export const ROUTE_PATH = {
     ADJUSTMENTS: '/adjustments',
     GLOBAL: '/global',
     SETTINGS: '/settings',
+} as const;
+
+export const EXTERNAL_ROUTE = {
     FACEBOOK: 'https://www.facebook.com/',
     GITHUB: 'https://www.github.com/',
     TWITTER: 'https://www.x.com/',

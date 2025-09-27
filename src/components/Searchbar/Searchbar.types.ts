@@ -5,6 +5,6 @@ import { ListItem } from '@models';
  * @property productList - list of product items
  */
 export type SearchBarProps = {
-    freesolo?: boolean;
     productList: ListItem[];
+    freesolo?: boolean;
 };

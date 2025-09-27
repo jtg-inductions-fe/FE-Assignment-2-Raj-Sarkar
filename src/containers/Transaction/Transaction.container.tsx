@@ -21,16 +21,10 @@ export const Transaction = (props: TransactionProps) => {
         modifiedColumnData.map((item) => ({
             rowRenderer: isDesktop
                 ? item.rowRenderer
-                : item.mobileRowRenderer
-                  ? item.mobileRowRenderer
-                  : item.rowRenderer,
+                : (item.mobileRowRenderer ?? item.rowRenderer),
             columnName: item.columnName,
             showInMobile: item.showInMobile,
-            width: isDesktop
-                ? item.width
-                : item.mobileWidth
-                  ? item.mobileWidth
-                  : item.width,
+            width: isDesktop ? item.width : (item.mobileWidth ?? item.width),
         }));
 
     return (
@@ -39,7 +33,7 @@ export const Transaction = (props: TransactionProps) => {
             subHeading="This is a list of latest transactions."
         >
             <Table
-                transactionData={transactionData}
+                data={transactionData}
                 columnDef={modifiedMappedColumnData}
             />
         </Card>

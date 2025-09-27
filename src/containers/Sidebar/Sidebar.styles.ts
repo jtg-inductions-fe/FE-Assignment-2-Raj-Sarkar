@@ -1,7 +1,7 @@
 import { Drawer as MuiDrawer, Stack as MuiStack, styled } from '@mui/material';
 
 export const StyledMainStack = styled(MuiStack)(
-    ({ theme: { palette, typography, breakpoints } }) => ({
+    ({ theme: { palette, typography, breakpoints, spacing } }) => ({
         width: typography.pxToRem(302),
         height: 'calc(100vh - 64px)',
         [breakpoints.up('sm')]: {
@@ -17,6 +17,8 @@ export const StyledMainStack = styled(MuiStack)(
         top: typography.pxToRem(64),
         borderRight: `${typography.pxToRem(1)} solid ${palette.grey[200]}`,
         flexShrink: 0,
+        overflow: 'auto',
+        gap: spacing(4),
     }),
 );
 

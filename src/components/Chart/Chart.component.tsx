@@ -22,6 +22,7 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
     const {
         yMin = 0,
         yMax = 240000,
+        yInterval = [],
         xMin,
         dates,
         sales,
@@ -60,6 +61,7 @@ export const SalesLineChart = (props: SalesLineChartProps) => {
                         disableTicks: true,
                         min: yMin,
                         max: yMax,
+                        tickInterval: yInterval,
                         tickLabelStyle: {
                             fontSize: theme.typography.pxToRem(14),
                             fontWeight: FONTWEIGHTS.fontWeightMedium,

@@ -9,11 +9,12 @@
  * @property xWeight - weight of x-label
  */
 export type SalesLineChartProps = {
-    yMin?: number;
-    yMax?: number;
     xMin: Date;
     dates: Date[];
     sales: number[];
     yPosition: 'left' | 'right' | 'none';
     xWeight: number;
+    yMin?: number;
+    yMax?: number;
+    yInterval?: number[];
 };

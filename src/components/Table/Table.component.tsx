@@ -14,12 +14,12 @@ import { TableProps } from './Table.types';
 
 /**
  *
- * @param transactionData - data of transaction
+ * @param data - data of transaction
  * @param columnDef - columndef data
  * @returns component to render a table
  */
 export const Table = <TValue,>(props: TableProps<TValue>) => {
-    const { transactionData, columnDef } = props;
+    const { data, columnDef } = props;
 
     return (
         <MuiTable aria-label="Transactions table">
@@ -43,7 +43,7 @@ export const Table = <TValue,>(props: TableProps<TValue>) => {
                 </MuiTableRow>
             </MuiTableHead>
             <MuiTableBody>
-                {transactionData.map((rowData, idx) => (
+                {data.map((rowData, idx) => (
                     <TableRow
                         key={idx}
                         columnData={columnDef}

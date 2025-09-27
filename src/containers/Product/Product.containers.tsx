@@ -26,7 +26,7 @@ export const Product = (props: ProductProps) => {
                 gap="sm"
                 heading="Top products"
             >
-                <List listData={productData} RenderItem={ListItem} />
+                <List listData={productData} renderItem={ListItem} />
             </Card>
         </MuiBox>
     );

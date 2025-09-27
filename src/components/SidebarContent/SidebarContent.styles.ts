@@ -17,12 +17,15 @@ export const StyledList = styled(MuiList)(({ theme: { typography } }) => ({
 }));
 
 export const StyledListItemButton = styled(MuiListItemButton)(
-    ({ theme: { spacing } }) => ({
+    ({ theme: { spacing, palette } }) => ({
         padding: spacing(1, 2),
         borderRadius: spacing(3),
         display: 'flex',
         justifyContent: 'space-between',
         width: '100%',
+        '&.Mui-selected': {
+            backgroundColor: palette.grey[100],
+        },
     }),
 );
 

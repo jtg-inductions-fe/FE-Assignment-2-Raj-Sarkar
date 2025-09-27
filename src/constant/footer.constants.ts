@@ -4,31 +4,31 @@ import Github from '@assets/icons/github.svg?react';
 import Twitter from '@assets/icons/nav_link.svg?react';
 import type { MenuIcon } from '@models';
 
-import { ROUTE_PATH } from './routeConstant';
+import { EXTERNAL_ROUTE } from './route.constants';
 
 export const FOOTER_ICONS: MenuIcon[] = [
     {
         id: 'facebook',
         icon: Facebook,
         label: 'facebook',
-        to: ROUTE_PATH.FACEBOOK,
+        to: EXTERNAL_ROUTE.FACEBOOK,
     },
     {
         id: 'twitter',
         icon: Twitter,
         label: 'twitter',
-        to: ROUTE_PATH.TWITTER,
+        to: EXTERNAL_ROUTE.TWITTER,
     },
     {
         id: 'github',
         icon: Github,
         label: 'github',
-        to: ROUTE_PATH.GITHUB,
+        to: EXTERNAL_ROUTE.GITHUB,
     },
     {
         id: 'dribbble',
         icon: Dribbble,
         label: 'dribbble',
-        to: ROUTE_PATH.DRIBBBLE,
+        to: EXTERNAL_ROUTE.DRIBBBLE,
     },
 ];

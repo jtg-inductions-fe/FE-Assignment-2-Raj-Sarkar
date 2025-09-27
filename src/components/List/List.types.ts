@@ -4,11 +4,11 @@ import { ListItem } from '@models';
 /**
  * Props types for list content component
  * @property listData - list of details of customer/product
- * @property RenderItem - component to render each item
+ * @property renderItem - component to render each item
  */
 export type ListContentProps = {
     listData: ListItem[];
-    RenderItem: React.FC<ListItemProps>;
+    renderItem: (props: ListItemProps) => React.ReactNode;
 };
 
 /**

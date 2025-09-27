@@ -22,7 +22,7 @@ export const Customer = (props: CustomerProps) => {
                 gap="sm"
                 heading="Latest Customers"
             >
-                <List listData={customerData} RenderItem={ListItem} />
+                <List listData={customerData} renderItem={ListItem} />
             </Card>
         </MuiBox>
     );
