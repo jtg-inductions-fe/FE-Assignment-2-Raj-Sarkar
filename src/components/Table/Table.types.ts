@@ -3,9 +3,7 @@ import type { TableProps as MuiTableProps } from '@mui/material';
 /**
  * Types for table component
  * @property data - data set of transactions
- * @property columnData - data of columns
- * @property rowRenderer - component to render the transaction data items
- * @property isDesktop - boolean value of view width is of desktop or not
+ * @property columnDef - data of columns
  */
 export type TableProps<TValue> = MuiTableProps & {
     data: TValue[];

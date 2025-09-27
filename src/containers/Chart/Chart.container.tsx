@@ -18,7 +18,7 @@ export const Chart = (props: ChartProps) => {
     const yMin = 0,
         yMax = 242500,
         interval = 40000,
-        yIntervalArray = [];
+        yIntervalArray: number[] = [];
     for (let i = yMin; i < yMax; i += interval) yIntervalArray.push(i);
 
     return (

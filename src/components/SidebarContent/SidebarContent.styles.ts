@@ -23,7 +23,7 @@ export const StyledListItemButton = styled(MuiListItemButton)(
         display: 'flex',
         justifyContent: 'space-between',
         width: '100%',
-        '&.Mui-selected': {
+        '&.Mui-selected, &.Mui-selected:hover': {
             backgroundColor: palette.grey[100],
         },
     }),
