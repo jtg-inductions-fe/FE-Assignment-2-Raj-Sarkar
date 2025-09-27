@@ -1,17 +1,13 @@
-export { COLORS, HTML_FONT_SIZE, SCALING_FACTOR } from './themeConstant';
-export { ROUTE_PATH } from './routeConstant';
-export { FONTWEIGHTS, LINE_HEIGHT } from './fontConstant';
-export { ICON_SIZE } from './sizeConstant';
-export * from './menuConstants';
-export { ITEM_DATA } from './imgConstant';
+export { COLORS, HTML_FONT_SIZE, SCALING_FACTOR } from './theme.constants';
+export { ROUTE_PATH } from './route.constants';
+export { FONTWEIGHTS, DEFAULT_LINE_HEIGHT } from './font.constants';
+export { ICON_SIZE } from './size.constants';
+export * from './menu.constants';
+export { ITEM_DATA } from './img.constants';
 export {
     PADDING_TO_SIZE_MAP,
     CONTAINER_GAP,
     CONTAINER_MARGIN,
-} from './containerConstant';
-export { BADGE_TYPE_COLORS } from './badgeConstant';
-export { FOOTER_ICONS } from './footerConstants';
-export {
-    STATUS_TO_BADGE_TYPE_MAP,
-    STATUS_TO_CONTENT_MAP,
-} from './transactionConstant';
+} from './container.constants';
+export { BADGE_TYPE_COLORS } from './badge.constants';
+export { FOOTER_ICONS } from './footer.constants';

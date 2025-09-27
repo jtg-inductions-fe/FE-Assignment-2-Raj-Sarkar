@@ -11,11 +11,11 @@
  */
 export type ListItem = {
     id: string;
-    avatar?: string;
     title: string;
     description: string;
     sales?: number;
     prefix?: string;
     suffix?: string;
     to?: string;
+    avatar?: string;
 };

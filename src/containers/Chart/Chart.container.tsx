@@ -15,6 +15,11 @@ export const Chart = (props: ChartProps) => {
     const dates = salesData.map((data) => data.date);
     const sales = salesData.map((data) => data.sales);
     const xMin = new Date(dates[0].getTime() - 6 * 60 * 60 * 1000);
+    const yMin = 0,
+        yMax = 242500,
+        interval = 40000,
+        yIntervalArray: number[] = [];
+    for (let i = yMin; i < yMax; i += interval) yIntervalArray.push(i);
 
     return (
         <Card
@@ -29,8 +34,9 @@ export const Chart = (props: ChartProps) => {
                 dates={dates}
                 sales={sales}
                 xMin={xMin}
-                yMin={0}
-                yMax={240000}
+                yMin={yMin}
+                yMax={yMax}
+                yInterval={yIntervalArray}
                 yPosition={isDesktop ? 'left' : 'none'}
                 xWeight={
                     isDesktop

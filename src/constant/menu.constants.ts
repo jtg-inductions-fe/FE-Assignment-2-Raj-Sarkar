@@ -12,7 +12,7 @@ import Support from '@assets/icons/support.svg?react';
 import type { MenuItem } from '@components/SidebarContent/SidebarContent.types';
 import type { MenuIcon } from '@models';
 
-import { ROUTE_PATH } from './routeConstant';
+import { ROUTE_PATH } from './route.constants';
 
 export const MENU_DATA_1: MenuItem[] = [
     {

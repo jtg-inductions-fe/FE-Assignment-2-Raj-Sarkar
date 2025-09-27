@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-import { InputAdornment, TextField as MuiTextField } from '@mui/material';
+import { InputAdornment } from '@mui/material';
 
 import Search from '@assets/icons/search.svg?react';
 
-import { StyledAutocomplete } from './Searchbar.styles';
+import { StyledAutocomplete, StyledTextField } from './Searchbar.styles';
 import type { SearchBarProps } from './Searchbar.types';
 
 /**
@@ -52,7 +52,7 @@ export const Searchbar = (props: SearchBarProps) => {
             freeSolo={freesolo}
             options={productList.map((prod) => prod.title)}
             renderInput={(params) => (
-                <MuiTextField
+                <StyledTextField
                     {...params}
                     placeholder="Search"
                     slotProps={{

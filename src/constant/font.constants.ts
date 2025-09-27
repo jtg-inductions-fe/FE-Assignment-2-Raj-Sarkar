@@ -4,4 +4,4 @@ export const FONTWEIGHTS = {
     fontWeightMedium: 600,
 } as const;
 
-export const LINE_HEIGHT = '150%';
+export const DEFAULT_LINE_HEIGHT = '150%';

@@ -1,7 +1,10 @@
 import { Badge } from '@components/Badge';
 import { TableColumnDef } from '@components/Table/Table.types';
 import { Typography } from '@components/Typography';
-import { STATUS_TO_BADGE_TYPE_MAP, STATUS_TO_CONTENT_MAP } from '@constant';
+import {
+    STATUS_TO_BADGE_TYPE_MAP,
+    STATUS_TO_CONTENT_MAP,
+} from '@containers/Transaction/Transaction.constants';
 import { formatDate } from '@helper';
 import type { TransactionItem } from '@models';
 import { theme } from '@theme';

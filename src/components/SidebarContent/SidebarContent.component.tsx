@@ -50,7 +50,10 @@ const SidebarItem = (props: SidebarItemProps) => {
 
     return (
         <>
-            <StyledListItemButton onClick={handleClickOnListButton}>
+            <StyledListItemButton
+                onClick={handleClickOnListButton}
+                selected={open}
+            >
                 <MuiStack direction="row" spacing={4}>
                     {item.icon && (
                         <Icon
